@@ -1,0 +1,1830 @@
+# 
+# The Nuclear Technology Group
+# Alternative tree - complete overhaul
+#
+# Design by Engineer, scripting by Steel
+
+technology = {
+	id = 8
+	category = nuclear
+	name = CTECN_N8 #TECH_NUCLEAR_NAME #Localized name
+	desc = CTECD_N8 #TECH_NUCLEAR_DESC #Localized description
+	
+	level = { # Elementary Physics & Chemistry
+		id = 8000
+		name = CTECN_N8000 #"Elementary Physics & Chemistry"
+		desc = CTECD_N8000 #"TO DO"
+		
+		cost = 2
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8001
+			name = CTECN_N8001 #"Radium"
+			desc = CTECD_N8001 #"Discovered in 1898 by Marie Curie from pitchblende ores found in Bohemia.  One of the first radioactive elements discovered."
+			
+			required = { }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8002
+			name = CTECN_N8002 #"Radium Isolation"
+			desc = CTECD_N8002 #"Isolated in 1911 by Curie and Debierne by the electrolysis of a solution of pure radium chloride employing a mercury cathode; on distillation in an atmosphere of hydrogen, this amalgam yielded the pure metal. Production would be possible with conventional electroplating technology."
+			
+			required = { 8001 }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8003
+			name = CTECN_N8003 #"Polonium"
+			desc = CTECD_N8003 #"Discovered in 1898 by Marie Curie.  It is also found in the Bohemian pitchblendes that provide Radium.  However, the concentrations are far lower (0.2% that of radium).  It is also far more radioactive."
+			
+			required = { 8001 }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8004
+			name = CTECN_N8004 #"Polonium Isolation"
+			desc = CTECD_N8004 #"It is found in combination with Bismuth.  Concentrated Polonium gives off dangerous levels of radioactivity and can ionize the air near a sample so it is surrounded by a blue glow."
+			
+			required = { 8003 }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8005
+			name = CTECN_N8005 #"Alpha Particle Detection"
+			desc = CTECD_N8005 #"Rutherford had discovered on Alpha Particles in 1899, but mistakenly took them for radiation, like x-rays.  By 1903 he experimentally demonstrated that he could bend a stream of Alpha beam in strong electric and magnetic fields, demonstrating that it was a positively charged particle.    Alpha particles are a helium nucleus, two protons and two neutrons and can only travel a few centimeters through the air before being stopped."
+			
+			required = { }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8006
+			name = CTECN_N8006 #"Beta Particle Detection"
+			desc = CTECD_N8006 #"Henri Becquerel discovered Beta Particles in 1900.   Beta particles are free electrons released by atomic decay or a nuclear reaction.  They can travel a few meters through the air before being stopped."
+			
+			required = { }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8007
+			name = CTECN_N8007 #"Gamma Ray Detection"
+			desc = CTECD_N8007 #"Discovered by Paul Villard around the turn of the century, they were conclusively demonstrated to be photons by Lord Ernest Rutherford in 1914.  Gamma Rays are caused by atomic decay or nuclear reactions, and have very high energy and short wavelengths.  Gamma rays can travel interstellar distances."
+			
+			required = { }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8008
+			name = CTECN_N8008 #"Mass Spectrometer Theory"
+			desc = CTECD_N8008 #"Originally developed by J. J. Thompson in 1899 in the United Kingdom, this notes that as one places ionized atoms under electrical and magnetic fields in the hard vacuum of a cathode ray tube, the trajectory of the atoms will vary depending on the mass and charge of the atom.  The atoms left impressions on a photographic plate and were instrumental in experimentally proving the existence of isotopes of stable, non-radioactive atoms."
+			
+			required = { 8003 }
+			chance = 90
+			cost = 1
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8009
+			name = CTECN_N8009 #"Geiger Counter Production"
+			desc = CTECD_N8009 #"The Geiger Counter was invented by Hans Geiger in 1928 and utilizes the Geiger-Mueller tube that detects ionizing radiation passing through a tube of inert gas and organic vapor.   The more fragile mica window type will detect photons, alpha particles, beta particles, and gamma rays.  The glass window type is sturdier, but does not detect alpha particles."
+			
+			required = { 8005 8006 8007 }
+			chance = 90
+			cost = 1
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8010
+			name = CTECN_N8010 #"Basic Theory of Radiation"
+			desc = CTECD_N8010 #"In 1913 Niels Bohr, who had been mentored by Lord Ernest Rutherford, published a theory of radiation which postulated that the atom consisted of a nucleus surrounded by electrons.  There were stable energy states for the atom, and if an imbalance occurred, then radiation resulted as the atom shed the appropriate particle necessary to restore equilibrium.  Bohr won the 1922 Nobel Prize in Physics for this work."
+			
+			required = { 8001 8003 8005 8006 8007 }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}				
+	} # Level 1
+	
+	level = { # 
+		id = 8100
+		name = CTECN_N8100 #"Advanced Physics & Chemistry"
+		desc = CTECD_N8100 #"TO DO"
+				
+		cost = 2
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8101
+			name = CTECN_N8101 #"Large Van de Graaff Generator Construction"
+			desc = CTECD_N8101 #"This was developed in 1929 by Robert J. Van de Graaff at Princeton University in the USA.  An electrode connected to a hollow sphere is raised to a high potential and then a rapidly moving silk belt carries ionized negative charge to an electrode inside the sphere.  The large potential difference between the two electrodes ionizes the air inside the sphere.  Potentials of up to a million volts were possible by the early 1930s."
+			
+			required = { }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8102
+			name = CTECN_N8102 #"Mass Spectrometer Construction"
+			desc = CTECD_N8102 #"An associate of J. J. Thompson, Francis W. Aston of Cambridge University refined the basic mass spectrometer of Thompson and achieved an order of magnitude improvement in precision in the late teens.  This led more precise study of isotopes a Nobel Prize for Aston in 1922.  In 1920, Canadian-born A. J. Dempster of the University of Chicago made further refinements with directional focusing and developed a method to ionize the samples with a beam of electrons from a hot wire filament.  Both innovations are still used in many modern mass spectrometers, and helped convert a scientific novelty into a useful research instrument."
+			
+			required = { 8008 }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8103
+			name = CTECN_N8103 #"Isotope Isolation"
+			desc = CTECD_N8103 #"Once the Mass Spectrometer was refined so it had sufficient accuracy, research into the variety of different atomic isotopes could proceed.  During the 1920s there was widespread research into identifying the various isotopes of the elements."
+			
+			required = { 8010 8102 }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8104
+			name = CTECN_N8104 #"Alpha Particle Generation"
+			desc = CTECD_N8104 #"In 1928, Walter Bothe bombarded a Beryllium target with alpha particles from Polonium.  This gave off a “high energy photon” which eventually was shown to be neutron.  Bothe also demonstrated that you could use the highly radioactive element of Polonium to bombard substances and create a reaction."
+			
+			required = { 8004 8010 }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8105
+			name = CTECN_N8105 #"The Neutron"
+			desc = CTECD_N8105 #"In 1932, Irene Joliet-Curie and her husband Frederic used Polonium to bombard paraffin with a Polonium source and also detected a positively charged particle in reaction.   1932, Sir James Chadwick, an associate of Lord Ernest Rutherford, repeated the Curie’s work on paraffin and used a number of other targets.  He was able to prove that there was a neutrally charged particle that was a consequence of the bombardment.  This was the neutron, announced in a paper Chadwick authored in the February 27 issue of Nature.  In 1935, Chadwick won the Nobel Prize in Physics for his discovery."
+			
+			required = { 8104 }
+			chance = 90
+			cost = 1
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8106
+			name = CTECN_N8106 #"Artificial Radiation"
+			desc = CTECD_N8106 #"In 1932, the Irene and Frederic Joliot-Curie bombarded boron and aluminum with alpha particles and created new radioactive isotopes of nitrogen and phosphorus.  This artificial radiation created a stir in the world of physics and won the husband and wife team a joint Nobel Prize in Physics in 1935."
+			
+			required = { 8103 8104 }
+			chance = 90
+			cost = 1
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8107
+			name = CTECN_N8107 #"Basic Cyclotron Theory"
+			desc = CTECD_N8107 #"Natural sources of radioactivity were too weak and did not produce enough radioactivity for good research.  Lord Ernest Rutherford made a plea for a more powerful source of particles.  Ernest Lawrence, a young researcher at the University of California, Berkeley, developed and patented the idea of the cyclotron.  This used an alternating electric field to accelerate particles through a strong magnetic field.  In early 1931 he built his first cyclotron and a larger model finished in the summer had a 1.1 million volt capacity.  This accomplishment won Lawrence the Nobel Prize in Physics in 1939."
+			
+			required = { 8010 8101 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8108
+			name = CTECN_N8108 #"Neutron Bombardment"
+			desc = CTECD_N8108 #"Enrico Fermi recognized that the neutrally charged neutron would do a better job bombarding the positively charged nucleus of the atom than the positively charged alpha particle.  He embarked on a program to bombard all of the known elements with neutrons and discovered 40 radioactive isotopes of the elements.  Fermi and his team also observed that bombardment of nuclei with neutrons resulted in the emission of alpha and beta particles, protons, positrons, and gamma radiation.  This 1934 work on neutron bombardment resulted in a Nobel Prize in Physics for 1938."
+			
+			required = { 8103 8105 }
+			chance = 90
+			cost = 1
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		
+	} # Level 2
+	
+	level = { # 
+		id = 8200
+		name = CTECN_N8200 #"Basic Nuclear Physics"
+		desc = CTECD_N8200 #"TO DO"
+				
+		cost = 3
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8201
+			name = CTECN_N8201 #"Decay Product Identifcation"
+			desc = CTECD_N8201 #"Fermi’s work had produced a number of radioactive isotopes.  With this raw material, scientists studied these isotopes and established that as these isotopes decayed, they gave off radiation and would shift down to stable isotopes of the element or lower atomic number elements.  In some cases these lower elements were radioactive isotopes in their own right that would undergo a series of transformations until stable isotopes resulted.  Although some decay products had been mapped as early as 1935, the story took some time to unfold."
+			
+			required = { 8108 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8202
+			name = CTECN_N8202 #"Fission Observation"
+			desc = CTECD_N8202 #"Joliot-Curie had confirmed Fermi’s results on the bombardment of Uranium by 1938, but believed that the by-products included transuranic isotopes of Thorium and Actinium.  Ida Noddack, co-discoverer of the element Rhenium, had postulated that bombardment might result lighter elements, fission, but did not follow up on the work.  Otto Hahn, Lise Meitner, and Fritz Strassman, working in Berlin, chemically separated the by-products of uranium bombardment into radium and barium, both of which were radioactive.  In December, 1938, they concluded that barium-like material was a bombardment by-product, but could not bring themselves to conclude fission of uranium atom into two lighter elements had occurred."
+			
+			required = { 8108 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8203
+			name = CTECN_N8203 #"Fission Measurement"
+			desc = CTECD_N8203 #"During 1939, Hahn followed up with colleague Lise Meitner who had  emigrated to Sweden to escape the Nazi’s.  Meitner worked with her nephew Otto Frisch, who had emigrated to Denmark and was working in Bohr’s laboratory in Copenhagen.  Following up on the work published by Hahn and Strassman, Meitner and Frisch realized that energy would be released as the two fission products separated.  Their calculations indicated a value 200 MeV for uranium fission.  According to the atomic weights of the uranium fission by-products, some mass was converted to energy in the act of fission.  Applying Einstein’s equation e = mc2, they found that the energy and mass figures checked out.  Frisch quickly returned to Copenhagen and empirically verified their calculations."
+			
+			required = { 8202 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8204
+			name = CTECN_N8204 #"Fission Theory"
+			desc = CTECD_N8204 #"Frisch told Niels Bohr about the work he and Meitner had done on fission.  They had proposed a theory that when a neutron entered the nucleus it caused the nucleus to change shape, vibrate a break apart, building on one of Bohr’s own ideas.  Bohr considered those observations with his own insights on the structure of the atom.  Bohr built on their insights to develop a theory for fission that he shared at a conference at in Washington on 17 January 1939."
+			
+			required = { 8203 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8205
+			name = CTECN_N8205 #"Chain Reaction Verification"
+			desc = CTECD_N8205 #"In 1934, Leo Szilard, a Hungarian expatriate physicist in Britain, filed patents for the release of nuclear energy through the transmutation of elements in a chain reaction.  In 1935, Szilard amended the patent to cite Uranium and Bromine as specific elements that could be used for this purpose.  In 1936, the British Admiralty accepted these patents (under British law the only way the patent could be kept secret was if a government agency itself held the patent).  However, the reality of a nuclear chain reaction depended upon more neutrons being given off in a fission reaction than were required to create the fission.  Bohr was arguing for experimental verification of this within days of his discussion of fission theory in Washington.  Within a matter of weeks in early 1939, Szilard’s theory had been empirically confirmed by Lew Kowarski at the Columbia University."
+			
+			required = { 8204 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8206
+			name = CTECN_N8206 #"Basic Cyclotron Construction"
+			desc = CTECD_N8206 #"Ernest Lawrence continued to build larger and more powerful cyclotrons at the University of California, Berkeley.  After Lawrence won the Nobel Prize in 1939, the Rockefeller Foundation donated $1.4 million to build a 100 MeV cyclotron at his laboratory in Berkeley.  In 1940, the USA had twice as many cyclotrons in service or in construction as the rest of the world combined."
+			
+			required = { 8107 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8207
+			name = CTECN_N8207 #"Transuranic Elements"
+			desc = CTECD_N8207 #"It was believed that bombardment of Uranium with alpha particles would produce elements with an atomic number beyond that of Uranium, a transuranic element.  Much of the earlier experimental work leading to fission was a consequence of failed attempts to find such transuranic elements.  However, another factor here was transformation of physics from table-top experiments to the need to use large cyclotrons and other tools costing hundreds of thousands if not millions of dollars.  This covers upgrading the major science labs with this more elaborate and complicated equipment."
+			
+			required = { 8205 8206 }
+			chance = 90
+			cost = 4
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8208
+			name = CTECN_N8208 #"Organized R&D Laboratories (USA Only)"
+			desc = CTECD_N8208 #"Science was being transformed by the industrialization of knowledge creation."
+			
+			required = { 8205 8206 3103 }
+			chance = 90
+			cost = 2
+			time = 240
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = research_cost which = theoretical value = -3 } # %
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = theoretical value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+			}
+		}
+		application = { # 
+			id = 8209
+			name = CTECN_N8209 #"Neptunium"
+			desc = CTECD_N8209 #"In the spring of 1940, Edward McMillan and Philip Abelson, working in the UC-Berkeley Rad Lab, bombarded uranium-238 with 12 MeV neutrons produced by bombarding a beryllium target with cyclotron accelerated deuterons.  Based on the knowledge of how lighter radioactive isotopes decayed it was hoped that new higher atomic weight elements might be created.  In fact, the experiment created U-239, which decayed into Neptunium, the first transuranic element."
+			
+			required = { 8201 8207 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8210
+			name = CTECN_N8210 #"Plutonium"
+			desc = CTECD_N8210 #"Glenn Seaborg led another UC-Berkeley team to search for the next transuranic element beginning in the summer of 1940.   Bombarding uranium with 16 MeV deuterons, a different isotope of Neptunium was created which decayed into Plutonium 238.  The plutonium could be chemically separated from the other materials."
+			
+			required = { 8209 }
+			chance = 90
+			cost = 1
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}	
+		application = { # 
+			id = 8211
+			name = CTECN_N8211 #"Basic R&D Labs"
+			desc = CTECD_N8211 #"Science was being transformed by the industrialization of knowledge creation and the formation of R&D labs where scientists could work together on high-cost, leading edge projects was a necessity that was gradually recognised around the world.  This concentration of effort streamlined not only the work itself but also the procurement of political support and funding."
+			
+			required = { 8205 8206 3103 } # Deactivate this tech for US only
+			chance = 90
+			cost = 2
+			time = 360 # Slower than US special tech
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { # Less benefit than US special tech
+				command = { type = research_cost which = application value = -1 } # %
+				command = { type = research_time which = application value = -1 } # %
+			}
+		}	
+
+	} # Level 3
+	
+	level = { # 
+		id = 8300
+		name = CTECN_N8300 #"Basic Nuclear Experimentation"
+		desc = CTECD_N8300 #"TO DO"
+				
+		cost = 6
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8301
+			name = CTECN_N8301 #"Supporting Nuclear Materials"
+			desc = CTECD_N8301 #"In order to move into larger scale experimentation on nuclear research, significant technical enhancements in supporting technologies were necessary"
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8302
+			name = CTECN_N8302 #"Micro-Chemistry"
+			desc = CTECD_N8302 #"In order to isolate the initial U-235 samples it was necessary to develop advanced analytical techniques which would permit the separation of this isotope of Uranium from the vastly more prevalent U-238 isotope."
+			
+			required = { 8301 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8303
+			name = CTECN_N8303 #"Heavy Water Production"
+			desc = CTECD_N8303 #"Heavy water occurs when the water molecule has two deuterium atoms instead of regular hydrogen atoms bonding to the oxygen atom.  This molecule slows down neutron particles that pass through it.  Heavy water was commercially available as a by-product of an ammonia factory in Norway that was built to take advantage of cheap hydro-electric power in 1934.  The ammonia was used as a feedstock for artificial fertilizer"
+			
+			required = { 8301 }
+			chance = 90
+			cost = 12
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = double_nuke_prod }
+			}
+		}
+		application = { # 
+			id = 8304
+			name = CTECN_N8304 #"Purified Graphite Production"
+			desc = CTECD_N8304 #"Graphite was broadly used in industry for its conductive properties, but it was also found that it would moderate neutrons, creating interest in this material as an alternative to heavy water to serve as a structural material and moderator in a controlled a nuclear chain reaction.  Using this in atomic applications required purification to remove trace elements of boron and calcium from the matrix of graphite."
+			
+			required = { 8301 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8305
+			name = CTECN_N8305 #"Large Cyclotron Construction"
+			desc = CTECD_N8305 #"These machines were able to raise particles to higher and higher potentials in order to generate more energetic subatomic interactions.  While still useful as experimental vehicles, the increasing precision and control of these machines also permitted accurate measurements of various sub-atomic interactions."
+			
+			required = { 8206 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8306
+			name = CTECN_N8306 #"Nuclear Piles"
+			desc = CTECD_N8306 #"In order to demonstrate a controlled chain reaction and make measurements in order to validate key parts of theory, it was necessary to fabricate a nuclear pile.  There were two basic types of piles developed during the 1940s, the heavy water pile and the graphite moderated pile."
+			
+			required = { 8205 8207 }
+			chance = 90
+			cost = 3
+			time = 270
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+
+# ID 8307 not included in design
+
+		application = { # 
+			id = 8308
+			name = CTECN_N8308 #"Heavy Water Pile Construction"
+			desc = CTECD_N8308 #"This pile uses U238 as a fuel.  Heavy water is used as a moderator.  The bombardment of the U238 by the slow neutrons moderated by the heavy water results in creation of Plutonium which can be chemically separated from the U238.  This was the approach favored by Heisenberg and his team of researchers in Germany.  Their design featured alternating layers of Uranium and Paraffin which was suspended in a heavy water tank."
+			
+			required = { 8009 8303 8306 8312 8317 4405 }
+			chance = 90
+			cost = 6
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8309
+			name = CTECN_N8309 #"Graphite Pile Construction"
+			desc = CTECD_N8309 #"This approach was used by the Americans and Soviets in their research.  It used uranium embedded in blocks of purified graphite with cadmium control rods that could be inserted or removed from the stack of material.  The cadmium absorbed neutrons, damping the chain reaction."
+			
+			required = { 8009 8304 8306 8312 8317 4405 }
+			chance = 90
+			cost = 6
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8310
+			name = CTECN_N8310 #"Basic Uranium Metallurgy"
+			desc = CTECD_N8310 #"Uranium had been something of a novelty element prior to 1930s.  Its salts were radioactive, but there were no major industrial applications for the metal.  Belgium had mines in the Congo that produced the metal."
+			
+			required = {  }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}	
+		application = { # 
+			id = 8311
+			name = CTECN_N8311 #"Uranium Oxide Production"
+			desc = CTECD_N8311 #"Most uranium ores are oxides of uranium: U3O8, UO2, UO3.  Concentrations of U308 vary from as much as 20% in some Canadian ores to only 0.5% in some Australian ores.  The ore is mechanically ground up in ball mills and subjected to a variety of chemical processes that result in “Yellowcake”, pure U3O8. "
+			
+			required = { 8009 8310 } 
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { 
+
+			}
+		}
+		application = { # 
+			id = 8312
+			name = CTECN_N8312 #"Uranium Purification"
+			desc = CTECD_N8312 #"The yellowcake, U3O8, is dissolved in nitric acid and then subjected to a series of chemical reactions which generate a tremendous amount of toxic chemical by-products.  Pure uranium metal can be obtained by reducing uranium tetrafluoride with either calcium or magnesium.  However, the pure uranium will contain a mixture of both U235 and U238. "
+			
+			required = { 8311 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8313
+			name = CTECN_N8313 #"U235 Isolation"
+			desc = CTECD_N8313 #"Small quantities of U235 could be extracted from the mix of U235 and U238.  This permitted experimental confirmation of the reaction of U235 atoms to fast neutrons that was necessary to show that relatively small, transportable quantities of U235 could be used in an atomic reaction."
+			
+			required = { 8302 8310 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8314
+			name = CTECN_N8314 #"Plutonium Isolation"
+			desc = CTECD_N8314 #"Once Plutonium had been created it was necessary to identify the chemical processes required to remove it and leave a pure metallic form.  Glenn Seaborg led the team that accomplished this on 20 August 1942."
+			
+			required = { 8210 8310 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8315
+			name = CTECN_N8315 #"Chain Reaction Calculations"
+			desc = CTECD_N8315 #"In order to calculate the amount of heat and radiation given off in a chain reaction, it was necessary to perform calculations on the size of the various atoms involved compared to the neutrons that would strike them.  Furthermore, it was necessary to get some level of empirical confirmation since these numbers varied by up to four orders of magnitude (10,000 times) depending on the who did the calculations and the assumptions that they used."
+			
+			required = { 3101 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8316
+			name = CTECN_N8316 #"Beryllium Cross Section Calculation"
+			desc = CTECD_N8316 #"The critical question for fission was the size of the nucleus compared to the atom.  In the case of Beryllium, it was found that neutrons striking this atom would be reflected back out of the atom.   This was historically completed in 1941."
+			
+			required = { 8315 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+
+		application = { # 
+			id = 8317
+			name = CTECN_N8317 #"U238 Cross Section Calculation"
+			desc = CTECD_N8317 #"The critical question for fission was the size of the nucleus compared to the atom. This would give an estimate for the chance that a neutron passing through the atom would strike the nucleus and create a reaction. The U238 was not as reactive as the U235 and so was identified as more suitable for a reactor fuel. This was completed by July, 1941."
+			
+			required = { 8315 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8318
+			name = CTECN_N8318 #"U235 Cross Section Calculation"
+			desc = CTECD_N8318 #"The critical question for fission was the size of the nucleus compared to the atom.  This would give an estimate for the chance that a neutron passing through the atom would strike the nucleus and create a reaction.  The U235 was much more reactive than the U238 and calculations suggested that as little as 1 kg might be suitable to create a bomb. The actual initial bombs used about 50 kg per weapon.  This was completed in July, 1941 in the west and by December, 1941 in the USSR."
+			
+			required = { 8317 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8319
+			name = CTECN_N8319 #"Plutonium Cross Section"
+			desc = CTECD_N8319 #"The critical question for fission was the size of the nucleus compared to the atom.  This would give an estimate for the chance that a neutron passing through the atom would strike the nucleus and create a reaction.  Plutonium was identified as a prime candidate for fission."
+			
+			required = { 8210 8315 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8320
+			name = CTECN_N8320 #"Nuclear Weapons Theory"
+			desc = CTECD_N8320 #"Finally, all the pieces are available to make a reasonable estimate on how much fissionable material is necessary to make a how big of a bang.  Though science fiction speculations had been afloat for years from H. G. Wells and others, and serious scientists had speculated about this possibility since fission measurements were made, the state of the art had now reached the point that it was clear an explosive device of unprecedented potency was possible, if the engineering problems could be solved. The British MAUD Report, approved on July 15, 1941, concluded that a bomb with as little of 25 pounds of U-235 could explode with a force equivalent to 1800 tons of TNT."
+			
+			required = { 8316 8318 8319 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8321
+			name = CTECN_N8321 #"Fusion Bomb Feasibility"
+			desc = CTECD_N8321 #"During the spring of 1941, Enrico Fermi speculated that the heat and pressure of a nuclear explosion might create conditions for hydrogen to fuse together into helium and produce even more energy.  Edward Teller studied the problem and convinced himself that the reaction would not work.   However, in Japan, Hakutaro Hagiwara of the University of Kyoto gave a paper in May, 1941 outlining a proposal for a bomb consisting of enriched U-235 and then igniting hydrogen for an even greater explosion"
+			
+			required = { 8205 8318 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8322
+			name = CTECN_N8322 #"Uranium Hexafluoride Creation"
+			desc = CTECD_N8322 #"During 1941, Philip Abelson of the University of California, Berkeley, developed a practical, relatively inexpensive way to create the gas Uranium Hexafluoride.  Given the international situation, he licensed the patent rights to the US government for one dollar and still never collected the dollar."
+			
+			required = { 8301 8310 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}	
+
+	} # Level 4
+	
+	level = { # 
+		id = 8400
+		name = CTECN_N8400 #"Basic Nuclear Theory"
+		desc = CTECD_N8400 #"TO DO"
+				
+		cost = 6 # TO DO
+		time = 180 # TO DO
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8407
+			name = CTECN_N8407 #"Graphite Nuclear Pile Experimentation"
+			desc = CTECD_N8407 #"Once nuclear piles were constructed, it was necessary to conduct experiments to measure and verify the amount of heat and radiation given off by chain reactions.  This would permit more refined calculations of the nuclear reactions that were taking place.  The world’s first self-sustained chain reaction took place during December, 1942 in a pile constructed on the grounds of the University of Chicago under the direction of Enrico Fermi."
+			
+			required = { 8309 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8408
+			name = CTECN_N8408 #"Heavy Water Nuclear Pile Experimentation"
+			desc = CTECD_N8408 #"Once nuclear piles were  constructed, it was necessary to conduct experiments to measure and verify the amount of heat and radiation given off by chain reactions.  This would permit more refined calculations of the nuclear reactions that were taking place."
+			
+			required = { 8308 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8409
+			name = CTECN_N8409 #"Graphite Production Pile Theory"
+			desc = CTECD_N8409 #"Once sufficient experiments were performed, it was possible to design a nuclear pile which would be fueled with U238, operated a period of time, and then harvested for the Plutonium that would created during the course of the fission reaction.  The Plutonium would then be chemically isolated from the Uranium and used as the fissile material for a Plutonium bomb.  Engineering issues associated with this included cooling, extraction of the fissile material and its byproducts, and control of the chain reaction in the pile."
+			
+			required = { 8407 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8410
+			name = CTECN_N8410 #"Heavy Water Production Pile Theory"
+			desc = CTECD_N8410 #"Once sufficient experiments were performed it was possible to design a heavy water pile which would be fueled with U238, operated a period of time, and then harvested for the Plutonium that could be isolated from the Uranium and used as the fissile material for a Plutonium bomb. Engineering issues associated with this included cooling, extraction of the fissile material and its byproducts, and control of the chain reaction in the pile."
+			
+			required = { 8408 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8411
+			name = CTECN_N8411 #"Isotope Isolation"
+			desc = CTECD_N8411 #"There are two major isotopes of Uranium.  U235 and U238.  Since they are chemically identical, traditional methods to separate the materials were ineffective and novel techniques relying on the different atomic weight had to be imagined.  There were multiple solutions including thermal diffusion, gaseous diffusion, electromagnetic diffusion and centrifuge separation."
+			
+			required = { 8313 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8412
+			name = CTECN_N8412 #"Gaseous Diffusion Separation Engineering"
+			desc = CTECD_N8412 #"This method of isotope separation depended on the fact that the lighter isotope of uranium, in the gaseous form of Uranium Hexafluoride, would move more quickly through a finely perforated barrier.  A sufficient number of barriers, in the thousands, would result in a much higher concentration of the U235 isotope in the gas at the end of the barriers than at the beginning.  This was demonstrated at Columbia University in November, 1941, but full scale engineering started in the spring of 1942. Getting an effective permeable membrane was a key piece part of this process and part of its difficulty."
+			
+			required = { 4803 8411 }
+			chance = 90
+			cost = 12
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8413
+			name = CTECN_N8413 #"Thermal Columnar Separation Engineering"
+			desc = CTECD_N8413 #"The theory behind this was similar to the Gaseous Diffusion Separation but depended on the superior mobility of lighter atoms when driven by heat instead of the mobility of lighter atoms through permeable membranes.  Philip Abelson was working with the US Navy to develop nuclear reactors as power sources for their submarines.  He sought to improve the efficiency of the reactors with an enriched U-235 fuel. A prototype system was built at the Naval Research Laboratory in 1942 that was 36 feet tall, used steam and hot water, and whose only moving parts were the recirculating pumps."
+			
+			required = { 8411 }
+			chance = 90
+			cost = 12
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8414
+			name = CTECN_N8414 #"Cyclotron Separation Engineering"
+			desc = CTECD_N8414 #"Ernest Lawrence realized that if the uranium isotopes could be ionized, then shooting them through the strong magnetic field of a cyclotron would result in the lighter isotope being deflected less than the heavier isotope.  By arranging to catch the lighter U-235 separately from the heavier U-238, one could isolate the two isotopes.  The instrument to do this would be called a Calutron."
+			
+			required = { 8305 8411 }
+			chance = 90
+			cost = 12
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8415
+			name = CTECN_N8415 #"Centrifuge Separation"
+			desc = CTECD_N8415 #"If the Uranium could be placed into solution, then the resultant solution could be centrifuged.  The heavier U-238 would settle to the bottom and the lighter U-235 would be concentrated at the top.  After sufficient time to achieve separation, then the U-235 would be decanted off."
+			
+			required = { 4803 8411 }
+			chance = 90
+			cost = 12
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+	} # Level 5
+	
+	level = { # Applied Nuclear Theory
+		id = 8500
+		name = CTECN_N8500 #"Applied Nuclear Theory"
+		desc = CTECD_N8500 #"TO DO"
+				
+		cost = 8
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8501
+			name = CTECN_N8501 #"Uranium Bomb Detonation Theory"
+			desc = CTECD_N8501 #"The challenge was now to assemble subcritical masses of Uranium and then bring them together in such a way as to create a nuclear explosion.  The solution involved designing a cannon to fire a uranium bullet at a precise velocity so it would pass through several rings of enriched U-235.  As the bullet passed through the rings, a critical mass would be achieved and trigger a nuclear explosion."
+			
+			required = { 8320 }
+			chance = 90
+			cost = 10
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8502
+			name = CTECN_N8502 #"Plutonium Bomb Detonation Theory"
+			desc = CTECD_N8502 #"The gun idea developed for a Uranium Bomb was unsuitable for a Plutonium bomb.  In order to prevent a pre-detonation of the Plutonium (essentially a fizzle instead of a massive, energy-releasing chain reaction), the muzzle velocity of the bullet had to be about 1000 meters per second, which was impractical.  Therefore, it was suggested that a shell of explosives around a Plutonium structure would be used to compress the Plutonium into a critical mass and start the nuclear reaction that way."
+			
+			required = { 8320 }
+			chance = 90
+			cost = 10
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8503
+			name = CTECN_N8503 #"Hydrogen Bomb Theory"
+			desc = CTECD_N8503 #"Hans Bethe and Edward Tellar returned to the idea of a fusion bomb and calculated that the heat generated by an atomic explosion could be used to trigger a fusion reaction of even greater force if the right fuel elements were available.  Preliminary calculations suggested that as little as six kilograms of liquid deuterium could unleash a 1 megaton explosion."
+			
+			required = { 8320 8321 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8504
+			name = CTECN_N8504 #"Steam Generator Theory"
+			desc = CTECD_N8504 #"Although water could be used to cool a reactor and generate steam, it was advisable to keep that subsequently radioactive coolant in its own loop of piping and arrange a heat exchanger to an outside loop that would be turned to steam and operate a turbine.  Then the mechanical energy of the turbine could be geared down to turn a ship’s propeller and/or drive an electric generator.  All of this would emphasize small size and weight since submarines propulsion was immediately identified as an eventual goal for this line of research as well as conventional industrial power sources."
+			
+			required = { 8306 6517 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		
+		application = { # Material: Uranium 235
+			id = 8505
+			name = CTECN_N8505 #"Graphite Production Pile Construction"
+			desc = CTECD_N8505 #"The production pile uses coin-shaped slugs of uranium that are inserted into hollow aluminum tubes that go through the core.  After a certain period of time, the slugs are pushed through the tubes and fall into a large tank of water where the fiercely radioactive short half-life fission products decay.  The reactor is reloaded and, after a safe period of time, the partially enriched uranium is removed from the tank so the Plutonium may be extracted.  An unanticipated by-product of the initial design was that a Xenon isotope was one of the by-products and after a period of a few days, enough accumulated to damp the chain reaction.  However, the US piles had margin to be expanded and adding about one third more uranium to the pile, created a dense enough neutron flux to overcome the dampening effect of the Xenon.  Historically these piles were built at Hanford, Washington."
+			
+			required = { 3302 8409 }
+			chance = 90
+			cost = 30
+			time = 540
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		
+		application = { # 
+			id = 8506
+			name = CTECN_N8506 #"Heavy Water Production Pile Construction"
+			desc = CTECD_N8506 #"The production pile uses coin-shaped slugs of uranium that are inserted into multiple hollow aluminum tubes.  An array of tubes is placed in the recirculating Heavy Water tank that moderates the chain reaction.  Hoists move individual tubes closer or farther from the array as desired to modify the neutron flux density.  After a certain period of time, the tubes are lifted out of the reactor and transferred to a “cooling tank” where the slugs are pushed out and kept a large tank of water where the fiercely radioactive short half-life fission products decay.  After a safe period of time, the partially enriched uranium is removed from the tank so the Plutonium may be extracted.  An unanticipated by-product of the initial design was that a Xenon isotope was one of the by-products and after a period of a few days, enough accumulated to damp the chain reaction.  The reactor needed to be redesigned for additional uranium to keep a dense enough neutron flux to overcome the dampening effect of the Xenon. "
+			
+			required = { 3302 8410 }
+			chance = 90
+			cost = 30
+			time = 540
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		
+	} # Level 6
+	
+	level = { # 
+		id = 8600
+		name = CTECN_N8600 #"Basic Nuclear Weapons Design"
+		desc = CTECD_N8600 #"TO DO"
+				
+		cost = 8
+		time = 120
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8601
+			name = CTECN_N8601 #"Uranium Bomb Detonator Engineering"
+			desc = CTECD_N8601 #"Now the need was to realize the specific design for a uranium gun.  A naval rifle was lightened and shortened since it was eventually realized that it would only need to fire once.  The uranium bullet had to be designed.  Also, the size of the charge had to be precisely calculated and tested since it was necessary for the uranium bullet to enter the uranium target rings with a precise velocity in order to achieve right rate of fission so the bomb would not “fizzle”."
+			
+			required = { 2885 8501 4805 }
+			chance = 90
+			cost = 8
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8602
+			name = CTECN_N8602 #"Plutonium Bomb Detonator Engineering"
+			desc = CTECD_N8602 #"To make the implosion concept work, it was necessary to develop a new order of magnitude in precision for explosives.  Historically, test calculations were run on a bank of new IBM computers before being experimentally verified in a program that included thousands of test explosions.  A key breakthrough involved understanding that one could shape the explosives to focus the shape of the shock wave, much as a glass lens focuses light.  This was the Explosive Lens concept."
+			
+			required = { 2885 8502 3602 }
+			chance = 90
+			cost = 12
+			time = 300
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 
+			id = 8603
+			name = CTECN_N8603 #"Uranium Tamper Design"
+			desc = CTECD_N8603 #"Placing a thick blanket of U-238 around the critical mass would boost the yield of the explosion by reflecting some of the neutrons back into the U-235 or Plutonium core as well as by getting some fission of the U-238 by the neutrons passing through the tamper."
+			
+			required = { 8320 }
+			chance = 90
+			cost = 3
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8604
+			name = CTECN_N8604 #"Initiator Design"
+			desc = CTECD_N8604 #"The details of this device are actually still classified.  It involves a device that would release neutrons to start the chain reaction only at precisely the correct moment."
+			
+			required = { 8320 4805 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8605
+			name = CTECN_N8605 #"U238 Reactor Design"
+			desc = CTECD_N8605 #"As part of atomic power plant development, it is necessary to design the right arrangement of shielding, control rods, moderator materials, nuclear fuel, and coolant so one can safely extract usable energy from the nuclear reactor."
+			
+			required = { 8306 }
+			chance = 90
+			cost = 3
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8606
+			name = CTECN_N8606 #"Hydrogen Bomb Design"
+			desc = CTECD_N8606 #"Further calculations showed that Deuterium was an unsuitable fuel for a thermonuclear action.  However, Tritium would do quite nicely.  Furthermore, the power of a Hydrogen Bomb could be tuned by adjusting the amount of fuel placed in proximity to the triggering nuclear explosion."
+			
+			required = { 8503 4805 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8607
+			name = CTECN_N8607 #"Improved R&D Labs"
+			desc = CTECD_N8607 #"Science was being transformed by the industrialization of knowledge creation and the formation of R&D labs where scientists could work together on high-cost, leading edge projects was a necessity that was gradually recognised around the world.  This concentration of effort streamlined not only the work itself but also the procurement of political support and funding.  For most countries R&D labs were only formed in the post-war years."
+			
+			required = { 8211 3302 } # Deactivate this tech for US only
+			chance = 90
+			cost = 2
+			time = 360 
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { # 
+				command = { type = research_cost which = application value = -2 } # %
+				command = { type = research_time which = application value = -2 } # %
+				command = { type = research_cost which = theoretical value = -1 } # %
+				command = { type = research_time which = theoretical value = -1 } # %
+			}
+		}		
+	} # Level 7
+	
+	level = { # 
+		id = 8700
+		name = CTECN_N8700 #"Nuclear Material Production"
+		desc = CTECD_N8700 #"TO DO"
+				
+		cost = 20
+		time = 120
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8701
+			name = CTECN_N8701 #"Uranium Hexafluoride Plant Construction"
+			desc = CTECD_N8701 #"This factory provided the feedstock to the Permeable Membrane Production Plants and the Magnetic Separation Plant.  The first industrial plant of this type was constructed at the Clinton Engineering Works on the Oak Ridge Nuclear reservation."
+			
+			required = { 8322 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # 
+			id = 8702
+			name = CTECN_N8702 #"Permeable Membrane Production Plant Construction"
+			desc = CTECD_N8702 #"This factory makes the membranes which are used to separate the U-235 from U-238 isotopes in the Gaseous Diffusion Plan.  The initial Norris-Adler Barrier, developed at Columbia University, used a nickel plated mesh which worked, but was very fragile.  A factory was built in Decatur, Illinois to fabricate the mesh.  By late 1943, the companies that were working on the gaseous diffusion plant, Kellex and Union Carbide, had developed an alternative method that relied on a compressed nickel powder barrier.  After some contentious discussions, the factory under construction was converted to the nickel powder barrier."
+			
+			required = { 8412 }
+			chance = 90
+			cost = 20
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # 
+			id = 8703
+			name = CTECN_N8703 #"Gaseous Diffusion Plant Construction"
+			desc = CTECD_N8703 #"This is the factory which implements the gaseous diffusion separation process.  Historically, the plant at Oak Ridge, Tennessee that provided this capability to the USA required 4000 stages of enrichment.  The process required new materials development to resist the corrosive Uranium Hexafluoride gas (what we would come to know as Teflon) and required a complete absence of grease or any other hydrocarbons in the diffusion chambers"
+			
+			required = { 4903 8701 8702 }
+			chance = 90
+			cost = 35
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # 
+			id = 8704
+			name = CTECN_N8704 #"Thermal Columnar Separation Plant Construction"
+			desc = CTECD_N8704 #"Once the engineering for the Thermal Separation Plant was complete, a full factory could be established.  The USA actually built two.  A 300 column plant was constructed in the Philadelphia Navy Yard which operated off of waste steam from the Naval Boiler and Turbine Laboratory.  However, a larger 2100 column was constructed at Oak Ridge starting in June, 1944.  Advanced welding techniques were necessary to reliably seal the system against steam leaks. "
+			
+			required = { 4801 8413 }
+			chance = 90
+			cost = 35
+			time = 270
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # 
+			id = 8705
+			name = CTECN_N8705 #"Cyclotron Separation Plant Construction"
+			desc = CTECD_N8705 #"The facility takes Uranium and accelerates the material through an electromagnetic field.  Since the different isotopes have different masses, they will deposit on targets that are farther from the center of device if they have higher mass.  The individual machines were named Calutrons in honor of the Berkeley Radiation Lab where cyclotrons were born.  This type of facility was built at Oak Ridge, Tennessee by the US Manhattan Project."
+			
+			required = { 8701 8410 8414 }
+			chance = 90
+			cost = 35
+			time = 270
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { #
+			id = 8706
+			name = CTECN_N8706 #"Uranium System"
+			desc = CTECD_N8706 #"Initially, the directors of the Manhattan Project believed that the Isotope separation processes would compete against one another and one or the other would “win”.  However, they realized that by using all of the processes together, they could accelerate the rate at which U-235 could be concentrated.  The uranium cycle at Oak Ridge involved sending using the Thermal Diffusion plant to reach about 1% concentration.  Then Uranium Tetrafluoride gas went through the gaseous diffusion plant to get 50% concentration.  Then the partially concentrated gas was fed to the Calutrons in the magnetic separation facility to get weapons-grade 80% U235.  That was converted back to the Uranium Tetrafluoride gas and shipped to Los Alamos in sub-critical quantities.  Scientists there reduced the gas to Uranium metal.  With all the plants operating, enough weapons-grade Uranium could be produced to make a bomb per month compared to one bomb every six months with the Calutrons alone. "
+			
+			required = { 8703 8704 8705 }
+			chance = 90
+			cost = 10
+			time = 30
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = double_nuke_prod }
+			}
+		}
+		application = { #
+			id = 8707
+			name = CTECN_N8707 #"Plutonium Refinery Plant Construction"
+			desc = CTECD_N8707 #"The micro-chemical processes pioneered by Glenn Seaborg were scaled up by more than a thousand fold to take the radioactive fission products from the Plutonium production piles and extract the weapons grade Plutonium.  Historically, this plant was located on the Hanford Nuclear Reservation. "
+			
+			required = { 8314 }
+			chance = 90
+			cost = 12
+			time = 270
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { #
+			id = 8708
+			name = CTECN_N8708 #"Tritium Production"
+			desc = CTECD_N8708 #"The necessary Tritium for the Hydrogen Bomb could be manufactured by bombarding Lithium with neutrons.  This would require a production pile and refining operation, similar to those developed for Plutonium manufacture and isolation.  Historically, this effort did not take place until after a nuclear arms race took off in the early years of the Cold War."
+			
+			required = { 8606 }
+			chance = 90
+			cost = 40
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { #
+			id = 8709
+			name = CTECN_N8709 #"Heavy Bomber Modification"
+			desc = CTECD_N8709 #"Delivery of an atomic bomb required a plane with an enormous bomb bay and good payload.  Special releases, guide rails so the tail fins of the bomb would not get caught in the bomb bay, additional crew stations to carry the technicians who would arm the bomb in flight, and, in the case of the B-29, even modifying the design of the plane to extend the length of the bomb bay, had to take place."
+			
+			required = { 9309 9808 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { #
+			id = 8710
+			name = CTECN_N8710 #"U238 Reactor Prototype"
+			desc = CTECD_N8710 #"This is a pilot nuclear power plant.  The key objectives here would be to refine the reactor design and overall efficiencies of the plant so that more useful energy could be extracted from the plant than was consumed in the operation of the facility."
+			
+			required = { 8504 8605 }
+			chance = 90
+			cost = 20
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+	} # Level 8
+	
+	level = { # 
+		id = 8800
+		name = CTECN_N8800 #"Nuclear Weapon Testing"
+		desc = CTECD_N8800 #"TO DO"
+				
+		cost = 8
+		time = 120
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8801
+			name = CTECN_N8801 #"Uranium Detonator Construction"
+			desc = CTECD_N8801 #"This is the construction of test of prototype Uranium guns so serial production of the shell of the Uranium Bomb (absent the fissile material) can commence"
+			
+			required = { 8601 8603 }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # 
+			id = 8802
+			name = CTECN_N8802 #"Uranium Bomb Test"
+			desc = CTECD_N8802 #"Rather than consume the scarce U-235 in a live weapons test, Otto Frisch designed an experiment using Uranium Hydride where a mock-up of the gun and rings would be set up.  Since the fission reaction in Uranium Hydride was slower than in the weapons grade U-235, dropping the bullet into the rings would result in only a burst of radioactivity instead of full explosion.  Richard Feynman called it tickling the tail of a sleeping dragon and it became known as the Dragon Experiment."
+			
+			required = { 8801 8705 }
+			chance = 90
+			cost = 2
+			time = 30
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8803
+			name = CTECN_N8803 #"Plutonium Detonator Construction"
+			desc = CTECD_N8803 #"This is the construction and test of working explosive implosion devices.  In historical fact, this was the pacing item in completing the Plutonium Bomb that was used for the first man-made atomic explosion."
+			
+			required = { 8602 8603 }
+			chance = 90
+			cost = 8
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8804
+			name = CTECN_N8804 #"Plutonium Bomb Test (Graphite)"
+			desc = CTECD_N8804 #"This is a test detonation of an atomic bomb.  In contrast to the Uranium Bomb, where calculations suggested a range of a factor of three in the potential explosive force, the estimates for a Plutonium bomb ranged from no effect to a slight chance that it could ignite the atmosphere and end civilization as we know it.  Credible calculations suggested that the explosive force could vary by a factor of 10.  Historically, this was the Trinity Test at Alamagordo, New Mexico, which resulted in an 18 kiloton detonation."
+			
+			required = { 8505 8603 8604 8707 8803 }
+			chance = 90
+			cost = 6
+			time = 30
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8805
+			name = CTECN_N8805 #"Plutonium Bomb Test (Heavy Water)"
+			desc = CTECD_N8805 #"This is a test detonation of an atomic bomb.  In contrast to the Uranium Bomb, where calculations suggested a range of a factor of three in the potential explosive force, the estimates for a Plutonium bomb ranged from no effect to a slight chance that it could ignite the atmosphere and end civilization as we know it.  Credible calculations suggested that the explosive force could vary by a factor of 10."
+			
+			required = { 8506 8603 8604 8707 8803 }
+			chance = 90
+			cost = 6
+			time = 30
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8806
+			name = CTECN_N8806 #"Bomber Crew Training"
+			desc = CTECD_N8806 #"This develops and trains the aircrew in the mechanics of loading and delivering an atomic weapon.  It also involved learning to execute a special diving turn to maximize the distance between the aircraft and the bomb by the time it would detonate."
+			
+			required = { 8709 }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8807
+			name = CTECN_N8807 #"U238 Reactor Prototype Testing"
+			desc = CTECD_N8807 #"This evaluates the initial power reactor design and establishes the changes necessary for successful industrial or naval applications. "
+			
+			required = { 8710 }
+			chance = 90
+			cost = 5
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8808
+			name = CTECN_N8808 #"Advanced R&D Labs"
+			desc = CTECD_N8808 #"Science was being transformed by the industrialization of knowledge creation and the formation of R&D labs where scientists could work together on high-cost, leading edge projects was a necessity that was gradually recognised around the world.  This concentration of effort streamlined not only the work itself but also the procurement of political support and funding.  For most countries R&D labs were only formed in the post-war years."
+			
+			required = { 8607 3972 } # Deactivate this tech for US only
+			chance = 90
+			cost = 2
+			time = 360 
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { # 
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+				command = { type = research_cost which = theoretical value = -2 } # %
+				command = { type = research_time which = theoretical value = -2 } # %
+			}
+		}	
+	} # Level 9
+	
+	level = { # 
+		id = 8900
+		name = CTECN_N8900 #"Nuclear Weapon Production"
+		desc = CTECD_N8900 #"TO DO"
+				
+		cost = 30
+		time = 30
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # 
+			id = 8901
+			name = CTECN_N8901 #"Basic Uranium Bomb Production"
+			desc = CTECD_N8901 #"After the bomb test is completed, serial production of the bomb can begin.  These bombs have a yield of about 10 KT and are the same model that was dropped on Hiroshima (The Little Boy). Most of the materials are already in a production pipeline so this involves operating the bomb material industry, final assembly of the components, and transport of the actual weapons to the theater of war.  The live bomb includes one additional feature.  The fuse for the detonator is linked to a radar altimeter.  Calculations show that the optimum blast damage will occur with a air burst at a certain altitude over the ground."
+			
+			required = { 8802 8806 14701 }
+			chance = 90
+			cost = 20
+			time = 30
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = nuke_level value = 2 } 
+			}
+		}
+		application = { # 
+			id = 8902
+			name = CTECN_N8902 #"Basic Plutonium Bomb Production (Graphite)"
+			desc = CTECD_N8902 #"After the bomb test is completed, serial production of the bomb can begin.  These bombs have a yield of about 20 Kilotons and are the same model that was dropped on Nagasaki (Fat Man).  Most of the materials are already in a production pipeline so this involves operating the bomb material industry, final assembly of the components, and transport of the actual weapons to the theater of war.  The live bomb includes one additional feature.  The fuse for the detonator is linked to a radar altimeter.  Calculations show that the optimum blast damage will occur with a air burst at a certain altitude over the ground."
+			
+			required = { 8804 8806 14701 }
+			chance = 90
+			cost = 20
+			time = 30
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = nuke_level value = 4 }
+			}
+		}
+		application = { # 
+			id = 8903
+			name = CTECN_N8903 #"Basic Plutonium Bomb Production (Heavy Water)"
+			desc = CTECD_N8903 #"After the bomb test is completed, serial production of the bomb can begin.  These bombs have a yield of about 20 Kilotons and are the same model that was dropped on Nagasaki (Fat Man).  Most of the materials are already in a production pipeline so this involves operating the bomb material industry, final assembly of the components, and transport of the actual weapons to the theater of war.  The live bomb includes one additional feature.  The fuse for the detonator is linked to a radar altimeter.  Calculations show that the optimum blast damage will occur with a air burst at a certain altitude over the ground."
+			
+			required = { 8805 8806 14701 }
+			chance = 90
+			cost = 20
+			time = 30
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = nuke_level value = 4 }
+			}
+		}
+		application = { # 
+			id = 8904
+			name = CTECN_N8904 #"Full Scale Nuclear Reactor Construction"
+			desc = CTECD_N8904 #"Practical power plants may now be built.  These plants, suitable for land-based construction, provide useful amounts of power, but require no air to burn fossil fuels and only need to be refueled at extremely infrequent intervals.  This is a full scale plant that generates power.  However, the short development time of this plant is indicative of 'crash' development."
+			
+			required = { 8807 4943 }
+			chance = 90
+			cost = 30
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 1 }
+			}
+		}
+		application = { # 
+			id = 8905
+			name = CTECN_N8905 #"Nuclear Propulsion"
+			desc = CTECD_N8905 #"These are shipboard nuclear reactors that can be used to replace the fossil fuel powered propulsion systems on surface ships or submarines. "
+			
+			required = { 8807  }
+			chance = 90
+			cost = 10
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+
+			}
+		}
+		application = { # 
+			id = 8906
+			name = CTECN_N8906 #"Commercial Nuclear Power Plants"
+			desc = CTECD_N8906 #"Now that the first full scale atomic plant has been built, additional plants may be built across the country. These are industrial power plants that provide electricity.  Once fueled, they operate for years producing no air pollution and without requiring transport of huge quantities of fossil fuel to the plant site.  These are copies of the first plant with few modifications or improvements."
+			
+			required = { 8904 3943  }
+			chance = 90
+			cost = 30
+			time = 300
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 5 }
+			}
+		}
+		application = { # 
+			id = 8907
+			name = CTECN_N8907 #"Tritium Bomb Design"
+			desc = CTECD_N8907 #"Calculation showed that mixing a small amount of tritium with a “cocktail” of Uranium and Plutonium might create an even more powerful bomb.  Older, pilot nuclear piles can create enough Tritium for these designs."
+			
+			required = { 8901 8902 }
+			chance = 90
+			cost = 10
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+			}
+		}
+		application = { # 
+			id = 8908
+			name = CTECN_N8908 #"Tritium Bomb Testing"
+			desc = CTECD_N8908 #"This involves the construction and test detonation of a Tritium-boosted atomic bomb.  Historically, this took place in May, 1951."
+			
+			required = { 8905 8708 }
+			chance = 90
+			cost = 20
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = nuke_level value = 5 }
+			}
+		}
+		application = { # 
+			id = 8909
+			name = CTECN_N8909 #"Advanced Hydrogen Bomb Design"
+			desc = CTECD_N8909 #"Reducing the theory to a practical design involved the use of electronic computers for calculations. However, there was a fundamental problem that the calculations kept showing that there was insufficient energy to push the tritium into a full-scale fusion reaction.  A fundamental breakthrough was necessary to take this problem in a new direction."
+			
+			required = { 8606 3972 }
+			chance = 90
+			cost = 6
+			time = 540
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # 
+			id = 8910
+			name = CTECN_N8910 #"Improved Commercial Nuclear Power Plants"
+			desc = CTECD_N8910 #"A second generation of atomic plants, incorporating the lessons of the first generation are now built.  These are industrial power plants that provide electricity.  Once fueled, they operate for years, producing no air pollution and without requiring transport of huge quantities of fossil fuel to the plant site.  The longer duration for the design and construction of these plants is critical to ensure their safe operation.  Historically, these were the first civilian power plants that were turned on the late 1950s."
+			
+			required = { 8807 }
+			chance = 90
+			cost = 30
+			time = 900
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 8 }
+			}
+		}
+	} # Level 10
+
+	level = { # 
+		id = 8940
+		name = CTECN_N8940 #"Semi-modern Nuclear Power"
+		desc = CTECD_N8940 #"Semi-modern Nuclear Power"
+				
+		cost = 1
+		time = 7200
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8941
+			name = CTECN_N8941 #"Semi-Modern Nuclear Power Plants"
+			desc = CTECD_N8941 #"A third generation of atomic plants, incorporating the lessons of the earlier generations.  These are industrial power plants that provide electricity.  Once fueled, they operate for years, producing no air pollution and without requiring transport of huge quantities of fossil fuel to the plant site.  The longer development time is driven by new safety measures that have been identified as critically important."
+			
+			required = { 8910 }
+			chance = 90
+			cost = 30
+			time = 900
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 10 }
+			}
+		}
+		application = { # 
+			id = 8942
+			name = CTECN_N8942 # "Fusion Device"
+			desc = CTECD_N8942 # "The engineering problems for creating a thermonuclear explosion have been solved.  An atomic bomb detonates and creates a fusion reaction of tritium.  However, this device is the size of a small building and is far too heavy to deliver with a strategic bomber.  This is the device which was detonated at Eniwetok Atoll in November, 1952."
+			
+			required = { 8908 8909 }
+			chance = 90
+			cost = 40
+			time = 720
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # 
+			id = 8943
+			name = CTECN_N8943 # "Hydrogen Bomb"
+			desc = CTECD_N8943 # "The fusion device is miniaturized so that a strategic bomber can carry it.  Unfortunately, the designers of HOI don't have the hard code for this weapon so there is no new weapon here.  Historically, these were available from the mid-1950s."	
+			required = { 8942 }
+			chance = 90
+			cost = 40
+			time = 720
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+
+	} # Level 11
+	
+	level = { # Nuclear Power Production
+		id = 8970
+		name = CTECN_N8970 #"Modern Nuclear Power"
+		desc = CTECD_N8970 #"Modern Nuclear Power"
+				
+		cost = 1
+		time = 7200
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # 
+			id = 8971
+			name = CTECN_N8971 #"Modern Nuclear Power Plants"
+			desc = CTECD_N8971 #"A fourth generation of atomic plants, incorporating the lessons of the earlier generations.  These are industrial power plants that provide electricity.  Once fueled, they operate for years, producing no air pollution and without requiring transport of huge quantities of fossil fuel to the plant site.  The longer development time is driven by new safety measures that have been identified as critically important."
+			
+			required = { 8941 }
+			chance = 90
+			cost = 50
+			time = 720
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 12 }
+			}
+		}
+
+	} # Level 12			
+}

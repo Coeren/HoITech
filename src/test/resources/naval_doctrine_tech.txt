@@ -1,0 +1,1150 @@
+# 
+# The Naval Doctrine Technology Group
+#
+
+#	
+#	
+#	
+technology = {
+	id = 13
+	category = naval_doctrine
+	name = TECH_NAVAL_DOC_NAME #Localized name
+	desc = TECH_NAVAL_DOC_DESC #Localized description
+	
+	level = { # Basic Naval Doctrines
+		id = 13000
+		name = CTECN_13000
+		desc = CTECD_13000
+		
+			cost = 4
+			time = 360
+			neg_offset = 75
+			pos_offset = 150
+
+			application = { # Naval Tradition (UK-Only)
+			id = 13114
+			name = CTECN_13114
+			desc = CTECD_13114
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 90
+			neg_offset = 45
+			pos_offset = 90
+
+			effects = {
+				command = { type = max_organization which = torpedo_plane when = now value = 2 }
+				command = { type = max_organization which = naval_bomber when = now value = 2 }
+				command = { type = max_organization which = submarine when = now value = 2 }
+				command = { type = max_organization which = battleship when = now value = 4 }
+				command = { type = max_organization which = cruiser when = now value = 4 }
+				command = { type = max_organization which = destroyer when = now value = 4 }
+				command = { type = max_organization which = carrier when = now value = 4 }
+				}
+		}
+		application = { # Sea Control Doctrine
+			id = 13007
+			name = CTECN_13007
+			desc = CTECD_13007
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = destroyer value = 1 }
+				command = { type = max_organization which = cruiser value = 1 }
+				command = { type = max_organization which = battleship value = 1 }
+			}
+		}
+		application = { # Commerce Warfare Doctrine
+			id = 13008
+			name = CTECN_13008
+			desc = CTECD_13008
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = cruiser value = 1 }
+				command = { type = max_organization which = submarine value = 1 }
+			}
+		}
+		application = { # Commerce Protection Doctrine
+			id = 13009
+			name = CTECN_13009
+			desc = CTECD_13009
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = transports value = 1 }
+				command = { type = max_organization which = destroyer value = 1 }
+			}
+		}
+		application = { # Admiralty Establishment
+			id = 13010
+			name = CTECN_13010
+			desc = CTECD_13010
+			
+			required = { 6021 }
+			chance = 90
+			cost = 6
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = destroyer value = 3 }
+				command = { type = max_organization which = cruiser value = 3 }
+				command = { type = max_organization which = battleship value = 3 }
+				command = { type = max_organization which = carrier value = 3 }
+			}
+		}
+		application = { # Offensive Destroyer Doctrine
+			id = 13011
+			name = CTECN_13011
+			desc = CTECD_13011
+			
+			required = { 13007 13010 6117 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = destroyer value = 3 }
+				command = { type = naval_attack which = destroyer value = 1 }
+				command = { type = naval_defense which = destroyer value = -1 }
+				command = { type = deactivate which = 13012 }
+			}
+		}
+		application = { # Screening Destroyer Doctrine
+			id = 13012
+			name = CTECN_13012
+			desc = CTECD_13012
+			
+			required = { 13009 13010 6117 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = destroyer value = 2 }
+				command = { type = naval_defense which = destroyer value = 1 }
+				command = { type = surface_detection which = destroyer value = 1 }
+				command = { type = sub_detection which = destroyer value = 1 }
+				command = { type = convoy_def_eff value = 5 }
+				command = { type = deactivate which = 13011 }
+			}
+		}
+		application = { # Large Destroyer Doctrine
+			id = 13013
+			name = CTECN_13013
+			desc = CTECD_13013
+			
+			required = { 6117 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Battleline Cruiser Doctrine
+			id = 13014
+			name = CTECN_13014
+			desc = CTECD_13014
+			
+			required = { 13007 13010 6118 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = cruiser value = 3 }
+				command = { type = naval_attack which = cruiser when = on_upgrade value = 2 }
+				command = { type = naval_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = surface_detection which =  cruiser when = on_upgrade value = -2 }
+				command = { type = build_cost which = cruiser value = 1 }
+				command = { type = build_time which = cruiser value = 30 }
+				command = { type = deactivate which = 13015 }
+				command = { type = deactivate which = 13016 }
+			}
+		}
+		application = { # Scouting Cruiser Doctrine
+			id = 13015
+			name = CTECN_13015
+			desc = CTECD_13015
+			
+			required = { 13010 6118 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = cruiser value = 3 }
+				command = { type = speed which = cruiser when = on_upgrade value = 2 }
+				command = { type = range which = cruiser when = on_upgrade value = 2000 }
+				command = { type = surface_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = deactivate which = 13014 }
+				command = { type = deactivate which = 13016 }
+			}
+		}
+		application = { # Commerce Raider Cruiser Doctrine
+			id = 13016
+			name = CTECN_13016
+			desc = CTECD_13016
+			
+			required = { 13008 6118 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = cruiser value = 3 }
+				command = { type = speed which = cruiser when = on_upgrade value = -2 }
+				command = { type = range which = cruiser when = on_upgrade value = 5000 }
+				command = { type = naval_attack which = cruiser when = on_upgrade value = -1 }
+				command = { type = naval_defense which = cruiser when = on_upgrade value = -1 }
+				command = { type = surface_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = build_cost which = cruiser value = -1 }
+				command = { type = build_time which = cruiser value = -15 }
+				command = { type = deactivate which = 13014 }
+				command = { type = deactivate which = 13015 }
+			}
+		}
+		application = { # Battleship Offensive Firepower Doctrine
+			id = 13017
+			name = CTECN_13017
+			desc = CTECD_13017
+			
+			required = { 13007 13010 6207 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = battleship value = 3 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = 3 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = build_cost which = battleship value = 4 }
+				command = { type = build_time which = battleship value = 15 }
+				command = { type = deactivate which = 13018 }
+				command = { type = deactivate which = 13019 }
+			}
+		}
+		application = { # Battleship Offensive Firepower Doctrine
+			id = 13018
+			name = CTECN_13018
+			desc = CTECD_13018
+			
+			required = { 13007 13010 6207 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = battleship value = 3 }
+				command = { type = speed which = battleship when = on_upgrade value = 3 }
+				command = { type = naval_defense which = battleship when = on_upgrade value = -2 }
+				command = { type = air_defense which = battleship when = on_upgrade value = -1 }
+				command = { type = fuel_consumption which = battleship when = on_upgrade value = 0.5 }
+				command = { type = deactivate which = 13017 }
+				command = { type = deactivate which = 13019 }
+			}
+		}
+		application = { # Battleship Protection Superiority Doctrine
+			id = 13019
+			name = CTECN_13019
+			desc = CTECD_13019
+			
+			required = { 13007 13010 6207 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = battleship value = 3 }
+				command = { type = naval_defense which = battleship when = on_upgrade value = 3 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 2 }
+				command = { type = speed which = battleship when = on_upgrade value = -2 }
+				command = { type = build_cost which = battleship value = 2 }
+				command = { type = build_time which = battleship value = 40 }
+				command = { type = deactivate which = 13017 }
+				command = { type = deactivate which = 13018 }
+			}
+		}
+}
+ # Level 1
+	
+	level = { # Great War Naval Experience
+		id = 13100
+		name = CTECN_13100
+		desc = CTECD_13100
+	
+			cost = 4
+			time = 360
+			neg_offset = 75
+			pos_offset = 150
+
+		application = { # Carrier Operational Doctrine
+			id = 13105
+			name = CTECN_13105
+			desc = CTECD_13105
+			
+			required = { 13010 6411 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 1 }
+			}
+		}
+		application = { # Submarine Operational Doctrine
+			id = 13106
+			name = CTECN_13106
+			desc = CTECD_13106
+			
+			required = { 5007 5015 13010 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 1 }
+			}
+		}
+		application = { # Battleline Doctrine
+			id = 13107
+			name = CTECN_13107
+			desc = CTECD_13107
+			
+			required = { 13007 13010 6208 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = cruiser value = 10 }
+				command = { type = max_organization which = battleship value = 30 }
+			}
+		}
+		application = { # Auxiliary Cruiser Doctrine
+			id = 13108
+			name = CTECN_13108
+			desc = CTECD_13108
+			
+			required = { 13008 13010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+#				command = { type = new_model which = transports value = 2 }
+			}
+		}
+		application = { # Convoy Organizational Doctrine
+			id = 13109
+			name = CTECN_13109
+			desc = CTECD_13109
+			
+			required = { 13009 13010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = transports value = 2 }
+				command = { type = convoy_def_eff value = 20 }
+			}
+		}
+		application = { # Close Blockade Doctrine
+			id = 13110
+			name = CTECN_13110
+			desc = CTECD_13110
+			
+			required = { 13009 13010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = destroyer value = 10 }
+				command = { type = max_organization which = cruiser value = 20 }
+				command = { type = max_organization which = submarine value = 2 }
+				command = { type = deactivate which = 13111 }
+			}
+		}
+		application = { # Distant Blockade Doctrine
+			id = 13111
+			name = CTECN_13111
+			desc = CTECD_13111
+			
+			required = { 13007 13010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = cruiser value = 10 }
+				command = { type = max_organization which = battleship value = 20 }
+				command = { type = max_organization which = carrier value = 5 }
+				command = { type = deactivate which = 13110 }
+			}
+		}
+		application = { # Unrestricted Submarine Warfare
+			id = 13112
+			name = CTECN_13112
+			desc = CTECD_13112
+			
+			required = { 5015 13008 13106 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 5 }
+				command = { type = naval_attack which = submarine value = 1 }
+			}
+		}
+		application = { # Lighter than Air Craft Operational Doctrine
+			id = 13113
+			name = CTECN_13113
+			desc = CTECD_13113
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { }
+			}
+		}
+}
+ # Level 2
+	
+	level = { # Interwar Naval Experience Doctrine
+		id = 13200
+		name = CTECN_13200
+		desc = CTECD_13200
+		
+		cost = 4
+		time = 720
+		neg_offset = 75
+		pos_offset = 150
+
+		application = { # Carrier Battleline Support Doctrine
+			id = 13208
+			name = CTECN_13208
+			desc = CTECD_13208
+			
+			required = { 13105 6208 6411 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 5 }
+				command = { type = max_organization which = battleship value = 5 }
+				command = { type = naval_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = naval_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = deactivate which = 13209 }
+			}
+		}	
+		application = { # Independent Carrier Operations Doctrine
+			id = 13209
+			name = CTECN_13209
+			desc = CTECD_13209
+			
+			required = { 13105 6414 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 10 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = deactivate which = 13208 }
+			}
+		}
+		application = { # Armored Flight Deck Doctrine
+			id = 13210
+			name = CTECN_13210
+			desc = CTECD_13210
+			
+			required = { 13105 6415 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Underway Replenishment Doctrine
+			id = 13211
+			name = CTECN_13211
+			desc = CTECD_13211
+			
+			required = { 13010 6020 6023 6024 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = range which = destroyer value = 3000 }
+				command = { type = range which = cruiser value = 5000 }
+				command = { type = range which = battleship value = 8000 }
+				command = { type = range which = carrier value = 8000 }
+			}
+		}
+		application = { # Mobile Fleet Base Defense Doctrine
+			id = 13212
+			name = CTECN_13212
+			desc = CTECD_13212
+			
+			required = { 13010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = destroyer value = 5 }
+				command = { type = max_organization which = cruiser value = 5 }
+				command = { type = max_organization which = battleship value = 5 }
+				command = { type = max_organization which = carrier value = 5 }
+				command = { type = coast_fort_eff value = -20 }
+				command = { type = deactivate which = 13213 }
+			}
+		}
+		application = { # Coastal Fortification Base Defense Doctrine
+			id = 13213
+			name = CTECN_13213
+			desc = CTECD_13213
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = coast_fort_eff value = 50 }
+				command = { type = max_organization which = militia value = 5 }
+				command = { type = deactivate which = 13212 }
+			}
+		}
+		application = { # Basic Invasion Organization
+			id = 13214
+			name = CTECN_13214
+			desc = CTECD_13214
+			
+			required = { 13010 6041 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = marine value = 5 }
+			}
+		}
+		application = { # Commerce Raider Doctrine
+			id = 13215
+			name = CTECN_13215
+			desc = CTECD_13215
+			
+			required = { 13016 6118 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = cruiser value = 3 }
+				command = { type = range which = cruiser when = on_upgrade value = 1000 }
+			}
+		}
+		application = { # Submarine Anti-Naval Unit Doctrine
+			id = 13216
+			name = CTECN_13216
+			desc = CTECD_13216
+			
+			required = { 13106 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 3 }
+				command = { type = naval_attack which = submarine value = 2 }
+				command = { type = deactivate which = 13217 }
+			}
+		}
+		application = { # Submarine Anti-Commerce Doctrine
+			id = 13217
+			name = CTECN_13217
+			desc = CTECD_13217
+			
+			required = { 13106 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 1 }
+				command = { type = deactivate which = 13216 }
+			}
+		}
+		application = { # Night Fighting Doctrine
+			id = 13218
+			name = CTECN_13218
+			desc = CTECD_13218
+
+			required = { 13107 6530 }
+			chance = 90
+			cost = 6
+			time = 540
+			neg_offset = 45
+			pos_offset = 90
+
+			effects = {
+				command = { type = max_organization which = destroyer value = 10 }
+				command = { type = night_attack which = destroyer when = on_upgrade value = 25 }
+				command = { type = max_organization which = cruiser value = 10 }
+				command = { type = night_attack which = cruiser when = on_upgrade value = 25 }
+				command = { type = max_organization which = battleship value = 5 }
+				command = { type = night_attack which = battleship when = on_upgrade value = 15 }
+			}
+		}
+
+	} # Level 3
+	
+	level = { # Early War Naval Experience Doctrines
+		id = 13300
+		name = CTECN_13300
+		desc = CTECD_13300
+		
+			cost = 4
+			time = 720
+			neg_offset = 75
+			pos_offset = 150
+
+		application = { # Focal Point Protection Doctrine
+			id = 13304
+			name = CTECN_13304
+			desc = CTECD_13304
+			
+			required = { 13109 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = sub_detection which = destroyer value = 1 }
+				command = { type = convoy_def_eff value = 25 }
+			}
+		}
+		application = { # Coastal Convoy Protection Doctrine
+			id = 13305
+			name = CTECN_13305
+			desc = CTECD_13305
+			
+			required = { 13109 13304 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = convoy_def_eff value = 30 }
+			}
+		}
+		application = { # Same Design Focus Doctrine
+			id = 13306
+			name = CTECN_13306
+			desc = CTECD_13306
+			
+			required = { 13009 13010 6117 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = build_cost which = destroyer value = -1 }
+				command = { type = build_time which = destroyer value = -10 }
+				command = { type = max_organization which = destroyer value = 3 }
+				command = { type = deactivate which = 13307 }
+				command = { type = deactivate which = 6933 }
+				command = { type = deactivate which = 6990 }
+				command = { type = deactivate which = 6946 }
+			}
+		}
+		application = { # Specialized ASW Escort Doctrine
+			id = 13307
+			name = CTECN_13307
+			desc = CTECD_13307
+			
+			required = { 13009 13010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = destroyer value = 1 }
+				command = { type = deactivate which = 13306 }
+			}
+		}
+		application = { # Carrier Task Force Doctrine
+			id = 13308
+			name = CTECN_13308
+			desc = CTECD_13308
+			
+			required = { 13209 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 10 }
+				command = { type = max_organization which = torpedo_plane value = 10 }
+				command = { type = surface_detection which = carrier value = 1 }
+				command = { type = air_defense which = carrier value = 1 }
+			}
+		}
+		application = { # Improved Invasion Organization
+			id = 13309
+			name = CTECN_13309
+			desc = CTECD_13309
+			
+			required = { 13214 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = marine value = 10 }
+			}
+		}
+		application = { # Forward Logistical Support
+			id = 13310
+			name = CTECN_13310
+			desc = CTECD_13310
+			
+			required = { 13007 13010 6022 6023 6024 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = range which = destroyer value = 500 }
+				command = { type = range which = cruiser value = 1000 }
+				command = { type = range which = battleship value = 1500 }
+				command = { type = range which = carrier value = 1500 }
+				command = { type = max_organization which = destroyer value = 3 }
+				command = { type = max_organization which = cruiser value = 3 }
+				command = { type = max_organization which = battleship value = 3 }
+				command = { type = max_organization which = carrier value = 3 }
+			}
+		}
+		application = { # Submarine Wolfpack Doctrine
+			id = 13311
+			name = CTECN_13311
+			desc = CTECD_13311
+			
+			required = { 13010 13217 5208 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 5 }
+				command = { type = surface_detection which = submarine value = 1 }
+				command = { type = naval_attack which = submarine value = 2 }
+			}
+		}
+}
+	
+	level = { # Middle War Naval Experience Doctrines
+		id = 13400
+		name = CTECN_13400
+		desc = CTECD_13400
+		
+			cost = 4
+			time = 720
+			neg_offset = 75
+			pos_offset = 150
+
+		application = { # Choke Point Control Doctrine
+			id = 13408
+			name = CTECN_13408
+			desc = CTECD_13408
+			
+			required = { 13304 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = convoy_def_eff value = 50 }
+			}
+		}
+		application = { # Submarine Hunting Aircraft Doctrine
+			id = 13409
+			name = CTECN_13409
+			desc = CTECD_13409
+			
+			required = { 13304 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = naval_bomber value = 15 }
+				command = { type = sub_detection which = naval_bomber value = 1 }
+				command = { type = sub_attack which = naval_bomber value = 1 }	
+			}
+		}
+		application = { # Maritime Air Supremacy Doctrine
+			id = 13410
+			name = CTECN_13410
+			desc = CTECD_13410
+			
+			required = { 13308 13309 6743 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 3 }
+				command = { type = max_organization which = torpedo_plane value = 15 }
+				command = { type = air_attack which = torpedo_plane value = 1.5 }
+				command = { type = air_defense which = torpedo_plane value = 1.5 }
+			}
+		}
+		application = { # Naval Air Support Doctrine
+			id = 13411
+			name = CTECN_13411
+			desc = CTECD_13411
+			
+			required = { 13410 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 5 }
+				command = { type = shore_attack which = carrier value = 4 }
+				command = { type = tactical_attack which = torpedo_plane value = 2 }
+			}
+		}
+		application = { # Battleships Anti-Aircraft Screening Role Doctrine
+			id = 13412
+			name = CTECN_13412
+			desc = CTECD_13412
+			
+			required = { 13308 6618 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = air_defense which = battleship when = on_upgrade value = 2 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 2 }
+				command = { type = air_detection which = battleship when = on_upgrade value = 1 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = -2 }
+				command = { type = deactivate which = 13413 }
+			}
+		}
+		application = { # Independent Battleship Operations Doctrine
+			id = 13413
+			name = CTECN_13413
+			desc = CTECD_13413
+			
+			required = { 13107 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = battleship value = 15 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = deactivate which = 13412 }
+			}
+		}
+		application = { # Submarine Underway Replenishment Doctrine
+			id = 13414
+			name = CTECN_13414
+			desc = CTECD_13414
+			
+			required = { 13106 13211 5407 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 1 }
+				command = { type = range which = submarine value = 1000 }
+			}
+		}
+		application = { # Advanced Invasion Organization
+			id = 13415
+			name = CTECN_13415
+			desc = CTECD_13415
+
+			required = { 13309 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = marine value = 10 }
+			}
+		}
+		application = { # Air Independent Submarine Propulsion Doctrine
+			id = 13416
+			name = CTECN_13416
+			desc = CTECD_13416
+			
+			required = { 13106 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Kamikaze Attacks (Japan Only)
+			id = 13417
+			name = CTECN_13417
+			desc = CTECD_13417
+			
+			required = { 13504 }
+			chance = 90
+			cost = 1
+			time = 8000
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = new_model which = naval_bomber value = 4 }
+			}
+		}
+	} # Level 5
+	
+	level = { # Late War Naval Experience Doctrines
+		id = 13500
+		name = CTECN_13500
+		desc = CTECD_13500
+		
+			cost = 4
+			time = 720
+			neg_offset = 75
+			pos_offset = 150
+
+		application = { # Sea Lane Control Doctrine
+			id = 13509
+			name = CTECN_13509
+			desc = CTECD_13509
+			
+			required = { 13408 6978 6979 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = convoy_def_eff value = 50 }
+				command = { type = sub_detection which = destroyer value = 1 }
+				command = { type = sub_attack which = destroyer value = 1 }
+			}
+		}
+		application = { # Hunter-Killer Group Doctrine
+			id = 13505
+			name = CTECN_13505
+			desc = CTECD_13505
+			
+			required = { 13308 6933 6946 6978 }
+		
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 5 }
+				command = { type = max_organization which = destroyer value = 5 }
+				command = { type = sub_detection which = carrier value = 1 }
+				command = { type = sub_detection which = destroyer value = 1 }
+				command = { type = sub_attack which = torpedo_plane value = 2 }
+				command = { type = sub_attack which = destroyer value = 1 }
+			}
+		}
+		application = { # Airborne Radar Warning Doctrine
+			id = 13506
+			name = CTECN_13506
+			desc = CTECD_13506
+			
+			required = { 13410 3901 3972 9806 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 3 }
+				command = { type = max_organization which = torpedo_plane value = 3 }
+				command = { type = air_detection which = carrier value = 3 }
+				command = { type = surface_detection which = carrier value = 1 }
+				command = { type = air_attack which = carrier value = 2 }
+				command = { type = air_attack which = torpedo_plane value = 2.5 }
+				command = { type = air_defense which = torpedo_plane value = 1.5 }
+			}
+		}
+		application = { # Maritime Power Projection Doctrine
+			id = 13507
+			name = CTECN_13507
+			desc = CTECD_13507
+			
+			required = { 13411 6982 6948 9806 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = carrier value = 3 }
+				command = { type = max_organization which = torpedo_plane value = 5 }
+				command = { type = strategic_attack which = torpedo_plane value = 2 }
+				command = { type = tactical_attack which = torpedo_plane value = 1 }
+			}
+		}
+		application = { # Nuclear Support Organization
+			id = 13508
+			name = CTECN_13508
+			desc = CTECD_13508
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { }
+			}
+		}
+
+	} # Level 6
+}

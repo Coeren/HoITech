@@ -1,5 +1,6 @@
 package elliot.hoi.tech.Controllers;
 
+import elliot.hoi.tech.Tech.TechBase;
 import elliot.hoi.tech.Tech.TechService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +15,11 @@ public class TechController {
     @GetMapping
     public String getAllTech() {
         return "here be techs";
+    }
+
+    @GetMapping("/{id}")
+    public TechBase getTechById(@PathVariable int id) {
+        return service.getTechById(id);
     }
 
     @PostMapping("/area/file")

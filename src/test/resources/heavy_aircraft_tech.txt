@@ -1,0 +1,2125 @@
+# 
+# The Heavy Aircraft Technology Group
+#
+#
+#	
+#	
+#	
+technology = {
+	id = 9
+	category = heavy_aircraft
+	name = TECH_H_AIR_NAME #Localized name
+	desc = TECH_H_AIR_DESC #Localized description
+	
+	level = { # 1 - Basic Bombers
+		id = 9000
+		name = CTECN_9000
+		desc = TECH_LEVEL_H_AIR_2_DESC 
+
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { #  Standard Freefall Bomb
+			id = 9007
+			name = CTECN_9007
+			desc = CTECD_9007
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # Artillery Spotter Aircraft
+			id = 9011
+			name = CTECN_9011
+			desc = CTECD_9011
+
+			required = { 14150 } #Basic aircraft airframes
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = fuel_consumption which = artillery when = now value = 0.1 }
+			}
+		}
+
+		application = { #  Basic Light Bomber - project
+			id = 9101
+			name = CTECN_9101
+			desc = CTECD_9101
+			
+			required = { }
+			chance = 90
+			cost = 3
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { #  Basic Medium Bomber - project
+			id = 9104
+			name = CTECN_9104
+			desc = CTECD_9104
+			
+			required = { }
+			chance = 90
+			cost = 3
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { #  Basic Heavy Bomber - project
+			id = 9107
+			name = CTECN_9107
+			desc = CTECD_9107
+			
+			required = { }
+			chance = 90
+			cost = 3
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # Basic 750+ hp Engines
+			id = 9001
+			name = CTECN_9001
+			desc = CTECD_9001
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Fuel-injection systems
+			id = 9002
+			name = CTECN_9002
+			desc = CTECD_9002
+			
+			required = { 9001 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic 1000+ hp Engines
+			id = 9003
+			name = CTECN_9003
+			desc = CTECD_9003
+			
+			required = { 9002 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = speed which = torpedo_plane value = 30 }
+
+			}
+		}
+		application = { # Basic Light Bomber Airframe
+			id = 9004
+			name = TECH_APP_H_AIR_1_4_NAME
+			desc = TECH_APP_H_AIR_1_4_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = speed which = torpedo_plane value = 30 }
+
+			}
+		}
+		application = { # Basic Medium Bomber Airframe
+			id = 9005
+			name = TECH_APP_H_AIR_1_5_NAME
+			desc = TECH_APP_H_AIR_1_5_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Heavy Bomber Airframe
+			id = 9006
+			name = TECH_APP_H_AIR_1_6_NAME
+			desc = TECH_APP_H_AIR_1_6_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # Basic Light Bomber Prototype Tests
+			id = 9008
+			name = TECH_APP_H_AIR_2_1_NAME
+			desc = TECH_APP_H_AIR_2_1_DESC
+			
+			required = { 9101 9001 9004 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+
+			command = { type = speed which = torpedo_plane when = on_upgrade value = 30 }
+			command = { type = range which = torpedo_plane when = on_upgrade value = 30 }
+			command = { type = surface_detection which = torpedo_plane when = on_upgrade value = 1 }
+			command = { type = air_defense which = torpedo_plane when = on_upgrade value = 1.5 }
+			command = { type = new_model which = torpedo_plane value = 1 }
+
+			}
+		}
+		application = { # Basic Close Support Plane
+			id = 9102
+			name = CTECN_9102
+			desc = TECH_APP_H_AIR_2_2_DESC
+			
+			required = { 9008 12002 9007 14995 }
+			chance = 90
+			cost = 20 # Redirecting the factories
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = dive_bomber value = 1 }
+			}
+		}
+
+		application = { # Basic Medium-Range Bomber Prototype Tests
+			id = 9009
+			name = TECH_APP_H_AIR_2_4_NAME
+			desc = TECH_APP_H_AIR_2_4_DESC
+			
+			required = { 9104 9001 9005 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Medium Bomber
+			id = 9105
+			name = CTECN_9105
+			desc = TECH_APP_H_AIR_2_5_DESC
+			
+			required = { 9009 9007 14995 }
+			chance = 90
+			cost = 20 # Redirecting the factories
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = tactical_bomber value = 1 }
+			}
+		}
+		application = { # Basic Naval Bomber
+			id = 9106
+			name = TECH_APP_H_AIR_2_6_NAME
+			desc = TECH_APP_H_AIR_2_6_DESC
+			
+			required = { 9009 9007 14995 }
+			chance = 90
+			cost = 20
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = naval_bomber value = 1 }
+			}
+		}
+		application = { # Basic Heavy Bomber Prototype Tests
+			id = 9010
+			name = TECH_APP_H_AIR_2_7_NAME
+			desc = TECH_APP_H_AIR_2_7_DESC
+			
+			required = { 9107 9001 9006 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Strategic Bomber
+			id = 9108
+			name = TECH_APP_H_AIR_2_8_NAME
+			desc = CTECD_9108
+			
+			required = { 9010 9007 14995 }
+			chance = 90
+			cost = 20
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = strategic_bomber value = 1 }
+			}
+		}
+		application = { # Basic Air Transport
+			id = 9109
+			name = TECH_APP_H_AIR_2_9_NAME
+			desc = CTECD_9109
+			
+			required = { 9010 }
+			chance = 90
+			cost = 20
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transport_plane value = 1 }
+			}
+		}
+
+	} # Level 1
+	
+	level = { # 2 - Airborne Warfare
+		id = 9100
+		name = CTECN_9100 
+		desc = TECH_LEVEL_H_AIR_3_DESC # Modified
+		
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { #  Improved Light Bomber - project
+			id = 9503
+			name = CTECN_9503
+			desc = CTECD_9503
+			
+			required = { 9008 12200 } # Prototype of basic, doctrine
+			chance = 90
+			cost = 3
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { #  Improved Medium Bomber - project
+			id = 9506
+			name = CTECN_9506
+			desc = CTECD_9506
+			
+			required = { 9009 12200 } # Prototype of basic, doctrine
+			chance = 90
+			cost = 3
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { #  Improved Heavy Bomber - project
+			id = 9509
+			name = CTECN_9509
+			desc = CTECD_9509
+			
+			required = { 9010 12200 } # Prototype of basic, doctrine
+			chance = 90
+			cost = 3
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Paratroopers
+			id = 9203
+			name = TECH_APP_H_AIR_3_3_NAME
+			desc = TECH_APP_H_AIR_3_3_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = activate_unit_type which = paratrooper } # Brigade activated
+			}
+		}
+		application = { # Airborne Assault Training
+			id = 9204
+			name = TECH_APP_H_AIR_3_4_NAME
+			desc = TECH_APP_H_AIR_3_4_DESC
+			
+			required = { 9203 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = paradrop_attack which = paratrooper value = 10 }
+			command = { type = new_model which = paratrooper value = 1 } # Division activated
+			}
+		}
+		application = { # Basic Glider (infantry)
+			id = 9201
+			name = CTECN_9201
+			desc = CTECD_9201
+			
+			required = { 9203 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = max_organization which = paratrooper value = 4 }
+			}
+		}
+
+		application = { # Basic Heavy Glider (artillery)
+			id = 9208
+			name = CTECN_9208
+			desc = CTECD_9208
+			
+			required = { 9201 9109 12003 } # Transport, doctrine and howitzer 
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+		effects = {
+
+		command = { type = soft_attack which = paratrooper when = now value = 1 }
+		command = { type = ground_defense which = paratrooper when = now value = 2 }
+
+				}
+		}
+
+		application = { # Advanced Glider (light vehicles)
+			id = 9209
+			name = CTECN_9209
+			desc = CTECD_9209
+			
+			required = { 9208 9109 12203 2304 } # Transport, doctrine and tank 
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+		command = { type = speed which = paratrooper when = now value = 1 }
+		command = { type = ground_defense which = paratrooper when = now value = 1 }
+		command = { type = new_model which = paratrooper value = 2 } # Airborne Division activated
+			}
+		}
+
+		application = { # Airborne Glider Training
+			id = 9202
+			name = TECH_APP_H_AIR_3_2_NAME
+			desc = TECH_APP_H_AIR_3_2_DESC
+			
+			required = { 9201 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {		
+				command = { type = hard_attack which = paratrooper when = now value = 1 }
+				command = { type = soft_attack which = paratrooper when = now value = 1 }
+				command = { type = air_defense which = paratrooper when = now value = 1 }
+			}
+		}
+
+	} # Level 2
+	
+	level = { # 3 Basic Ordinance and Equipment
+		id = 9200
+		name = CTECN_9200 
+		desc = TECH_LEVEL_H_AIR_4_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Basic Radio Navigation
+			id = 9301
+			name = TECH_APP_H_AIR_4_1_NAME
+			desc = CTECD_9301
+			
+			required = { 3007 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = max_organization which = fighter when = now value = 1 }
+			command = { type = max_organization which = dive_bomber when = now value = 1 }
+			command = { type = max_organization which = torpedo_plane when = now value = 2 }
+			command = { type = naval_attack which = torpedo_plane when = now value = 0.6 }
+			command = { type = max_organization which = tactical_bomber when = now value = 2 }
+			command = { type = max_organization which = naval_bomber when = now value = 2 }
+			command = { type = max_organization which = strategic_bomber when = now value = 2 }
+			command = { type = strategic_attack which = strategic_bomber when = now value = 0.5 }
+			}
+		}
+		application = { # Incendiary Bombs
+			id = 9302
+			name = TECH_APP_H_AIR_4_2_NAME
+			desc = TECH_APP_H_AIR_4_2_DESC
+			
+			required = { 9007 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = strategic_attack which = strategic_bomber when = now value = 1 }
+			command = { type = strategic_attack which = tactical_bomber when = now value = 1 }
+			}
+		}
+		application = { # Dive-Drop Bomb Shells
+			id = 9303
+			name = TECH_APP_H_AIR_4_3_NAME
+			desc = CTECD_9303
+			
+			required = { 9007 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+		command = { type = naval_attack which = torpedo_plane when = now value = 0.6 }
+		command = { type = tactical_attack which = torpedo_plane when = now value = 0.5 }
+		command = { type = tactical_attack which = dive_bomber when = now value = 1 }
+			}
+		}
+		application = { # Deep Penetration Bombs
+			id = 9304
+			name = TECH_APP_H_AIR_4_4_NAME
+			desc = CTECD_9304
+			
+			required = { 9303 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				# Fortifications less effective (-50%)
+			command = { type = fort_attack which = strategic_bomber when = now value = 50 }
+			command = { type = fort_attack which = tactical_bomber when = now value = 50 }
+			command = { type = fort_attack which = dive_bomber when = now value = 50 }
+			command = { type = naval_attack which = torpedo_plane when = now value = 1.4 }
+			}
+		}
+
+		application = { #  2000+ Kg freefall bomb
+			id = 9308
+			name = CTECN_9308
+			desc = CTECD_9308
+			
+			required = { 9007 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+	effects = {
+			command = { type = strategic_attack which = strategic_bomber when = now value = 1 }
+		}
+	}
+
+		application = { #  5000+ kg freefall bomb
+			id = 9309
+			name = CTECN_9309
+			desc = CTECD_9309
+			
+			required = { 9308 9510 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+	effects = {
+			command = { type = strategic_attack which = strategic_bomber when = now value = 2 }
+		}
+	}
+
+		application = { # Multiple Gun Turrets
+			id = 9305
+			name = CTECN_9305
+			desc = TECH_APP_H_AIR_4_5_DESC
+			
+			required = { 14973 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_defense which = strategic_bomber when = on_upgrade value = 1 }		
+			}
+		}
+
+		application = { #  Basic Air-to-Surface Rocket
+			id = 9306
+			name = CTECN_9306
+			desc = CTECD_9306
+			
+			required = { 9007 7002 7102 } # Bomb & small rocket
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+	effects = {
+			command = { type = tactical_attack which = dive_bomber when = on_upgrade value = 1 }
+			command = { type = tactical_attack which = fighter when = on_upgrade value = 0.5 }
+			command = { type = tactical_attack which = torpedo_plane when = on_upgrade value = 0.6 }
+		}
+	}
+
+		application = { #  Armor plating
+			id = 9307
+			name = CTECN_9307
+			desc = CTECD_9307
+			
+			required = { 9101 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+		effects = {
+			command = { type = air_defense which = dive_bomber when = on_upgrade value = 1 }
+			command = { type = ground_defense which = dive_bomber when = on_upgrade value = 1 }
+			command = { type = speed which = dive_bomber when = on_upgrade value = -40 }
+			command = { type = fuel_consumption which = dive_bomber when = on_upgrade value = 0.2 }
+		}
+	}
+
+
+	} # Level 3
+	
+	level = { # 4 - Improved Ordinance and Equipment
+		id = 9300
+		name = CTECN_9300 
+		desc = TECH_LEVEL_H_AIR_5_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { #  Hi-octane fuel
+			id = 9407
+			name = CTECN_9407
+			desc = CTECD_9407
+			
+			required = { 4201 } # Catalytic Cracking
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+		effects = {
+	command = { type = speed which = fighter value = 30 }
+	command = { type = speed which = dive_bomber value = 20 }
+	command = { type = speed which = tactical_bomber value = 20 }
+	command = { type = speed which = strategic_bomber value = 10 }
+	command = { type = speed which = naval_bomber value = 10 }
+	command = { type = speed which = torpedo_plane value = 30 }
+	command = { type = speed which = transport_plane value = 10 }
+	command = { type = fuel_consumption which = fighter value = 0.2 }
+	command = { type = fuel_consumption which = dive_bomber value = 0.2 }
+	command = { type = fuel_consumption which = tactical_bomber value = 0.2 }
+	command = { type = fuel_consumption which = strategic_bomber value = 0.4 }
+	command = { type = fuel_consumption which = naval_bomber value = 0.3 }
+	command = { type = fuel_consumption which = torpedo_plane value = 0.1 }
+	command = { type = fuel_consumption which = transport_plane value = 0.4 }
+		}
+	}
+
+	application = { #  Supercharger systems
+			id = 9408
+			name = CTECN_9408
+			desc = CTECD_9408
+			
+			required = { 9003 } # 1000+ hp engine
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+		effects = {
+	command = { type = speed which = fighter value = 20 }
+	command = { type = speed which = dive_bomber value = 15 }
+	command = { type = speed which = tactical_bomber value = 15 }
+	command = { type = speed which = strategic_bomber value = 10 }
+	command = { type = speed which = naval_bomber value = 10 }
+	command = { type = speed which = torpedo_plane value = 20 }
+	command = { type = speed which = transport_plane value = 10 }
+	command = { type = fuel_consumption which = fighter value = 0.2 }
+	command = { type = fuel_consumption which = dive_bomber value = 0.2 }
+	command = { type = fuel_consumption which = tactical_bomber value = 0.2 }
+	command = { type = fuel_consumption which = strategic_bomber value = 0.4 }
+	command = { type = fuel_consumption which = naval_bomber value = 0.3 }
+	command = { type = fuel_consumption which = torpedo_plane value = 0.1 }
+	command = { type = fuel_consumption which = transport_plane value = 0.4 }
+		}
+	}
+
+		application = { # Experimental Jet Engines
+			id = 9409
+			name = CTECN_9409
+			desc = CTECD_9409
+			
+			required = { 7303 4407 }
+			chance = 90
+			cost = 15
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}		
+
+		application = { # 1250+ hp Engines
+			id = 9401
+			name = CTECN_9401
+			desc = CTECD_9401
+			
+			required = { 9003 4407 } # 1000+ HP Engine
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+					command = { }
+			}
+		}
+		application = { # 1500+ hp Engines
+			id = 9402
+			name = CTECN_9402
+			desc = CTECD_9402
+			
+			required = { 9401 9407 } # Engine and fuel
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = torpedo_plane value = 10 }
+				command = { type = range which = torpedo_plane value = 20 }
+			}
+		}
+		application = { # 1750+ HP Engines
+			id = 9403
+			name = CTECN_9403
+			desc = CTECD_9403
+			
+			required = { 9402 9408 } # Engine & superchager
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Light Bomber Airframe
+			id = 9404
+			name = TECH_APP_H_AIR_5_4_NAME
+			desc = TECH_APP_H_AIR_5_4_DESC
+			
+			required = { 9101 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Medium Bomber Airframe
+			id = 9405
+			name = TECH_APP_H_AIR_5_5_NAME
+			desc = TECH_APP_H_AIR_5_5_DESC
+			
+			required = { 9104 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Heavy Bomber Airframe
+			id = 9406
+			name = TECH_APP_H_AIR_5_6_NAME
+			desc = TECH_APP_H_AIR_5_6_DESC
+			
+			required = { 9107 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+
+	} # Level 4
+	
+	level = { # 5 Improved Bombers
+		id = 9400
+		name = CTECN_9400 
+		desc = TECH_LEVEL_H_AIR_6_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+
+
+		application = { # Improved Light Bomber Prototype Tests
+			id = 9205
+			name = TECH_APP_H_AIR_6_3_NAME
+			desc = TECH_APP_H_AIR_6_3_DESC
+			
+			required = { 9503 9008 9401 9404 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = ground_defense which = torpedo_plane when = on_upgrade value = 1 }
+			command = { type = air_defense which = torpedo_plane when = on_upgrade value = 1.5 }
+			command = { type = tactical_attack which = torpedo_plane when = on_upgrade value = 0.5 }
+			command = { type = new_model which = torpedo_plane value = 2 }
+			}
+		}
+		application = { # Improved Close Support Plane
+			id = 9504
+			name = CTECN_9504
+			desc = TECH_APP_H_AIR_6_4_DESC
+			
+			required = { 9205 9007 14975 9307 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = dive_bomber value = 2 }
+			}
+		}
+
+		application = { # Improved Medium Bomber Prototype Tests
+			id = 9206
+			name = TECH_APP_H_AIR_6_6_NAME
+			desc = TECH_APP_H_AIR_6_6_DESC
+			
+			required = { 9506 9009 9402 9405 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Medium Bomber
+			id = 9507
+			name = TECH_APP_H_AIR_6_7_NAME
+			desc = TECH_APP_H_AIR_6_7_DESC
+			
+			required = { 9206 9007 14973 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = tactical_bomber value = 2 }
+			}
+		}
+		application = { # Improved Naval Patrol Plane
+			id = 9508
+			name = CTECN_9508
+			desc = TECH_APP_H_AIR_6_8_DESC
+			
+			required = { 9206 9007 14973 13200 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = naval_bomber value = 2 }
+			}
+		}
+		application = { # Improved Heavy Bomber Prototype Tests
+			id = 9207
+			name = TECH_APP_H_AIR_6_9_NAME
+			desc = TECH_APP_H_AIR_6_9_DESC
+			
+			required = { 9509 9010 9403 9406 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Heavy Bomber
+			id = 9510
+			name = TECH_APP_H_AIR_6_10_NAME
+			desc = CTECD_9510
+			
+			required = { 9207 9305 9302 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = strategic_bomber value = 2 }
+			}
+		}
+		application = { # Improved Air Transport
+			id = 9511
+			name = TECH_APP_H_AIR_6_11_NAME
+			desc = CTECD_9511
+			
+			required = { 9207 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transport_plane value = 2 }
+			}
+		}
+
+
+
+
+
+		application = { #  Advanced Light Bomber - project
+			id = 9801
+			name = CTECN_9801
+			desc = CTECD_9801
+			
+			required = { 9205 12400 } # prototype of improved, doctrine
+			chance = 90
+			cost = 3
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { #  Advanced Medium Bomber - project
+			id = 9804
+			name = CTECN_9804
+			desc = CTECD_9804
+			
+			required = { 9206 12400 } # Prototype of improved, doctrine
+			chance = 90
+			cost = 3
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { #  Advanced Heavy Bomber - project
+			id = 9807
+			name = CTECN_9807
+			desc = CTECD_9807
+			
+			required = { 9207 12400 } # Prototype of improved, doctrine
+			chance = 90
+			cost = 3
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { #  Basic Turbojet Bomber - project
+			id = 9515
+			name = CTECN_9515
+			desc = CTECD_9515
+			
+			required = { 9506 12500 7300 } # Prototype of improved, doctrine
+			chance = 90
+			cost = 5
+			time = 240
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { #  Basic Medium Turbojet Bomber - project
+			id = 9516
+			name = CTECN_9516
+			desc = CTECD_9516
+			
+			required = { 9509 12500 7300 } # Prototype of improved, doctrine
+			chance = 90
+			cost = 5
+			time = 240
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # Improved Radio Navigation
+			id = 9501
+			name = TECH_APP_H_AIR_6_1_NAME
+			desc = TECH_APP_H_AIR_6_1_DESC
+			
+			required = { 3206 9301 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = max_organization which = fighter when = now value = 1 }
+			command = { type = max_organization which = dive_bomber when = now value = 1 }
+			command = { type = max_organization which = torpedo_plane when = now value = 2 }
+			command = { type = naval_attack which = torpedo_plane when = now value = 0.6 }
+			command = { type = max_organization which = tactical_bomber when = now value = 2 }
+			command = { type = max_organization which = naval_bomber when = now value = 2 }
+			command = { type = max_organization which = strategic_bomber when = now value = 2 }
+			command = { type = strategic_attack which = strategic_bomber when = now value = 0.5 }
+			}
+		}
+		application = { # Basic Centimetric Airborne Radar Navigation
+			id = 9502
+			name = TECH_APP_H_AIR_6_2_NAME
+			desc = TECH_APP_H_AIR_6_2_DESC
+			
+			required = { 3501 4204 9301 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = max_organization which = fighter when = now value = 1 }
+			command = { type = max_organization which = dive_bomber when = now value = 1 }
+			command = { type = max_organization which = torpedo_plane when = now value = 2 }
+			command = { type = naval_attack which = torpedo_plane when = now value = 0.6 }
+			command = { type = max_organization which = tactical_bomber when = now value = 2 }
+			command = { type = max_organization which = naval_bomber when = now value = 2 }
+			command = { type = max_organization which = strategic_bomber when = now value = 2 }
+			command = { type = strategic_attack which = strategic_bomber when = now value = 0.5 }
+			}
+		}
+
+
+	} # Level 5
+	
+	level = { # 6 - Advanced Ordinance and Equipment
+		id = 9500
+		name = CTECN_9500
+		desc = TECH_LEVEL_H_AIR_6_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { #  Pressurized Cockpit
+			id = 9517
+			name = CTECN_9517
+			desc = CTECD_9517
+			
+			required = { 9010 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+	command = { type = air_defense which = strategic_bomber when = on_upgrade value = 1 }
+	command = { type = ground_defense which = strategic_bomber when = on_upgrade value = 2 }
+			}
+		}
+
+		application = { # Napalm Bombs
+			id = 9601
+			name = TECH_APP_H_AIR_7_1_NAME
+			desc = TECH_APP_H_AIR_7_1_DESC
+			
+			required = { 9302 12200 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = tactical_attack which = tactical_bomber when = now value = 1 }
+			command = { type = tactical_attack which = strategic_bomber when = now value = 1 }
+			command = { type = tactical_attack which = torpedo_plane when = now value = 0.3 }		
+			}
+		}
+
+	application = { # Advanced Radio Navigation
+			id = 9602
+			name = TECH_APP_H_AIR_7_2_NAME
+			desc = TECH_APP_H_AIR_7_2_DESC
+			
+			required = { 3406 9501 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+		command = { type = max_organization which = fighter value = 1 }
+		command = { type = max_organization which = dive_bomber value = 1 }
+		command = { type = max_organization which = torpedo_plane value = 2 }
+		command = { type = naval_attack which = torpedo_plane value = 0.8 }
+		command = { type = max_organization which = tactical_bomber value = 2 }
+		command = { type = max_organization which = naval_bomber value = 2 }
+		command = { type = max_organization which = strategic_bomber value = 2 }
+		command = { type = strategic_attack which = strategic_bomber value = 0.5 }
+			}
+		}
+		application = { # Improved Centimetric Airborne Radar Navigation
+			id = 9603
+			name = TECH_APP_H_AIR_7_3_NAME
+			desc = TECH_APP_H_AIR_7_3_DESC
+			
+			required = { 3702 9502 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+		command = { type = max_organization which = fighter value = 1 }
+		command = { type = max_organization which = dive_bomber value = 1 }
+		command = { type = max_organization which = torpedo_plane value = 2 }
+		command = { type = naval_attack which = torpedo_plane value = 0.8 }
+		command = { type = max_organization which = tactical_bomber value = 2 }
+		command = { type = max_organization which = naval_bomber value = 2 }
+		command = { type = max_organization which = strategic_bomber value = 2 }
+		command = { type = strategic_attack which = strategic_bomber value = 0.5 }
+			}
+		}
+
+		application = { # Airburst Shrapnel Bombs
+			id = 9901
+			name = TECH_APP_H_AIR_10_1_NAME
+			desc = TECH_APP_H_AIR_10_1_DESC
+			
+			required = { 9007 14701 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+		command = { type = tactical_attack which = tactical_bomber when = now value = 1 }
+		command = { type = tactical_attack which = dive_bomber when = now value = 1 }
+		command = { type = tactical_attack which = torpedo_plane when = now value = 0.5 }
+			}
+		}
+		application = { # Airborne Homing Torpedos
+			id = 9902
+			name = TECH_APP_H_AIR_10_2_NAME
+			desc = TECH_APP_H_AIR_10_2_DESC
+			
+			required = { 9007 6963 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+		command = { type = naval_attack which = torpedo_plane when = now value = 1.4 }
+		command = { type = naval_attack which = naval_bomber when = now value = 1 }
+			}
+		}
+		application = { # Gyrostabilized Bombing Sights
+			id = 9903
+			name = TECH_APP_H_AIR_10_3_NAME
+			desc = TECH_APP_H_AIR_10_3_DESC
+			
+			required = { 9602 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+	command = { type = naval_attack which = naval_bomber when = now value = 1 }
+	command = { type = tactical_attack which = tactical_bomber when = now value = 1 }
+	command = { type = strategic_attack which = strategic_bomber when = now value = 1 }
+			}
+		}
+		application = { # Remote-Control Gun Turrets
+			id = 9550
+			name = CTECN_9550
+			desc = CTECD_9550
+			required = { 9305 3804 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+	command = { type = air_defense which = strategic_bomber when = on_upgrade value = 1 }
+	command = { type = speed which = strategic_bomber when = on_upgrade value = 50 }
+	command = { type = range which = strategic_bomber  when = on_upgrade value = 100 }
+	command = { type = speed which = tactical_bomber when = on_upgrade value = 50 }
+	command = { type = range which = tactical_bomber when = on_upgrade value = 100 }	
+			}
+		}
+
+
+		application = { # Gun pods
+			id = 10708
+			name = CTECN_10708
+			desc = CTECD_10708
+			
+			required = { 14975 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = tactical_attack which = dive_bomber when = on_upgrade value = 1 }
+			}
+		}
+
+		application = { # Improved Air-to-Surface Rocket
+			id = 7703
+			name = CTECN_7703
+			desc = TECH_APP_ROCKET_8_3_DESC
+			
+			required = { 7003 7401 7402 7403 7302 3705 9306 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+	command = { type = naval_attack which = torpedo_plane when =  now value = 1.7 } 
+	command = { type = tactical_attack which = torpedo_plane when =  now value = 1 }
+	command = { type = naval_attack which = dive_bomber when =  now value = 1 } 
+	command = { type = tactical_attack which = dive_bomber when =  now value = 1 }  
+			}
+		}
+
+
+	} # Level 6
+	
+	level = { # 7 - Advanced Bombers
+		id = 9600
+		name = CTECN_9600
+		desc = TECH_LEVEL_H_AIR_7_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Basic 2000+ HP Engines
+			id = 9702
+			name = CTECN_9702
+			desc = CTECD_9702
+			
+			required = { 9403 4805 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+
+		application = { # Basic Rocket Engine
+			id = 10704
+			name = TECH_APP_L_AIR_8_4_NAME
+			desc = TECH_APP_L_AIR_8_4_DESC
+			
+			required = { 7303 4805 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+
+		application = { # Advanced Light Bomber Airframe
+			id = 9706
+			name = TECH_APP_H_AIR_8_6_NAME
+			desc = TECH_APP_H_AIR_8_6_DESC
+			
+			required = { 9404 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = range which = torpedo_plane value = 30 }
+			command = { type = speed which = torpedo_plane value = 30 }
+			}
+		}
+		application = { # Advanced Medium Bomber Airframe
+			id = 9707
+			name = TECH_APP_H_AIR_8_7_NAME
+			desc = TECH_APP_H_AIR_8_7_DESC
+			
+			required = { 9405 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Heavy Bomber Airframe
+			id = 9708
+			name = TECH_APP_H_AIR_8_8_NAME
+			desc = TECH_APP_H_AIR_8_8_DESC
+			
+			required = { 9406 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Light Bomber Prototype Tests
+			id = 9512
+			name = TECH_APP_H_AIR_9_1_NAME
+			desc = TECH_APP_H_AIR_9_1_DESC
+			
+			required = { 9801 9409 9706 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = ground_defense which = torpedo_plane when = on_upgrade value = 1 }
+			command = { type = air_defense which = torpedo_plane when = on_upgrade value = 2.5 }
+			command = { type = tactical_attack which = torpedo_plane when = on_upgrade value = 1 }
+			command = { type = naval_attack which = torpedo_plane when = on_upgrade value = 1.7 }
+			command = { type = new_model which = torpedo_plane value = 3 }
+			}
+		}		
+
+
+		application = { # Advanced Medium Bomber Prototype Tests
+			id = 9513
+			name = CTECN_9513
+			desc = TECH_APP_H_AIR_9_4_DESC
+			
+			required = { 9804 9403 9707 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Medium Bomber
+			id = 9805
+			name = CTECN_9805
+			desc = TECH_APP_H_AIR_9_5_DESC
+			
+			required = { 9513 9301 9007 14973 4803 } # Quality Control added
+			chance = 90
+			cost = 25
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = tactical_bomber value = 3 }
+			}
+		}
+		application = { # Advanced Naval Patrol Plane
+			id = 9806
+			name = CTECN_9806
+			desc = TECH_APP_H_AIR_9_6_DESC
+			
+			required = { 9513 9301 9007 14973 4803 } # Quality Control added
+			chance = 90
+			cost = 25
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = naval_bomber value = 3 }
+			}
+		}
+		application = { # Advanced Heavy Bomber Prototype Tests
+			id = 9514
+			name = TECH_APP_H_AIR_9_7_NAME
+			desc = TECH_APP_H_AIR_9_7_DESC
+			
+			required = { 9807 9702 9708 9517 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Strategic Bomber
+			id = 9808
+			name = TECH_APP_H_AIR_9_8_NAME
+			desc = CTECD_9808
+			
+			required = { 9514 9302 9305 4803 } # Quality Control added
+			chance = 90
+			cost = 30
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = strategic_bomber value = 3 }
+			}
+		}
+		application = { # Advanced Air Transports
+			id = 9809
+			name = TECH_APP_H_AIR_9_9_NAME
+			desc = CTECD_9809
+			
+			required = { 9514 4803 } # Quality Control added
+			chance = 90
+			cost = 25
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transport_plane value = 3 }
+			}
+		}
+	
+
+	} # Level 7
+	
+	level = { # 8 - Turbojet Bombers
+		id = 9700
+		name = CTECN_9700
+		desc = TECH_LEVEL_H_AIR_8_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+		
+
+
+		application = { # Turbojet Engine
+			id = 9705
+			name = CTECN_9705
+			desc = TECH_APP_H_AIR_8_5_DESC
+			
+			required = { 9409 4903 4904 9804 4805 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Turbojet Medium Bomber Airframe
+			id = 9944
+			name = CTECN_9944
+			desc = TECH_APP_H_AIR_11_4_DESC
+			
+			required = { 4903 4904 9804 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		
+		application = { # Basic Turbojet Dive Bomber
+			id = 9802
+			name = TECH_APP_H_AIR_9_2_NAME
+			desc = TECH_APP_H_AIR_9_2_DESC
+			
+			required = { 9515 9512 4903 9705 14975 9306 4803 }
+			chance = 90
+			cost = 30
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = dive_bomber value = 3 }
+				command = { type = new_model which = torpedo_plane value = 4 }
+				command = { type = speed which = torpedo_plane when = on_upgrade value = 50 }
+				command = { type = range which = torpedo_plane when = on_upgrade value = 30 }
+				command = { type = naval_attack which = torpedo_plane when = on_upgrade value = 1.7 }
+				command = { type = tactical_attack which = torpedo_plane when = on_upgrade value = 1 }
+				command = { type = ground_defense which = torpedo_plane when = on_upgrade value = 1 }
+				command = { type = air_defense which = torpedo_plane when = on_upgrade value = 2.5 }
+			}
+		}
+
+		application = { # Turbojet Medium Bomber Prototype Tests
+			id = 9971
+			name = CTECN_9971
+			desc = TECH_APP_H_AIR_12_1_DESC
+			
+			required = { 9516 9804 9705 9944 4803 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Turbojet Medium Bomber
+			id = 9972
+			name = CTECN_9972
+			desc = TECH_APP_H_AIR_12_2_DESC
+			
+			required = { 9971 14974 9007 }
+			chance = 90
+			cost = 30
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = tactical_bomber value = 4 }
+			}
+		}
+
+
+	} # Level 8
+	
+	level = { # 9 - Intercontinental Bombers
+		id = 9800
+		name = CTECN_9800 
+		desc = TECH_LEVEL_H_AIR_9_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+
+		application = { #  Intercontinental Bomber Project
+			id = 9703
+			name = CTECN_9703
+			desc = CTECD_9703
+			
+			required = { 9808 12403 12500 } # Prototype of improved, doctrine
+			chance = 90
+			cost = 6
+			time = 240
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # Intercontinental Bomber Engine
+			id = 9999
+			name = CTECN_9999
+			desc = CTECD_9999
+			required = { 9702 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+
+		application = { # Intercontinental Bomber Airframe
+			id = 2866
+			name = CTECN_2866
+			desc = CTECD_2866
+
+			required = { 9708 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { 
+				command = { }
+			}
+		}
+
+		application = { # S-M Intercontinental Bomber Prototype Tests
+			id = 9995
+			name = CTECN_9995
+			desc = CTECD_9995	
+			required = { 9703 9999 2866 }
+			chance = 90
+			cost = 12
+			time = 210
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Semi-Modern Intercontinental Bomber
+			id = 9996
+			name = CTECN_9996
+			desc = CTECD_9996
+
+			required = { 9995 9302 9602 9550 }
+			chance = 90
+			cost = 35
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = strategic_bomber value = 5 }
+			}
+		}
+		application = { # Semi-Modern Intercontinental Transport Prototype 
+			id = 9990
+			name = CTECN_9990
+			desc = CTECD_9990
+			required = { 9703 9809 2866 9999 }
+			chance = 90
+			cost = 12
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # Semi-Modern Intercontinental Transport
+			id = 9991
+			name = CTECN_9991
+			desc = CTECD_9991
+			required = { 9990 9602 }
+			chance = 90
+			cost = 30
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transport_plane value = 4 }
+			}
+		}
+
+		application = { #  LR Turbojet Bomber - project
+			id = 9810
+			name = CTECN_9810
+			desc = CTECD_9810
+			
+			required = { 9703 } # Prototype of improved, doctrine
+			chance = 90
+			cost = 8
+			time = 240
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}	
+
+
+	} # Level 9
+	
+	level = { # 10 - Advanced Ordinance and Equipment
+		id = 9900
+		name = CTECN_9900 
+		desc = TECH_LEVEL_H_AIR_10_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Payload Drop Computers
+			id = 9941
+			name = TECH_APP_H_AIR_11_1_NAME
+			desc = TECH_APP_H_AIR_11_1_DESC
+			
+			required = { 3905 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = naval_bomber when = now value = 1 }
+				command = { type = tactical_attack which = tactical_bomber when = now value = 1 }
+				command = { type = strategic_attack which = strategic_bomber when = now value = 1 }
+			}
+		}
+
+		application = { # Advanced Centimetric Airborne Radar Navigation
+			id = 9701
+			name = TECH_APP_H_AIR_8_1_NAME
+			desc = TECH_APP_H_AIR_8_1_DESC
+			
+			required = { 3901 9603 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+		command = { type = max_organization which = fighter value = 1 }
+		command = { type = max_organization which = dive_bomber value = 1 }
+		command = { type = max_organization which = torpedo_plane value = 2 }
+		command = { type = naval_attack which = torpedo_plane value = 0.8 }
+		command = { type = max_organization which = tactical_bomber value = 2 }
+		command = { type = max_organization which = naval_bomber value = 2 }
+		command = { type = max_organization which = strategic_bomber value = 2 }
+		command = { type = strategic_attack which = strategic_bomber value = 0.5 }
+			}
+		}
+
+
+	} # Level 10
+	
+	level = { # 11 - Semi-Modern Bomber and Airframe Design
+		id = 9940
+		name = CTECN_9940 
+		desc = TECH_LEVEL_H_AIR_11_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { #  Supersonic Bomber - project
+			id = 9811
+			name = CTECN_9811
+			desc = CTECD_9811
+			
+			required = { 9971 9995 12500 }
+			chance = 90
+			cost = 10
+			time = 280
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}			
+
+	application = { # Long Range Turbojet Bomber Engine
+			id = 9943
+			name = CTECN_9943
+			desc = TECH_APP_H_AIR_11_3_DESC
+			
+			required = { 7802 9705 9999 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # Long Range Turbojet Bomber Airframe
+			id = 9945
+			name = CTECN_9945
+			desc = TECH_APP_H_AIR_11_5_DESC
+			
+			required = { 9944 2866 }
+			chance = 90
+			cost = 15
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+
+
+		application = { # Semi-Modern Heavy Turbojet Bomber Prototype Tests
+			id = 9973
+			name = TECH_APP_H_AIR_12_3_NAME
+			desc = TECH_APP_H_AIR_12_3_DESC
+			
+			required = { 9810 9943 9945 }
+			chance = 90
+			cost = 15
+			time = 150
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Semi-Modern Strategic Turbojet Bomber
+			id = 9974
+			name = TECH_APP_H_AIR_12_4_NAME
+			desc = CTECD_9974
+			required = { 9973 9302 9941 9701 }
+			chance = 90
+			cost = 45
+			time = 45
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = strategic_bomber value = 4 }
+			}
+		}
+
+
+	} # Level 11
+	
+	level = { # 12 - Semi-Modern Bomber Development
+		id = 9970
+		name = TECH_LEVEL_H_AIR_12_NAME 
+		desc = TECH_LEVEL_H_AIR_12_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Supersonic Bomber Engines
+			id = 2862
+			name = CTECN_2862
+			desc = CTECD_2862
+			required = { 7802 9943 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { 
+				command = { }
+			}
+		}
+
+		application = { # Supersonic Bomber Airframe
+			id = 2863
+			name = CTECN_2863
+			desc = CTECD_2863
+			required = { 9945 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { 
+				command = { }
+			}
+		}
+
+
+		application = { # Supersonic Bomber Prototype Test
+			id = 9993
+			name = CTECN_9993
+			desc = CTECD_9993
+
+			required = { 9811 9973 2862 2863 4943 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Supersonic Bomber
+			id = 9994
+			name = CTECN_9994
+			desc = CTECD_9994
+
+			required = { 9993 9302 9941 9701 } # Quality Control added
+			chance = 90
+			cost = 12
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = strategic_bomber value = 6 }
+			}
+		}
+
+			application = { # Rigid Flying Boom System
+			id = 9998
+			name = CTECN_9998
+			desc = CTECD_9998
+
+			required = { 12503 } 
+			chance = 90
+			cost = 12
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+
+
+
+			application = { # Single Point Refueling System
+			id = 9992
+			name = CTECN_9992
+			desc = CTECD_9992
+
+			required = { 12503 } 
+			chance = 90
+			cost = 12
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+
+			application = { # Tanker Aircraft
+			id = 9997
+			name = CTECN_9997
+			desc = CTECD_9997
+
+			required = { 9992 9998 9974 } 
+			chance = 90
+			cost = 30
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = range which = strategic_bomber when = on_upgrade value = 1500 }
+				command = { type = fuel_consumption which = strategic_bomber value = 2.0 }
+			}
+		}
+	} # Level 12
+}

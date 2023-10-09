@@ -1,0 +1,1416 @@
+# 
+# The Electronics Technology Group
+#
+
+# aa_batteries max increase 5 points
+#	
+#	
+#	
+
+technology = {
+	id = 3
+	category = electronics
+	name = TECH_ELECTRONICS_NAME #Localized name
+	desc = TECH_ELECTRONICS_DESC #Localized description
+	
+	level = { # Prewar electronics
+		id = 3000
+		name = TECH_LEVEL_ELEC_1_NAME 
+		desc = TECH_LEVEL_ELEC_1_DESC 
+		
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Direction finding stations
+			id = 3010
+			name = CTECN_3010 # Direction finding stations
+			desc = CTECD_3010 # The establishment of 'Y' stations during the Great War was a direct consequence of the increased use of wireless communications.  By using multiple stations it was possible to triangulate the location of an enemy fleet, greatly improving the ability to track the enemy without being in close viusal contact.
+
+			required = { }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = submarine when = now value = 1 }
+				command = { type = surface_detection which = destroyer when = now value = 1 }
+				command = { type = surface_detection which = carrier when = now value = 1 }
+				command = { type = surface_detection which = cruiser when = now value = 1 }
+				command = { type = surface_detection which = battleship when = now value = 1 }
+			}
+		}
+
+		application = { # Basic signals intercept vehicle
+			id = 3011
+			name = CTECN_3011 # Basic signals intercept vehicle
+			desc = CTECD_3011 # As the use of wireless signalling became widespread it quickly became obvious that the interception of enemy communications could allow a decisive advantage.  This led to the development of vehicles that were dedicated to listening in on enemy communications from positions close to the front.
+
+			required = { }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = intelligence which = us value = 5 }
+				command = { type = army_detection which = us value = 2 }
+			}
+		}
+
+		application = { # Code Talkers
+			id = 3012
+			name = CTECN_3012 # Code Talkers
+			desc = CTECD_3012 # The languages of Native American tribes were almost completely unknown outside of Europe and this was recognised as an advantage as early as 1918, when during the Great War the US Army used Choctaw Code Talkers to ensure secure communications and therefore surprise in an attack against German positions in the Argonne forest.  This practise continued during the Second World War with active recruitment of Choctaws, Kiowas, Navajos, Hopis, Cherokees, Commanches, Winnebagos, Seminoles and others.
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = intelligence which = them value = -2 }
+				command = { type = army_detection which = them value = -1 }
+			}
+		}
+
+		application = { # Magnetron Device
+			id = 3001
+			name = TECH_APP_ELEC_1_1_NAME
+			desc = TECH_APP_ELEC_1_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effect
+			}
+		}
+		application = { # Radio Controlled Rangefinders
+			id = 3002
+			name = TECH_APP_ELEC_1_2_NAME
+			desc = TECH_APP_ELEC_1_2_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # Basic Decimetric Radar
+			id = 3003
+			name = TECH_APP_ELEC_1_3_NAME
+			desc = TECH_APP_ELEC_1_3_DESC
+			
+			required = { 3001 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # Basic Decimetric Radar Warning Sites
+			id = 3004
+			name = TECH_APP_ELEC_1_4_NAME
+			desc = TECH_APP_ELEC_1_4_DESC
+			
+			required = { 3003 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = surprise which = air value = 10 }
+			}
+		}
+		application = { # Basic Man Portable Radio Sets
+			id = 3005
+			name = TECH_APP_ELEC_1_5_NAME
+			desc = TECH_APP_ELEC_1_5_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Vehicle Radio Sets
+			id = 3006
+			name = TECH_APP_ELEC_1_6_NAME
+			desc = TECH_APP_ELEC_1_6_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Long-Range Radio Sets
+			id = 3007
+			name = TECH_APP_ELEC_1_7_NAME
+			desc = TECH_APP_ELEC_1_7_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Cathode Ray Tube
+			id = 3008
+			name = CTECN_3008
+			desc = CTECD_3008
+			
+			required = { }
+			chance = 80
+			cost = 6
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+
+	} # Level 1
+	
+	level = { # Binary Code
+		id = 3100
+		name = TECH_LEVEL_ELEC_2_NAME 
+		desc = TECH_LEVEL_ELEC_2_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Binary Coded Machine Language
+			id = 3101
+			name = TECH_APP_ELEC_2_1_NAME
+			desc = TECH_APP_ELEC_2_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Moving Target Indicator
+			id = 3102
+			name = TECH_APP_ELEC_2_2_NAME
+			desc = TECH_APP_ELEC_2_2_DESC
+			
+			required = { 3003 3010 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Electromechanical Computers
+			id = 3103
+			name = TECH_APP_ELEC_2_3_NAME
+			desc = TECH_APP_ELEC_2_3_DESC
+			
+			required = { 3101 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = research_cost which = theoretical value = -5 } # %
+				command = { type = research_cost which = application value = -5 } # %
+				command = { type = research_time which = theoretical value = -5 } # %
+				command = { type = research_time which = application value = -5 } # %
+			}
+		}
+		application = { # Basic Electromechanical Encryption Devices
+			id = 3104
+			name = TECH_APP_ELEC_2_4_NAME
+			desc = TECH_APP_ELEC_2_4_DESC
+			
+			required = { 3101 }
+			chance = 80
+			cost = 9
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = intelligence which = them value = -10 }
+			}
+		}
+		application = { # Early Intelligence establishment
+			id = 3107
+			name = CTECN_3107 # Early Intelligence establishment
+			desc = CTECD_3107 # The processing and decryption of high volumes of enemy signals increasingly required a dedicated intelligence establishment.  This included institutes that provided training for intelligence analysts, auxiliary organisations that provided operators for the increasingly complex electro-mechanical devices used for and dedicated intelligence centers such as Bletchley Park and Arlington Hall where each nations most skilled cryptanalysts would work together on breaking enemy codes.  
+
+			required = { 3103 3104 }
+			chance = 90
+			cost = 4
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = intelligence which = us value = 10 }
+				command = { type = intelligence which = them value = -5 }
+				command = { type = army_detection which = us value = 2 }
+				command = { type = army_detection which = them value = -1 }
+			}
+		}
+		application = { # Iconoscope
+			id = 3105
+			name = CTECN_3105
+			desc = CTECD_3105
+			required = { }
+			chance = 80
+			cost = 6
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Television Broadcasting
+			id = 3106
+			name = CTECN_3106
+			desc = CTECD_3106
+			required = { 3008 3105 }
+			chance = 80
+			cost = 8
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}	
+
+	} # Level 2
+	
+	level = { # Cavity Magnetron
+		id = 3200
+		name = TECH_LEVEL_ELEC_3_NAME 
+		desc = TECH_LEVEL_ELEC_3_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Cavity Magnetron Device
+			id = 3201
+			name = TECH_APP_ELEC_3_1_NAME
+			desc = TECH_APP_ELEC_3_1_DESC
+			
+			required = { 3001 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Decimetric Radar
+			id = 3202
+			name = TECH_APP_ELEC_3_2_NAME
+			desc = TECH_APP_ELEC_3_2_DESC
+			
+			required = { 3003 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Decimetric Radar Warning Sites
+			id = 3203
+			name = TECH_APP_ELEC_3_3_NAME
+			desc = TECH_APP_ELEC_3_3_DESC
+			
+			required = { 3004 3202 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = surprise which = air value = 5 }
+			}
+		}
+		application = { # Improved Man Portable Radio Sets
+			id = 3204
+			name = TECH_APP_ELEC_3_4_NAME
+			desc = TECH_APP_ELEC_3_4_DESC
+			
+			required = { 3005 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Vehicle Radio Sets
+			id = 3205
+			name = TECH_APP_ELEC_3_5_NAME
+			desc = TECH_APP_ELEC_3_5_DESC
+			
+			required = { 3006 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Long-Range Radio Sets
+			id = 3206
+			name = TECH_APP_ELEC_3_6_NAME
+			desc = TECH_APP_ELEC_3_6_DESC
+			
+			required = { 3007 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Electromechanical Decryption Machines
+			id = 3207
+			name = TECH_APP_ELEC_3_7_NAME
+			desc = TECH_APP_ELEC_3_7_DESC
+			
+			required = { 3101 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = intelligence which = us value = 20 }
+			}
+		}
+		
+	} # Level 3
+	
+	level = { # Frequency Modulation
+		id = 3300
+		name = TECH_LEVEL_ELEC_4_NAME 
+		desc = TECH_LEVEL_ELEC_4_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Punch Cards
+		id = 3301
+		name = CTECN_3301
+		desc = CTECD_3301
+		
+		required = { 3104 }
+		chance = 90
+		cost = 6
+		time = 90
+		neg_offset = 20
+		pos_offset = 40
+		
+		effects = {
+			command = { }
+			}
+		}
+
+		application = { # Improved Electromechanical Computers
+			id = 3302
+			name = TECH_APP_ELEC_4_2_NAME
+			desc = TECH_APP_ELEC_4_2_DESC
+			
+			required = { 3301 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = research_cost which = theoretical value = -4 } # %
+				command = { type = research_cost which = application value = -4 } # %
+				command = { type = research_time which = theoretical value = -4 } # %
+				command = { type = research_time which = application value = -4 } # %
+			}
+		}
+	} # Level 4
+	
+	level = { # Resonance Magnetron
+		id = 3400
+		name = TECH_LEVEL_ELEC_5_NAME 
+		desc = TECH_LEVEL_ELEC_5_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Resonance Magnetron Device
+			id = 3401
+			name = TECH_APP_ELEC_5_1_NAME
+			desc = TECH_APP_ELEC_5_1_DESC
+			
+			required = { 3201 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Decimetric Radar
+			id = 3402
+			name = TECH_APP_ELEC_5_2_NAME
+			desc = TECH_APP_ELEC_5_2_DESC
+			
+			required = { 3202 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Decimetric Radar Warning Sites
+			id = 3403
+			name = TECH_APP_ELEC_5_3_NAME
+			desc = TECH_APP_ELEC_5_3_DESC
+			
+			required = { 3203 3402 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = surprise which = air value = 5 }
+			}
+		}
+		application = { # Advanced Man Portable Radio Sets
+			id = 3404
+			name = TECH_APP_ELEC_5_4_NAME
+			desc = TECH_APP_ELEC_5_4_DESC
+			
+			required = { 3204 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Vehicle Radio Sets
+			id = 3405
+			name = TECH_APP_ELEC_5_5_NAME
+			desc = TECH_APP_ELEC_5_5_DESC
+			
+			required = { 3205 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Long-Range Radio Sets
+			id = 3406
+			name = TECH_APP_ELEC_5_6_NAME
+			desc = TECH_APP_ELEC_5_6_DESC
+			
+			required = { 3206 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Electromechanical Encryption Devices
+			id = 3407
+			name = TECH_APP_ELEC_5_7_NAME
+			desc = TECH_APP_ELEC_5_7_DESC
+			
+			required = { 3104 }
+			chance = 80
+			cost = 9
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = intelligence which = them value = -20 }
+			}
+		}
+		application = { # Expanded Intelligence establishment
+			id = 3408
+			name = CTECN_3408 # Expanded Intelligence establishment
+			desc = CTECD_3408 # The processing and decryption of high volumes of enemy signals increasingly required a dedicated intelligence establishment.  This included institutes that provided training for intelligence analysts, auxiliary organisations that provided operators for the increasingly complex electro-mechanical devices used for and dedicated intelligence centers such as Bletchley Park and Arlignton Hall where each nations most skilled cryptanalysts would work together on breaking enemy codes.
+
+			required = { 3407 3107 }
+			chance = 90
+			cost = 6
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = intelligence which = us value = 15 }
+				command = { type = intelligence which = them value = -10 }
+				command = { type = army_detection which = us value = 4 }
+				command = { type = army_detection which = them value = -2 }
+			}
+
+		}
+		
+	} # Level 5
+	
+	level = { # Centimetric Radar
+		id = 3500
+		name = TECH_LEVEL_ELEC_6_NAME 
+		desc = TECH_LEVEL_ELEC_6_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Basic Centimetric Radar
+			id = 3501
+			name = TECH_APP_ELEC_6_1_NAME
+			desc = TECH_APP_ELEC_6_1_DESC
+			
+			required = { 3401 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Centimetric Radar Warning Sites
+			id = 3502
+			name = TECH_APP_ELEC_6_2_NAME
+			desc = TECH_APP_ELEC_6_2_DESC
+			
+			required = { 3403 3501 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = surprise which = air value = 10 }
+			}
+		}
+		application = { # Basic Centimetric Radar Warning Device
+			id = 3503
+			name = TECH_APP_ELEC_6_3_NAME
+			desc = TECH_APP_ELEC_6_3_DESC
+			
+			required = { 3501 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Centimetric Radar Homing Device
+			id = 3504
+			name = TECH_APP_ELEC_6_4_NAME
+			desc = TECH_APP_ELEC_6_4_DESC
+			
+			required = { 3501 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Electromechanical Decryption Devices
+			id = 3505
+			name = TECH_APP_ELEC_6_5_NAME
+			desc = TECH_APP_ELEC_6_5_DESC
+			
+			required = { 3207 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = intelligence which = us value = 20 }
+			}
+		}
+		application = { # IFF Radar Frequency Technology
+			id = 3506
+			name = TECH_APP_ELEC_6_6_NAME
+			desc = TECH_APP_ELEC_6_6_DESC
+			
+			required = { 3501 10100 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_detection which = fighter when = now value = 1 }
+				command = { type = air_detection which = strategic_bomber when = now value = 1 }
+				command = { type = air_detection which = tactical_bomber when = now value = 1 }
+				command = { type = air_detection which = torpedo_plane when = now value = 1 }
+				command = { type = air_detection which = transport_plane when = now value = 1 }
+			}
+		}
+		
+		
+	} # Level 6
+	
+	level = { # Telemetric Guidance
+		id = 3600
+		name = TECH_LEVEL_ELEC_7_NAME 
+		desc = TECH_LEVEL_ELEC_7_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Advanced Electromechanical Encryption Devices
+			id = 3601
+			name = TECH_APP_ELEC_7_1_NAME
+			desc = TECH_APP_ELEC_7_1_DESC
+			
+			required = { 3407 }
+			chance = 80
+			cost = 9
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = intelligence which = them value = -20 }
+			}
+		}
+		application = { # Advanced Electromechanical Computers
+			id = 3602
+			name = TECH_APP_ELEC_7_2_NAME
+			desc = TECH_APP_ELEC_7_2_DESC
+			
+			required = { 3302 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = AA_batteries value = 5 }
+				command = { type = industrial_modifier which = total value = 5 }
+				command = { type = research_cost which = theoretical value = -3 } # %
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = theoretical value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+			}
+		}
+		application = { # Codification of the Navajo language
+			id = 3603
+			name = CTECN_3603 # Codification of the Navajo language
+			desc = CTECD_3603 # Building on US Army experience from both the Great War and the Second World War, the US Marine Corps undertook a project to codify and refine the Code Talker practise into a real security discipline.  The Marine Corps used Navajos exclusively as it was perceived that their language was virtually unknown outside the Navajo nation, there was no written language and it's complex tonal inflections made it extremely difficult to learn as an adult.  Historically 400 Navajos and one Caucasian became part of the Marine Corps code talking program and the code was never broken.
+			
+			required = { 3012 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = intelligence which = them value = -3 }
+				command = { type = army_detection which = them value = -2 }
+			}
+		}
+		application = { # Improved signals intercept vehicle
+			id = 3604
+			name = CTECN_3604 # Improved signals intercept vehicle
+			desc = CTECD_3604 # As the mobility of modern armies increased the usefulness of fixed stations for signals interception decreased.  Mobile signals vehicles became more important and this encouraged further development of these highly specialized vehicles.
+
+			required = { 3011 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = intelligence which = us value = 10 }
+				command = { type = army_detection which = us value = 3 }
+			}
+		}
+	
+	} # Level 7
+	
+	level = { # Infrared Technology
+		id = 3700
+		name = TECH_LEVEL_ELEC_8_NAME 
+		desc = TECH_LEVEL_ELEC_8_DESC
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Near Infrared System Technology
+			id = 3701
+			name = TECH_APP_ELEC_8_1_NAME
+			desc = TECH_APP_ELEC_8_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Centimetric Radar
+			id = 3702
+			name = TECH_APP_ELEC_8_2_NAME
+			desc = TECH_APP_ELEC_8_2_DESC
+			
+			required = { 3501 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Centimetric Radar Warning Sites
+			id = 3703
+			name = TECH_APP_ELEC_8_3_NAME
+			desc = TECH_APP_ELEC_8_3_DESC
+			
+			required = { 3502 3702 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = surprise which = air value = 10 }
+			}
+		}
+		application = { # Improved Centimetric Radar Warning Device
+			id = 3704
+			name = TECH_APP_ELEC_8_4_NAME
+			desc = TECH_APP_ELEC_8_4_DESC
+			
+			required = { 3503 3702 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Centimetric Radar Homing Device
+			id = 3705
+			name = TECH_APP_ELEC_8_5_NAME
+			desc = TECH_APP_ELEC_8_5_DESC
+			
+			required = { 3504 3702 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Electromechanical Decryption Device
+			id = 3706
+			name = TECH_APP_ELEC_8_6_NAME
+			desc = TECH_APP_ELEC_8_6_DESC
+			
+			required = { 3505 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = intelligence which = us value = 20 }
+			}
+		}
+		application = { # Sound Locator
+			id = 3707
+			name = CTECN_3707 # Sound Locator
+			desc = CTECD_3707 # Mortars were very effective at breaking up infantry assaults and pinning troops while remaining hidden.  Research into counter-measures resulted in the GR-6 Sound Locator, a device that used three microphones to pin-point enemy mortar positions with great accuracy.  Historically this was first used by US troops in the battle for Okinawa.
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = jungle_attack which = infantry value = 3 }
+				command = { type = jungle_attack which = paratrooper value = 3 }
+				command = { type = jungle_attack which = bergsjaeger value = 3 }
+				command = { type = jungle_attack which = marine value = 3 }
+			}
+		}
+		
+	} # Level 8
+	
+	level = { # Central Processing Unit
+		id = 3800
+		name = TECH_LEVEL_ELEC_9_NAME 
+		desc = TECH_LEVEL_ELEC_9_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Memory Storage
+			id = 3801
+			name = TECH_APP_ELEC_9_1_NAME
+			desc = TECH_APP_ELEC_9_1_DESC
+			
+			required = { 3301 3706 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Conditional Control Transfer
+			id = 3802
+			name = TECH_APP_ELEC_9_2_NAME
+			desc = TECH_APP_ELEC_9_2_DESC
+			
+			required = { 3801 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Central Processing Unit
+			id = 3803
+			name = TECH_APP_ELEC_9_3_NAME
+			desc = TECH_APP_ELEC_9_3_DESC
+			
+			required = { 3802 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Pulse code modulation
+			id = 3805
+			name = CTECN_3805 # Pulse code modulation
+			desc = CTECD_3805 # Pulse code modulation was first applied to voice transmission during the effort to develop secure voice transmission over telephone lines.
+			
+			required = { 3803 }
+			chance = 90
+			cost = 3
+			time = 60
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effect
+			}
+		}
+		application = { # Bandwidth compression
+			id = 3806
+			name = CTECN_3806 # Bandwidth compression
+			desc = CTECD_3806 # In order to achieve near real time results with encryption and decryption of voice data streams it is necessary to use bandwidth compression.  
+			
+			required = { 3803 }
+			chance = 90
+			cost = 3
+			time = 60
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effect
+			}
+		}
+		application = { # Multilevel frequency shift keying
+			id = 3807
+			name = CTECN_3807 # Multilevel frequency shift keying
+			desc = CTECD_3807 # Phase-shift keying is a form of modulation in which the phase of the carrier signal is shifted to represent digital data.
+			
+			required = { 3805 3806 }
+			chance = 90
+			cost = 3
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effect
+			}
+		}
+		application = { # Secure voice encryption
+			id = 3808
+			name = CTECN_3808 # Secure voice encryption
+			desc = CTECD_3808 # The first voice encryption system for telephones was the SIGSALY system developed by Bell Telephone Laboratories in 1943.  The system consisted of 40 racks of equipment and weighed 55 tons.  Initially it was installed in the Pentagon and in London to provide secure communications and by the end of the war there was twelve systems installed worldwide.  The systems was based on random noise acetate records and was generally considered to have poor voice quality but good security.  It used several new technologies, such as pulse code modulation for speech transmission, bandwidth compression and multilevel frequency shift keying.  
+			
+			required = { 3807 }
+			chance = 90
+			cost = 6
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = intelligence which = them value = -10 }
+			}
+		}
+
+		application = { # Basic Electromechanical General Purpose Computers
+			id = 3804
+			name = TECH_APP_ELEC_9_4_NAME
+			desc = TECH_APP_ELEC_9_4_DESC
+			
+			required = { 3803 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 5 }
+				command = { type = research_cost which = theoretical value = -3 } # %
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = theoretical value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+			}
+		}
+		
+	} # Level 9
+	
+	level = { # Advanced Centimetric Radar
+		id = 3900
+		name = TECH_LEVEL_ELEC_10_NAME 
+		desc = TECH_LEVEL_ELEC_10_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Advanced Centimetric Radar
+			id = 3901
+			name = TECH_APP_ELEC_10_1_NAME
+			desc = TECH_APP_ELEC_10_1_DESC
+			
+			required = { 3702 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Centimetric Radar Warning Sites
+			id = 3902
+			name = TECH_APP_ELEC_10_2_NAME
+			desc = TECH_APP_ELEC_10_2_DESC
+			
+			required = { 3703 3901 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = surprise which = air value = 20 }
+			}
+		}
+		application = { # Advanced Centimetric Radar Warning Device
+			id = 3903
+			name = TECH_APP_ELEC_10_3_NAME
+			desc = TECH_APP_ELEC_10_3_DESC
+			
+			required = { 3704 3901 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Centimetric Radar Warning Device
+			id = 3904
+			name = TECH_APP_ELEC_10_4_NAME
+			desc = TECH_APP_ELEC_10_4_DESC
+			
+			required = { 3705 3901 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Electromechanical General Purpose Computers
+			id = 3905
+			name = TECH_APP_ELEC_10_5_NAME
+			desc = TECH_APP_ELEC_10_5_DESC
+			
+			required = { 3804 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 5 }
+				command = { type = research_cost which = theoretical value = -3 } # %
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = theoretical value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+			}
+		}
+	} # Level 10
+	
+	level = { # Transistor
+		id = 3940
+		name = TECH_LEVEL_ELEC_11_NAME 
+		desc = TECH_LEVEL_ELEC_11_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Assembly Programming Language
+			id = 3941
+			name = TECH_APP_ELEC_11_1_NAME
+			desc = TECH_APP_ELEC_11_1_DESC
+			
+			required = { 3905 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Magnetic Core Data Storage
+			id = 3942
+			name = TECH_APP_ELEC_11_2_NAME
+			desc = TECH_APP_ELEC_11_2_DESC
+			
+			required = { 3905 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Electromechanical General Purpose Computers
+			id = 3943
+			name = TECH_APP_ELEC_11_3_NAME
+			desc = TECH_APP_ELEC_11_3_DESC
+			
+			required = { 3905 }
+			chance = 80
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 5 }
+				command = { type = research_cost which = theoretical value = -3 } # %
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = theoretical value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+			}
+		}
+		application = { # Joint services cryptology
+			id = 3944
+			name = CTECN_3944 # Joint services cryptology
+			desc = CTECD_3944 # As the size and numbers of various intelligence operations expanded far beyond what planners had envisaged it became obvious that separate army services and government ministries were duplicating efforts and sometimes compromising each others work by retransmitting information using less secure ciphers than the original transmission.  The solution was to establish single national organization to manage all cryptology research and development as well as signals intelligence interception and processing.
+
+			required = { 3408 3943 }
+			chance = 90
+			cost = 8
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = intelligence which = us value = 20 }
+				command = { type = intelligence which = them value = -15 }
+				command = { type = army_detection which = us value = 5 }
+				command = { type = army_detection which = them value = -3 }
+			}
+		}
+		
+	} # Level 11
+	
+	level = { # Electronic Computers
+		id = 3970
+		name = TECH_LEVEL_ELEC_12_NAME 
+		desc = TECH_LEVEL_ELEC_12_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Computer Adapted Transistors
+			id = 3971
+			name = TECH_APP_ELEC_12_1_NAME
+			desc = TECH_APP_ELEC_12_1_DESC
+			
+			required = { 4942 4943 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Magnetic Drum Data Storage
+			id = 3975
+			name = CTECN_3975
+			desc = CTECD_3975
+			
+			required = { 3103 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Electronic Computers
+			id = 3972
+			name = TECH_APP_ELEC_12_2_NAME
+			desc = TECH_APP_ELEC_12_2_DESC
+			
+			required = { 3941 3942 3943 3971 }
+			chance = 80
+			cost = 12
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 5 }
+				command = { type = research_cost which = theoretical value = -3 } # %
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = theoretical value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+			}
+		}
+		application = { # Improved Electronic Computers
+			id = 3973
+			name = TECH_APP_ELEC_12_3_NAME
+			desc = TECH_APP_ELEC_12_3_DESC
+			
+			required = { 3972 3975 4975 }
+			chance = 80
+			cost = 8
+			time = 600
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 5 }
+				command = { type = research_cost which = theoretical value = -3 } # %
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = theoretical value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+			}
+		}
+		application = { # Advanced Electronic Computers
+			id = 3974
+			name = TECH_APP_ELEC_12_4_NAME
+			desc = TECH_APP_ELEC_12_4_DESC
+			
+			required = { 3973 4976 }
+			chance = 80
+			cost = 10
+			time = 600
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 5 }
+				command = { type = research_cost which = theoretical value = -3 } # %
+				command = { type = research_cost which = application value = -3 } # %
+				command = { type = research_time which = theoretical value = -3 } # %
+				command = { type = research_time which = application value = -3 } # %
+			}
+		}
+	} # Level 12
+}

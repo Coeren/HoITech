@@ -1,0 +1,1371 @@
+# 
+# The Industry Technology Group
+#
+
+#
+#	
+#	
+#	
+
+technology = {
+	id = 4
+	category = industry
+	name = TECH_INDUSTRY_NAME #Localized name
+	desc = TECH_INDUSTRY_DESC #Localized description
+	
+	level = { # 1 - Hydrogenation
+		id = 4000
+		name = TECH_LEVEL_INDUSTRY_1_NAME 
+		desc = TECH_LEVEL_INDUSTRY_1_DESC 
+		
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+
+		application = { # AI "root" tech
+			id = 4002
+			name = CTECN_4002
+			desc = CTECD_4002
+			
+			required = { }
+			chance = 90
+			cost = 1
+			time = 9000
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+			# command = { type = industrial_multiplier which = coal_to_oil value = 0.4 } # For further considearation...
+			# command = { type = industrial_multiplier which = oil_to_rubber value = 0.4 } # For further considearation...
+			command = { type = research_cost which = application value = -30 } # to allow AI more balanced R&D
+			command = { type = research_cost which = theoretical value = -30 } # same thing...
+			command = { type = range which = submarine when = now value = 1000 }
+			command = { type = range which = transports when = now value = 1000 }
+			command = { type = range which = destroyer when = now value = 1000 }
+			command = { type = range which = cruiser when = now value = 1000 }
+			command = { type = range which = battleship when = now value = 1000 }
+			command = { type = range which = carrier when = now value = 1000 }
+
+# Modifiers section
+
+			command = { type = shore_attack which = infantry value = 10 }
+			command = { type = shore_attack which = motorized value = 10 }
+			command = { type = shore_attack which = bergsjaeger value = 10 }
+			command = { type = shore_attack which = paratrooper value = 10 }
+			command = { type = shore_attack which = marine value = 10 }
+			command = { type = shore_attack which = cavalry value = 10 }
+			command = { type = shore_attack which = armor value = 10 }
+			command = { type = shore_attack which = mechanized value = 10 }
+			command = { type = shore_attack which = militia value = 10 }
+
+			command = { type = night_attack which = infantry value = -500 }
+			command = { type = night_defense which = infantry value = -500 }
+			command = { type = night_attack which = motorized value = -500 }
+			command = { type = night_defense which = motorized value = -500 }
+			command = { type = night_attack which = bergsjaeger value = -500 }
+			command = { type = night_defense which = bergsjaeger value = -500 }
+			command = { type = night_attack which = paratrooper value = -500 }
+			command = { type = night_defense which = paratrooper value = -500 }
+			command = { type = night_attack which = marine value = -500 }
+			command = { type = night_defense which = marine value = -500 }
+			command = { type = night_attack which = cavalry value = -500 }
+			command = { type = night_defense which = cavalry value = -500 }
+			command = { type = night_attack which = armor value = -500 }
+			command = { type = night_defense which = armor value = -500 }
+			command = { type = night_attack which = mechanized value = -500 }
+			command = { type = night_defense which = mechanized value = -500 }
+			command = { type = night_attack which = militia value = -500 }
+			command = { type = night_defense which = militia value = -500 }
+
+			command = { type = urban_attack which = motorized value = 5 }
+			command = { type = urban_attack which = armor value = 15 }
+			command = { type = urban_attack which = mechanized value = 10 }
+			command = { type = urban_attack which = militia value = 10 }
+			command = { type = urban_defense which = militia value = 30 }
+
+# Adjustment - tanks/moto were too weak there
+
+			command = { type = mountain_attack which = motorized value = 5 }
+			command = { type = mountain_attack which = armor value = 20 }
+			command = { type = mountain_attack which = mechanized value = 15 }
+
+			command = { type = mountain_defense which = motorized value = 1 }
+			command = { type = mountain_defense which = armor value = 1 }
+			command = { type = mountain_defense which = mechanized value = 1 }
+
+			command = { type = mountain_attack which = infantry value = 1 }
+			command = { type = mountain_defense which = infantry value = 1 }
+			command = { type = mountain_attack which = bergsjaeger value = 1 }
+			command = { type = mountain_defense which = bergsjaeger value = 1 }
+			command = { type = mountain_attack which = paratrooper value = 1 }
+			command = { type = mountain_defense which = paratrooper value = 1 }
+			command = { type = mountain_attack which = marine value = 1 }
+			command = { type = mountain_defense which = marine value = 1 }
+			command = { type = mountain_attack which = cavalry value = 1 }
+			command = { type = mountain_defense which = cavalry value = 1 }
+			command = { type = mountain_attack which = militia value = 1 }
+			command = { type = mountain_defense which = militia value = 1 }
+
+# Antibug section
+
+			command = { type = desert_attack which = motorized value = 1 }
+			command = { type = desert_attack which = armor value = 1 }
+			command = { type = desert_attack which = mechanized value = 1 }
+
+			command = { type = desert_defense which = motorized value = 1 }
+			command = { type = desert_defense which = armor value = 1 }
+			command = { type = desert_defense which = mechanized value = 1 }
+
+			command = { type = desert_attack which = infantry value = 1 }
+			command = { type = desert_defense which = infantry value = 1 }
+			command = { type = desert_attack which = bergsjaeger value = 1 }
+			command = { type = desert_defense which = bergsjaeger value = 1 }
+			command = { type = desert_attack which = paratrooper value = 1 }
+			command = { type = desert_defense which = paratrooper value = 1 }
+			command = { type = desert_attack which = marine value = 1 }
+			command = { type = desert_defense which = marine value = 1 }
+			command = { type = desert_attack which = cavalry value = 1 }
+			command = { type = desert_defense which = cavalry value = 1 }
+			command = { type = desert_attack which = militia value = 1 }
+			command = { type = desert_defense which = militia value = 1 }
+
+			command = { type = hill_attack which = motorized value = 1 }
+			command = { type = hill_attack which = armor value = 1 }
+			command = { type = hill_attack which = mechanized value = 1 }
+
+			command = { type = hill_defense which = motorized value = 1 }
+			command = { type = hill_defense which = armor value = 1 }
+			command = { type = hill_defense which = mechanized value = 1 }
+
+			command = { type = hill_attack which = infantry value = 1 }
+			command = { type = hill_defense which = infantry value = 1 }
+			command = { type = hill_attack which = bergsjaeger value = 1 }
+			command = { type = hill_defense which = bergsjaeger value = 1 }
+			command = { type = hill_attack which = paratrooper value = 1 }
+			command = { type = hill_defense which = paratrooper value = 1 }
+			command = { type = hill_attack which = marine value = 1 }
+			command = { type = hill_defense which = marine value = 1 }
+			command = { type = hill_attack which = cavalry value = 1 }
+			command = { type = hill_defense which = cavalry value = 1 }
+			command = { type = hill_attack which = militia value = 1 }
+			command = { type = hill_defense which = militia value = 1 }
+
+# Deactivation section
+
+			command = { type = deactivate which = 4003 } # Locker tech
+			command = { type = deactivate which = 4004 } # HARD C.O.R.E.
+			command = { type = deactivate which = 9203 } # Paratroppers
+			command = { type = deactivate which = 10105 } # 2-engined fighters
+			command = { type = deactivate which = 10107 } # MR fighters
+			command = { type = deactivate which = 9109 } # Basic Transport Planes
+			command = { type = deactivate which = 11511 } # Partisan attacks (negative)
+			}
+		}
+
+		application = { # Human Player Technology Tech Tree
+			id = 4003
+			name = CTECN_4003
+			desc = CTECD_4003
+			
+			required = { }
+			chance = 90
+			cost = 1
+			time = 9000
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+
+
+# Modifiers section
+
+			command = { type = river_attack which = infantry value = -7 }
+			command = { type = river_attack which = motorized value = -10 }
+			command = { type = river_attack which = bergsjaeger value = -7 }
+			command = { type = river_attack which = paratrooper value = -7 }
+			command = { type = river_attack which = marine value = -5 }
+			command = { type = river_attack which = cavalry value = -7 }
+			command = { type = river_attack which = armor value = -15 }
+			command = { type = river_attack which = mechanized value = -15 }
+			command = { type = river_attack which = militia value = -10 }
+
+
+			command = { type = night_attack which = infantry value = -500 }
+			command = { type = night_defense which = infantry value = -500 }
+			command = { type = night_attack which = motorized value = -500 }
+			command = { type = night_defense which = motorized value = -500 }
+			command = { type = night_attack which = bergsjaeger value = -500 }
+			command = { type = night_defense which = bergsjaeger value = -500 }
+			command = { type = night_attack which = paratrooper value = -500 }
+			command = { type = night_defense which = paratrooper value = -500 }
+			command = { type = night_attack which = marine value = -500 }
+			command = { type = night_defense which = marine value = -500 }
+			command = { type = night_attack which = cavalry value = -500 }
+			command = { type = night_defense which = cavalry value = -500 }
+			command = { type = night_attack which = armor value = -500 }
+			command = { type = night_defense which = armor value = -500 }
+			command = { type = night_attack which = mechanized value = -500 }
+			command = { type = night_defense which = mechanized value = -500 }
+			command = { type = night_attack which = militia value = -500 }
+			command = { type = night_defense which = militia value = -500 }
+
+
+			command = { type = urban_attack which = motorized value = 5 }
+			command = { type = urban_attack which = armor value = 15 }
+			command = { type = urban_attack which = mechanized value = 10 }
+			command = { type = urban_attack which = militia value = 10 }
+			command = { type = urban_defense which = militia value = 30 }
+
+# Adjustment - tanks/moto were too weak there
+
+			command = { type = mountain_attack which = motorized value = 5 }
+			command = { type = mountain_attack which = armor value = 20 }
+			command = { type = mountain_attack which = mechanized value = 15 }
+
+
+			command = { type = mountain_defense which = motorized value = 1 }
+			command = { type = mountain_defense which = armor value = 1 }
+			command = { type = mountain_defense which = mechanized value = 1 }
+
+			command = { type = mountain_attack which = infantry value = 1 }
+			command = { type = mountain_defense which = infantry value = 1 }
+			command = { type = mountain_attack which = bergsjaeger value = 1 }
+			command = { type = mountain_defense which = bergsjaeger value = 1 }
+			command = { type = mountain_attack which = paratrooper value = 1 }
+			command = { type = mountain_defense which = paratrooper value = 1 }
+			command = { type = mountain_attack which = marine value = 1 }
+			command = { type = mountain_defense which = marine value = 1 }
+			command = { type = mountain_attack which = cavalry value = 1 }
+			command = { type = mountain_defense which = cavalry value = 1 }
+			command = { type = mountain_attack which = militia value = 1 }
+			command = { type = mountain_defense which = militia value = 1 }
+
+# Antibug section
+
+			command = { type = desert_attack which = motorized value = 1 }
+			command = { type = desert_attack which = armor value = 1 }
+			command = { type = desert_attack which = mechanized value = 1 }
+
+			command = { type = desert_defense which = motorized value = 1 }
+			command = { type = desert_defense which = armor value = 1 }
+			command = { type = desert_defense which = mechanized value = 1 }
+
+			command = { type = desert_attack which = infantry value = 1 }
+			command = { type = desert_defense which = infantry value = 1 }
+			command = { type = desert_attack which = bergsjaeger value = 1 }
+			command = { type = desert_defense which = bergsjaeger value = 1 }
+			command = { type = desert_attack which = paratrooper value = 1 }
+			command = { type = desert_defense which = paratrooper value = 1 }
+			command = { type = desert_attack which = marine value = 1 }
+			command = { type = desert_defense which = marine value = 1 }
+			command = { type = desert_attack which = cavalry value = 1 }
+			command = { type = desert_defense which = cavalry value = 1 }
+			command = { type = desert_attack which = militia value = 1 }
+			command = { type = desert_defense which = militia value = 1 }
+
+			command = { type = hill_attack which = motorized value = 1 }
+			command = { type = hill_attack which = armor value = 1 }
+			command = { type = hill_attack which = mechanized value = 1 }
+
+			command = { type = hill_defense which = motorized value = 1 }
+			command = { type = hill_defense which = armor value = 1 }
+			command = { type = hill_defense which = mechanized value = 1 }
+
+			command = { type = hill_attack which = infantry value = 1 }
+			command = { type = hill_defense which = infantry value = 1 }
+			command = { type = hill_attack which = bergsjaeger value = 1 }
+			command = { type = hill_defense which = bergsjaeger value = 1 }
+			command = { type = hill_attack which = paratrooper value = 1 }
+			command = { type = hill_defense which = paratrooper value = 1 }
+			command = { type = hill_attack which = marine value = 1 }
+			command = { type = hill_defense which = marine value = 1 }
+			command = { type = hill_attack which = cavalry value = 1 }
+			command = { type = hill_defense which = cavalry value = 1 }
+			command = { type = hill_attack which = militia value = 1 }
+			command = { type = hill_defense which = militia value = 1 }
+
+
+# Deactivation
+
+			command = { type = deactivate which = 4002 } # "root" tech
+			command = { type = deactivate which = 4004 } # HARD C.O.R.E.
+			command = { type = deactivate which = 11512 } # GPW
+			command = { type = build_cost which = transports value = 3 } 
+			command = { type = build_cost which = submarine value = 1 } 
+			command = { type = build_cost which = destroyer value = 1 } 
+			}
+		}
+
+
+		application = { # HARD C.O.R.E. tech
+			id = 4004
+			name = CTECN_4004
+			desc = CTECD_4004
+			
+			required = { }
+			chance = 90
+			cost = 1
+			time = 9000
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+
+
+			command = { type = research_cost which = application value = 20 } 
+			command = { type = research_cost which = theoretical value = 20 }
+
+			command = { type = industrial_modifier which = supplies value = -5 } 
+	
+			command = { type = build_cost which = armor value = 3 } 
+			command = { type = build_cost which = motorized value = 2 } 
+			command = { type = build_cost which = mechanized value = 3 } 
+			command = { type = build_cost which = infantry value = 1 } 
+			command = { type = build_cost which = cavalry value = 1 } 
+			command = { type = build_cost which = paratrooper value = 2 } 
+			command = { type = build_cost which = marine value = 2 } 
+			command = { type = build_cost which = bergsjaeger value = 2 }
+
+			command = { type = build_cost which = fighter value = 1 } 
+			command = { type = build_cost which = torpedo_plane value = 1 }	
+			command = { type = build_cost which = tactical_bomber value = 2 } 	
+	 		command = { type = build_cost which = dive_bomber value = 2 } 
+			command = { type = build_cost which = naval_bomber value = 2 } 	
+			command = { type = build_cost which = strategic_bomber value = 2 }
+
+
+# Modifiers section
+
+			command = { type = river_attack which = infantry value = -7 }
+			command = { type = river_attack which = motorized value = -10 }
+			command = { type = river_attack which = bergsjaeger value = -7 }
+			command = { type = river_attack which = paratrooper value = -7 }
+			command = { type = river_attack which = marine value = -5 }
+			command = { type = river_attack which = cavalry value = -7 }
+			command = { type = river_attack which = armor value = -15 }
+			command = { type = river_attack which = mechanized value = -15 }
+			command = { type = river_attack which = militia value = -10 }
+
+
+			command = { type = night_attack which = infantry value = -500 }
+			command = { type = night_defense which = infantry value = -500 }
+			command = { type = night_attack which = motorized value = -500 }
+			command = { type = night_defense which = motorized value = -500 }
+			command = { type = night_attack which = bergsjaeger value = -500 }
+			command = { type = night_defense which = bergsjaeger value = -500 }
+			command = { type = night_attack which = paratrooper value = -500 }
+			command = { type = night_defense which = paratrooper value = -500 }
+			command = { type = night_attack which = marine value = -500 }
+			command = { type = night_defense which = marine value = -500 }
+			command = { type = night_attack which = cavalry value = -500 }
+			command = { type = night_defense which = cavalry value = -500 }
+			command = { type = night_attack which = armor value = -500 }
+			command = { type = night_defense which = armor value = -500 }
+			command = { type = night_attack which = mechanized value = -500 }
+			command = { type = night_defense which = mechanized value = -500 }
+			command = { type = night_attack which = militia value = -500 }
+			command = { type = night_defense which = militia value = -500 }
+
+
+			command = { type = urban_attack which = motorized value = 5 }
+			command = { type = urban_attack which = armor value = 15 }
+			command = { type = urban_attack which = mechanized value = 10 }
+			command = { type = urban_attack which = militia value = 10 }
+			command = { type = urban_defense which = militia value = 30 }
+
+# Adjustment - tanks/moto were too weak there
+
+			command = { type = mountain_attack which = motorized value = 5 }
+			command = { type = mountain_attack which = armor value = 20 }
+			command = { type = mountain_attack which = mechanized value = 15 }
+
+			command = { type = mountain_defense which = motorized value = 1 }
+			command = { type = mountain_defense which = armor value = 1 }
+			command = { type = mountain_defense which = mechanized value = 1 }
+
+			command = { type = mountain_attack which = infantry value = 1 }
+			command = { type = mountain_defense which = infantry value = 1 }
+			command = { type = mountain_attack which = bergsjaeger value = 1 }
+			command = { type = mountain_defense which = bergsjaeger value = 1 }
+			command = { type = mountain_attack which = paratrooper value = 1 }
+			command = { type = mountain_defense which = paratrooper value = 1 }
+			command = { type = mountain_attack which = marine value = 1 }
+			command = { type = mountain_defense which = marine value = 1 }
+			command = { type = mountain_attack which = cavalry value = 1 }
+			command = { type = mountain_defense which = cavalry value = 1 }
+			command = { type = mountain_attack which = militia value = 1 }
+			command = { type = mountain_defense which = militia value = 1 }
+
+# Antibug section
+
+			command = { type = desert_attack which = motorized value = 1 }
+			command = { type = desert_attack which = armor value = 1 }
+			command = { type = desert_attack which = mechanized value = 1 }
+
+			command = { type = desert_defense which = motorized value = 1 }
+			command = { type = desert_defense which = armor value = 1 }
+			command = { type = desert_defense which = mechanized value = 1 }
+
+			command = { type = desert_attack which = infantry value = 1 }
+			command = { type = desert_defense which = infantry value = 1 }
+			command = { type = desert_attack which = bergsjaeger value = 1 }
+			command = { type = desert_defense which = bergsjaeger value = 1 }
+			command = { type = desert_attack which = paratrooper value = 1 }
+			command = { type = desert_defense which = paratrooper value = 1 }
+			command = { type = desert_attack which = marine value = 1 }
+			command = { type = desert_defense which = marine value = 1 }
+			command = { type = desert_attack which = cavalry value = 1 }
+			command = { type = desert_defense which = cavalry value = 1 }
+			command = { type = desert_attack which = militia value = 1 }
+			command = { type = desert_defense which = militia value = 1 }
+
+			command = { type = hill_attack which = motorized value = 1 }
+			command = { type = hill_attack which = armor value = 1 }
+			command = { type = hill_attack which = mechanized value = 1 }
+
+			command = { type = hill_defense which = motorized value = 1 }
+			command = { type = hill_defense which = armor value = 1 }
+			command = { type = hill_defense which = mechanized value = 1 }
+
+			command = { type = hill_attack which = infantry value = 1 }
+			command = { type = hill_defense which = infantry value = 1 }
+			command = { type = hill_attack which = bergsjaeger value = 1 }
+			command = { type = hill_defense which = bergsjaeger value = 1 }
+			command = { type = hill_attack which = paratrooper value = 1 }
+			command = { type = hill_defense which = paratrooper value = 1 }
+			command = { type = hill_attack which = marine value = 1 }
+			command = { type = hill_defense which = marine value = 1 }
+			command = { type = hill_attack which = cavalry value = 1 }
+			command = { type = hill_defense which = cavalry value = 1 }
+			command = { type = hill_attack which = militia value = 1 }
+			command = { type = hill_defense which = militia value = 1 }
+
+
+# Deactivation
+
+			command = { type = deactivate which = 4002 } # "root" tech
+			command = { type = deactivate which = 11512 } # GPW
+			command = { type = deactivate which = 4003 } # Locker tech
+
+			}
+		}
+		
+		application = { # Basic Synthetic Oil Plants
+			id = 4001
+			name = TECH_APP_INDUSTRY_1_1_NAME
+			desc = TECH_APP_INDUSTRY_1_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 16
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = industrial_multiplier which = coal_to_oil value = 0.25 }
+				command = { type = industrial_multiplier which = oil_to_rubber value = 0.25 }
+				command = { type = deactivate which = 4974 }
+			}
+		}
+		application = { # Agrarian Economy - economy balancing for 1-21 IC minors
+			id = 4974
+			name = CTECN_4974
+			desc = CTECD_4974
+			
+			required = {  }
+			chance = 90
+			cost = 1
+			time = 8000
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_multiplier which = oil_to_rubber value = 2.0 } 
+				command = { type = industrial_multiplier which = coal_to_oil value = 2.0 } 
+				command = { type = industrial_modifier which = supplies value = 50 }
+				command = { type = deactivate which = 4001 }
+				command = { type = deactivate which = 4301 }
+				command = { type = deactivate which = 4302 }
+				command = { type = deactivate which = 4303 }
+				command = { type = deactivate which = 4601 }
+				command = { type = deactivate which = 4701 }
+				command = { type = deactivate which = 4941 }
+				command = { type = deactivate which = 4973 }
+			}
+		}
+
+	} # Level 1
+	
+	level = { # 2 - Plastics
+		id = 4100
+		name = TECH_LEVEL_INDUSTRY_2_NAME 
+		desc = TECH_LEVEL_INDUSTRY_2_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Early Synthetic Materials
+			id = 4101
+			name = TECH_APP_INDUSTRY_2_1_NAME
+			desc = TECH_APP_INDUSTRY_2_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Caoutchouc
+			id = 4102
+			name = TECH_APP_INDUSTRY_2_2_NAME
+			desc = TECH_APP_INDUSTRY_2_2_DESC
+			
+			required = { 4101 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 1 }
+			}
+		}
+		application = { # Semi-modern Chemistry
+			id = 4103
+			name = CTECN_4103
+			desc = CTECD_4103
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 100
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				
+				command = { }
+                                
+			}
+		}
+             	application = { # Industrial Pasteurization
+			id = 4104
+			name = CTECN_4104
+			desc = CTECD_4104
+
+			required = { 4103 }
+			chance = 90
+			cost = 5
+			time = 100
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				
+				command = { type = supply_consumption which = infantry when = now value = -0.15 }
+				command = { type = supply_consumption which = motorized when = now value = -0.15 }
+				command = { type = supply_consumption which = mechanized when = now value = -0.15 }
+				command = { type = supply_consumption which = armor when = now value = -0.15 }
+				command = { type = supply_consumption which = cavalry when = now value = -0.15 }
+				command = { type = supply_consumption which = marine when = now value = -0.15 }
+				command = { type = supply_consumption which = paratrooper when = now value = -0.15 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = -0.15 }
+			
+			}
+		}
+	} # Level 2
+	
+	level = { # 3 - Catalytic Cracking
+		id = 4200
+		name = TECH_LEVEL_INDUSTRY_3_NAME 
+		desc = TECH_LEVEL_INDUSTRY_3_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Catalytic Cracking Plants
+			id = 4201
+			name = TECH_APP_INDUSTRY_3_1_NAME
+			desc = TECH_APP_INDUSTRY_3_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = supplies value = 10 }
+			}
+		}
+		application = { # Basic Synthetic Materials
+			id = 4202
+			name = TECH_APP_INDUSTRY_3_2_NAME
+			desc = TECH_APP_INDUSTRY_3_2_DESC
+			
+			required = { 4101 4201 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Vinyl Acetates
+			id = 4203
+			name = TECH_APP_INDUSTRY_3_3_NAME
+			desc = TECH_APP_INDUSTRY_3_3_DESC
+			
+			required = { 4202 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 1 }
+			}
+		}
+		application = { # Polyethylene
+			id = 4204
+			name = TECH_APP_INDUSTRY_3_4_NAME
+			desc = TECH_APP_INDUSTRY_3_4_DESC
+			
+			required = { 4202 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		
+	} # Level 3
+	
+	level = { # 4 - Polymerisation
+		id = 4300
+		name = TECH_LEVEL_INDUSTRY_4_NAME 
+		desc = TECH_LEVEL_INDUSTRY_4_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Butadiene Processing Plants
+			id = 4301
+			name = TECH_APP_INDUSTRY_4_1_NAME
+			desc = TECH_APP_INDUSTRY_4_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Styrene Processing Plants
+			id = 4302
+			name = TECH_APP_INDUSTRY_4_2_NAME
+			desc = TECH_APP_INDUSTRY_4_2_DESC
+			
+			required = { }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Synthetic Rubber Plants
+			id = 4303
+			name = TECH_APP_INDUSTRY_4_3_NAME
+			desc = TECH_APP_INDUSTRY_4_3_DESC
+			
+			required = { 4301 4302 }
+			chance = 90
+			cost = 16
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = industrial_multiplier which = oil_to_rubber value = 0.5 }
+			}
+		}
+	} # Level 4
+	
+	level = { # 5 - Assembly Mass Production
+		id = 4400
+		name = TECH_LEVEL_INDUSTRY_5_NAME 
+		desc = TECH_LEVEL_INDUSTRY_5_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Vehicle Assembly Construction Process
+			id = 4401
+			name = TECH_APP_INDUSTRY_5_1_NAME
+			desc = TECH_APP_INDUSTRY_5_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 20
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = build_cost which = armor when = now value = -1 } # balance change
+				# command = { type = build_cost which = motorized when = now value = -1 }
+				command = { type = build_time which = motorized when = now value = -12 }
+				# command = { type = build_cost which = mechanized when = now value = -1 }
+				command = { type = build_time which = mechanized when = now value = -10 }
+				command = { type = build_time which = armor when = now value = -30 }
+			}
+		}
+		application = { # Ship Assembly Construction Process
+			id = 4402
+			name = TECH_APP_INDUSTRY_5_2_NAME
+			desc = TECH_APP_INDUSTRY_5_2_DESC
+			
+			required = { }
+			chance = 90
+			cost = 20
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = build_cost which = battleship when = now value = -1 }
+				command = { type = build_cost which = cruiser when = now value = -1 }
+				# command = { type = build_cost which = destroyer when = now value = -1 }
+				# command = { type = build_cost which = submarine when = now value = -1 }
+				command = { type = build_cost which = carrier when = now value = -2 }
+				command = { type = build_time which = battleship when = now value = -90 }
+				command = { type = build_time which = cruiser when = now value = -30 }
+				command = { type = build_time which = destroyer when = now value = -15 }
+				command = { type = build_time which = submarine when = now value = -35 }
+				command = { type = build_time which = carrier when = now value = -90 }
+				command = { type = build_time which = transports when = now value = -15 }
+			}
+		}
+		application = { # Aircraft Assembly Construction Process
+			id = 4403
+			name = TECH_APP_INDUSTRY_5_3_NAME
+			desc = TECH_APP_INDUSTRY_5_3_DESC
+			
+			required = { }
+			chance = 90
+			cost = 20
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				# command = { type = build_cost which = fighter when = now value = -1 }
+				command = { type = build_cost which = strategic_bomber when = now value = -1 } # balance change
+				# command = { type = build_cost which = tactical_bomber when = now value = -1 }
+				# command = { type = build_cost which = torpedo_plane when = now value = -1 }
+				command = { type = build_cost which = transport_plane when = now value = -2 }
+				# command = { type = build_cost which = naval_bomber when = now value = -1 }
+				# command = { type = build_cost which = dive_bomber when = now value = -1 }
+				command = { type = build_time which = fighter when = now value = -30 }
+				command = { type = build_time which = strategic_bomber when = now value = -30 }
+				command = { type = build_time which = tactical_bomber when = now value = -30 }
+				command = { type = build_time which = torpedo_plane when = now value = -30 }
+				command = { type = build_time which = transport_plane when = now value = -30 }
+				command = { type = build_time which = naval_bomber when = now value = -30 }
+				command = { type = build_time which = dive_bomber when = now value = -30 }
+			}
+		}
+		application = { # Rocket Assembly Construction Process
+			id = 4404
+			name = TECH_APP_INDUSTRY_5_4_NAME
+			desc = TECH_APP_INDUSTRY_5_4_DESC
+			
+			required = { 7500 }  # Flying Bomb Development 
+			chance = 90
+			cost = 20
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = build_cost which = flying_rocket when = now value = -1 }
+				command = { type = build_time which = flying_rocket when = now value = -15 }
+				command = { type = build_cost which = flying_bomb when = now value = -1 }
+				command = { type = build_time which = flying_bomb when = now value = -15 }
+			}
+		}
+		application = { # Small Arms Assembly Construction Process
+			id = 4405
+			name = CTECN_4405
+			desc = CTECD_4405
+			
+			required = { }
+			chance = 90
+			cost = 20
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = build_time which = infantry when = now value = -10 }
+				command = { type = build_time which = cavalry when = now value = -10 }
+				command = { type = build_time which = bergsjaeger when = now value = -10 }
+				command = { type = build_time which = marine when = now value = -15 }
+				# command = { type = build_cost which = paratrooper when = now value = -1 }
+				command = { type = build_time which = paratrooper when = now value = -10 }
+				command = { type = build_time which = motorized when = now value = -8 }
+				command = { type = build_time which = mechanized when = now value = -5 }
+			}
+		}
+
+	application = { # Systemized Worker Training
+			id = 4406
+			name = CTECN_4406
+			desc = CTECD_4406
+			
+			required = { }
+			chance = 90
+			cost = 10
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 3 }
+				}
+		}
+	application = { # Improved metallurgy
+			id = 4407
+			name = CTECN_4407 # Improved Metallurgy
+			desc = CTECD_4407 # As the complexity and weight of armaments and vehicles increased new industrial methods had to be found to work metal with higher precision and quality.  Without such improvement tank turrets turned too slowly (KV-2), armor-piercing shot shattered on contact (early war Russian tank ammo) and artillery tubes had to be exchanged after just one hundred shots were fired (Italian battleship guns).
+			
+			required = { }
+			chance = 90
+			cost = 10
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = supplies value = 2 }
+				}
+		}
+
+
+			application = { # Total War tech
+			id = 4005
+			name = CTECN_4005
+			desc = CTECD_4005
+			
+			required = { 4401 4403 4405 }
+			chance = 90
+			cost = 1
+			time = 9000
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+
+			command = { type = industrial_modifier which = supplies value = 3 } 
+	
+			command = { type = build_time which = armor 		value = -20 } 
+			command = { type = build_time which = motorized 	value = -15 } 
+			command = { type = build_time which = mechanized 	value = -15 } 
+			command = { type = build_time which = infantry 		value = 1 } 
+			command = { type = build_time which = cavalry 		value = 1 } 
+			command = { type = build_time which = paratrooper 	value = 2 } 
+			command = { type = build_time which = marine 		value = 2 } 
+			command = { type = build_time which = bergsjaeger 	value = 2 }
+
+			command = { type = build_time which = fighter 		value = -15 } 
+			command = { type = build_time which = torpedo_plane 	value = -10 }	
+			command = { type = build_time which = tactical_bomber 	value = -20 } 	
+	 		command = { type = build_time which = dive_bomber 	value = -15 } 
+			command = { type = build_time which = naval_bomber 	value = -20 } 	
+			command = { type = build_time which = strategic_bomber 	value = -20 }
+
+			command = { type = max_organization which = motorized 	when = on_upgrade value = -2 }
+			command = { type = max_organization which = mechanized 	when = on_upgrade value = -2 }
+			command = { type = max_organization which = armor 	when = on_upgrade value = -2 }
+
+			}
+		}
+	} # Level 5
+	
+	level = { # 6 - Improved Plastics
+		id = 4500
+		name = TECH_LEVEL_INDUSTRY_6_NAME 
+		desc = TECH_LEVEL_INDUSTRY_6_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Improved Synthetic Materials
+			id = 4501
+			name = TECH_APP_INDUSTRY_6_1_NAME
+			desc = TECH_APP_INDUSTRY_6_1_DESC
+			
+			required = { 4202 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Nylon
+			id = 4502
+			name = TECH_APP_INDUSTRY_6_2_NAME
+			desc = TECH_APP_INDUSTRY_6_2_DESC
+			
+			required = { 4501 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Polyurethane
+			id = 4503
+			name = TECH_APP_INDUSTRY_6_3_NAME
+			desc = TECH_APP_INDUSTRY_6_3_DESC
+			
+			required = { 4501 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 5 }
+			}
+		}
+	} # Level 6
+	
+	level = { # 7 - Hydroforming
+		id = 4600
+		name = TECH_LEVEL_INDUSTRY_7_NAME 
+		desc = TECH_LEVEL_INDUSTRY_7_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Improved Synthetic Oil Plants
+			id = 4601
+			name = TECH_APP_INDUSTRY_7_1_NAME
+			desc = TECH_APP_INDUSTRY_7_1_DESC
+			
+			required = { 4001 }
+			chance = 90
+			cost = 16
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = industrial_multiplier which = coal_to_oil value = 0.5 }
+			}
+		}
+	} # Level 7
+	
+	level = { # 8 - Catalytic Polymerisation
+		id = 4700
+		name = TECH_LEVEL_INDUSTRY_8_NAME 
+		desc = TECH_LEVEL_INDUSTRY_8_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Improved Synthetic Rubber Plants
+			id = 4701
+			name = TECH_APP_INDUSTRY_8_1_NAME
+			desc = TECH_APP_INDUSTRY_8_1_DESC
+			
+			required = { 4303 }
+			chance = 90
+			cost = 16
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = industrial_multiplier which = oil_to_rubber value = 0.75 }
+			}
+		}
+	} # Level 8
+	
+	level = { # 9 - Modular Assembly Construction
+		id = 4800
+		name = TECH_LEVEL_INDUSTRY_9_NAME 
+		desc = TECH_LEVEL_INDUSTRY_9_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+
+
+		application = { # Quality Control - new
+			id = 4803
+			name = CTECN_4803
+			desc = CTECD_4803
+			
+			required = { }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 3 } 
+			}
+		}
+
+		application = { # Advanced Welding Techniques
+			id = 4801
+			name = TECH_APP_INDUSTRY_9_1_NAME
+			desc = TECH_APP_INDUSTRY_9_1_DESC
+			
+			required = { 4803 } # Quality Control added
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+
+		application = { # Modular Assembly Ship Production
+			id = 4802
+			name = TECH_APP_INDUSTRY_9_2_NAME
+			desc = TECH_APP_INDUSTRY_9_2_DESC
+			
+			required = { 4402 4801 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = build_cost which = transports when = now value = -1 }
+				command = { type = build_time which = transports when = now value = -30 }
+			}
+		}
+	application = { # Non-traditional labor pools
+			id = 4804
+			name = CTECN_4804
+			desc = CTECD_4804
+			
+			required = { 4406  4803 }
+			chance = 90
+			cost = 10
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 4 }
+				command = { type = manpowerpool value = 30 } # Base amount for small to medium economies
+				}
+		}
+	application = { # Advanced metallurgy
+			id = 4805
+			name = CTECN_4805 # Advanced Metallurgy
+			desc = CTECD_4805 # High performance turbojet engines, lightweight ship superstructures, rocket fuel pumps and nuclear engineering all required new materials and higher standards of manufacturing.
+			
+			required = { 4407 }
+			chance = 90
+			cost = 12
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = supplies value = 2 }
+				}
+		}
+
+	} # Level 9
+	
+	level = { # 10 - Fluid Catalytic Cracking
+		id = 4900
+		name = TECH_LEVEL_INDUSTRY_10_NAME 
+		desc = TECH_LEVEL_INDUSTRY_10_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Fluid Catalytic Cracking Plants
+			id = 4901
+			name = TECH_APP_INDUSTRY_10_1_NAME
+			desc = TECH_APP_INDUSTRY_10_1_DESC
+			
+			required = { 4201 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = supplies value = 10 }
+			}
+		}
+		application = { # Advanced Synthetic Materials
+			id = 4902
+			name = TECH_APP_INDUSTRY_10_2_NAME
+			desc = TECH_APP_INDUSTRY_10_2_DESC
+			
+			required = { 4501 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Teflon
+			id = 4903
+			name = TECH_APP_INDUSTRY_10_3_NAME
+			desc = TECH_APP_INDUSTRY_10_3_DESC
+			
+			required = { 4902 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Silicone
+			id = 4904
+			name = TECH_APP_INDUSTRY_10_4_NAME
+			desc = TECH_APP_INDUSTRY_10_4_DESC
+			
+			required = { 4902 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+	} # Level 10
+	
+	level = { # 11 - Iso-Octane and Alkylate Process
+		id = 4940
+		name = TECH_LEVEL_INDUSTRY_11_NAME 
+		desc = TECH_LEVEL_INDUSTRY_11_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Advanced Synthetic Oil Plants
+			id = 4941
+			name = TECH_APP_INDUSTRY_11_1_NAME
+			desc = TECH_APP_INDUSTRY_11_1_DESC
+			
+			required = { 4601 }
+			chance = 90
+			cost = 16
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = industrial_multiplier which = coal_to_oil value = 0.9 } # from 1
+			}
+		}
+		application = { 
+			id = 4942
+			name = CTECN_4942
+			desc = CTECD_4942
+			
+			required = { 4803 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+	application = { # Semi-Modern metallurgy
+			id = 4943
+			name = CTECN_4943 # Semi-Modern Metallurgy
+			desc = CTECD_4943 # Semi-conductor manufacturing, jet engines, nuclear power plants and other advanced technology required unprecedented precision and quality in the materials used.  
+			
+			required = { 4805 }
+			chance = 90
+			cost = 20
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = supplies value = 2 }
+				}
+		
+		}
+	} # Level 11
+	
+	level = { # 12 - Cold Polymerisation
+		id = 4970
+		name = TECH_LEVEL_INDUSTRY_12_NAME 
+		desc = TECH_LEVEL_INDUSTRY_12_DESC 
+				
+		cost = 12
+		time = 360
+		neg_offset = 50
+		pos_offset = 100
+		
+		application = { # Very Advanced Synthetic Materials
+			id = 4971
+			name = TECH_APP_INDUSTRY_12_1_NAME
+			desc = TECH_APP_INDUSTRY_12_1_DESC
+			
+			required = { 4902 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Polypropylene
+			id = 4972
+			name = TECH_APP_INDUSTRY_12_2_NAME
+			desc = TECH_APP_INDUSTRY_12_2_DESC
+			
+			required = { 4971 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_modifier which = total value = 15 }
+			}
+		}
+		application = { # Advanced Synthetic Rubber Plants
+			id = 4973
+			name = TECH_APP_INDUSTRY_12_3_NAME
+			desc = TECH_APP_INDUSTRY_12_3_DESC
+			
+			required = { 4701 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = industrial_multiplier which = oil_to_rubber value = 0.9 } # from 1
+			}
+		}
+		application = { 
+			id = 4975
+			name = CTECN_4975
+			desc = CTECD_4975
+			
+			required = { 4942 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { 
+			id = 4976
+			name = CTECN_4976
+			desc = CTECD_4976
+			
+			required = { 4975 }
+			chance = 90
+			cost = 12
+			time = 210
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+
+	} # Level 12
+}

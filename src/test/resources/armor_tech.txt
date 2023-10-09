@@ -1,0 +1,2434 @@
+##############################
+# The Armor Technology Group #
+##############################
+
+technology = {
+	id = 2
+	category = armor
+	name = TECH_ARMOR_NAME #Localized name
+	desc = TECH_ARMOR_DESC #Localized description
+	
+	level = { # 1 - Post-Great War Tanks
+		id = 2000
+		name = CTECN_2000
+		desc = TECH_LEVEL_ARMOR_1_DESC 
+		
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Early Gear
+			id = 2001
+			name = TECH_APP_ARMOR_1_1_NAME
+			desc = TECH_APP_ARMOR_1_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Early Suspension
+			id = 2002
+			name = TECH_APP_ARMOR_1_2_NAME
+			desc = TECH_APP_ARMOR_1_2_DESC
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Early Engine
+			id = 2003
+			name = TECH_APP_ARMOR_1_3_NAME
+			desc = TECH_APP_ARMOR_1_3_DESC
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Early Halftrack Troop Carrier
+			id = 2004
+			name = TECH_APP_ARMOR_1_4_NAME
+			desc = TECH_APP_ARMOR_1_4_DESC
+			
+			required = { }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = mechanized when = now value = 1 }
+				command = { type = ground_defense which = mechanized when = now value = 1 }
+			}
+		}
+		application = { # Early Tank Prototype Tests
+			id = 2005
+			name = TECH_APP_ARMOR_1_5_NAME
+			desc = TECH_APP_ARMOR_1_5_DESC
+			
+			required = { 2001 2002 2003 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Great War Tank
+			id = 2006
+			name = CTECN_2006
+			desc = CTECD_2006
+			
+			required = { 2005 }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 1 }
+			}
+		}
+	} # Level 1
+	
+	level = { # 2 - Interwar Tanks
+		id = 2100
+		name = CTECN_2100
+		desc = CTECD_2100
+		
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Basic Gear
+			id = 2201
+			name = TECH_APP_ARMOR_3_1_NAME
+			desc = TECH_APP_ARMOR_3_1_DESC
+			
+			required = { 2001 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Suspension
+			id = 2202
+			name = TECH_APP_ARMOR_3_2_NAME
+			desc = TECH_APP_ARMOR_3_2_DESC
+			
+			required = { 2002 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Engine
+			id = 2203
+			name = TECH_APP_ARMOR_3_3_NAME
+			desc = TECH_APP_ARMOR_3_3_DESC
+			
+			required = { 2003 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Optical Sights
+			id = 2101
+			name = TECH_APP_ARMOR_2_1_NAME
+			desc = TECH_APP_ARMOR_2_1_DESC
+			
+			required = { 2005 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Christie Suspension
+			id = 2250
+			name = CTECN_2250
+			desc = CTECD_2250
+			
+			required = { 2201 2202 }
+			chance = 90
+			cost = 7
+			time = 60
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = armor when = on_upgrade value = 2 }
+				command = { type = build_cost which = armor when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = armor when = on_upgrade value = 0.1 }
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 0.1 }
+				command = { type = deactivate which = 2252 } # Vickers
+			}
+		}
+		application = { # Vickers Suspension
+			id = 2252
+			name = CTECN_2252
+			desc = CTECD_2252
+			
+			required = { 2201 2202 }
+			chance = 90
+			cost = 7
+			time = 60
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = armor when = on_upgrade value = -2 }
+				command = { type = build_cost which = armor when = on_upgrade value = -1 }
+				command = { type = fuel_consumption which = armor when = on_upgrade value = -0.1 }
+				command = { type = deactivate which = 2250 } # Christie
+			}
+		}
+		application = { # Interwar Armoured Car
+			id = 2943
+			name = CTECN_2943
+			desc = CTECD_2943
+			
+			required = { 2203 14973 } # Basic Engine, .50 cal MG
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = army_detection which = us value = 2 }
+				command = { type = max_organization which = infantry when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = infantry when = on_upgrade value = 0.1 }
+				command = { type = max_organization which = cavalry when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = cavalry when = on_upgrade value = 0.1 }
+				command = { type = max_organization which = motorized when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = motorized when = on_upgrade value = 0.1 }
+				command = { type = max_organization which = mechanized when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = mechanized when = on_upgrade value = 0.1 }
+			}
+		}
+		application = { # Armored Car Brigade
+			id = 2991
+			name = CTECN_2991
+			desc = CTECD_2991
+			
+			required = { 2943 } 
+			chance = 90
+			cost = 6
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = desert_attack which = infantry value = 10 }
+				command = { type = desert_defense which = infantry value = 20 }
+				command = { type = desert_attack which = motorized value = 10 }
+				command = { type = desert_defense which = motorized value = 20 }
+				command = { type = soft_attack which = infantry value = 0.500 }
+				command = { type = ground_defense which = infantry when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = infantry when = on_upgrade value = 0.1 }
+				command = { type = soft_attack which = motorized value = 0.500 }
+				command = { type = ground_defense which = motorized when = on_upgrade value = 1 }
+				command = { type = deactivate which = 2992 }
+			}
+		}
+		application = { # Armored Car Brigade
+			id = 2992
+			name = CTECN_2992
+			desc = CTECD_2992
+			
+			required = { 2943 14010 } 
+			chance = 90
+			cost = 8
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = desert_attack which = infantry value = 10 }
+				command = { type = desert_defense which = infantry value = 20 }
+				command = { type = desert_attack which = motorized value = 10 }
+				command = { type = desert_defense which = motorized value = 20 }
+				command = { type = soft_attack which = infantry value = 0.500 }
+				command = { type = hard_attack which = infantry value = 0.500 }
+				command = { type = ground_defense which = infantry when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = infantry when = on_upgrade value = 0.1 }
+				command = { type = soft_attack which = motorized value = 0.500 }
+				command = { type = hard_attack which = motorized value = 0.500 }
+				command = { type = ground_defense which = motorized when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = motorized when = on_upgrade value = 0.1 }
+				command = { type = deactivate which = 2991 }
+			}
+		}
+		application = { # Tankette Prototype
+			id = 2986
+			name = CTECN_2986
+			desc = CTECD_2986
+			
+			required = { 2201 2202 2203 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				
+			}
+		}
+		application = { # Tankette (.30 MG)
+			id = 2987
+			name = CTECN_2987
+			desc = CTECD_2987
+			
+			required = { 2986 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = army_detection which = us value = 2 }
+				command = { type = new_model which = armor value = 2 }
+				command = { type = deactivate which = 2988 }
+			}
+		}
+		application = { # Tankette (.50 MG)
+			id = 2988
+			name = CTECN_2988
+			desc = CTECD_2988
+			
+			required = { 2986 14973 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = army_detection which = us value = 2 }
+				command = { type = new_model which = armor value = 3 }
+				command = { type = deactivate which = 2987 }
+			}
+		}
+		application = { # Infantry Support Tank Prototype
+			id = 2985
+			name = CTECN_2985
+			desc = CTECD_2985
+			
+			required = { 2201 2202 2203 2101 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Inf Support Tank battalion
+			id = 2993
+			name = CTECN_2993
+			desc = CTECD_2993
+			
+			required = { 2985 14207 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = new_model which = armor value = 4 }
+				command = { type = soft_attack which = infantry when = on_upgrade value = 1 } # new
+				command = { type = ground_defense which = infantry when = on_upgrade value = 1 } # new
+				command = { type = build_time which = infantry when = on_upgrade value = 10 } # new
+				command = { type = build_cost which = infantry when = on_upgrade value = 1 } # new
+				command = { type = supply_consumption which = infantry when = on_upgrade value = 0.1 } # new
+			}
+		}
+	} # Level 2
+	
+	level = { # 3 - Amphibious Tanks
+		id = 2200
+		name = TECH_LEVEL_ARMOR_3_NAME 
+		desc = TECH_LEVEL_ARMOR_3_DESC 
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+	
+		application = { # Basic Wading Equipment
+			id = 2204
+			name = TECH_APP_ARMOR_3_4_NAME
+			desc = TECH_APP_ARMOR_3_4_DESC
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = river_attack which = mechanized value = 5 } # -5
+				command = { type = river_attack which = armor value = 5 } # -5
+			}
+		}
+		application = { # Improved Wading Equipment
+			id = 2502
+			name = TECH_APP_ARMOR_6_2_NAME
+			desc = TECH_APP_ARMOR_6_2_DESC
+			
+			required = { 2204 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = river_attack which = mechanized value = 5 } # -5
+				command = { type = river_attack which = armor value = 5 } # -5
+			}
+		}
+		application = { # Advanced Wading Equipment
+			id = 2802
+			name = TECH_APP_ARMOR_9_2_NAME
+			desc = TECH_APP_ARMOR_9_2_DESC
+			
+			required = { 2502 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = river_attack which = mechanized value = 5 } # -5
+				command = { type = river_attack which = armor value = 5 } # -5
+			}
+		}
+		application = { # Basic Amphibious Tank
+			id = 2205
+			name = TECH_APP_ARMOR_3_5_NAME
+			desc = TECH_APP_ARMOR_3_5_DESC
+			
+			required = { 2005 2204 }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = mechanized value = 5 }
+				command = { type = shore_attack which = armor value = 5 }
+			}
+		}
+		application = { # Basic Amphibious Assault Vehicle
+			id = 2206
+			name = TECH_APP_ARMOR_3_6_NAME
+			desc = TECH_APP_ARMOR_3_6_DESC
+			
+			required = { 2005 2204 13214 6040 } # Naval training added
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = marine when = now value = 1 }
+				command = { type = hard_attack which = marine when = now value = 1 }
+				command = { type = ground_defense which = marine when = now value = 1 }
+			}
+		}
+		application = { # Improved Amphibious Tank
+			id = 2403
+			name = TECH_APP_ARMOR_5_3_NAME
+			desc = TECH_APP_ARMOR_5_3_DESC
+			
+			required = { 2205 11300 }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = armor value = 5 }
+			}
+		}
+		application = { # Improved Amphibious Assault Vehicle
+			id = 2404
+			name = TECH_APP_ARMOR_5_4_NAME
+			desc = TECH_APP_ARMOR_5_4_DESC
+			
+			required = { 2206 }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = marine when = now value = 1 }
+				command = { type = hard_attack which = marine when = now value = 1 }
+			}
+		}
+		application = { # Advanced Amphibious Tank
+			id = 2605
+			name = TECH_APP_ARMOR_7_5_NAME
+			desc = TECH_APP_ARMOR_7_5_DESC
+			
+			required = { 2403 11400 }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = armor value = 5 }
+			}
+		}
+		application = { # Advanced Amphibious Assault Vehicle
+			id = 2606
+			name = TECH_APP_ARMOR_7_6_NAME
+			desc = TECH_APP_ARMOR_7_6_DESC
+			
+			required = { 2404 }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = marine when = now value = 2 }
+			}
+		}
+		application = { # Submersible Tank
+			id = 2207
+			name = TECH_APP_ARMOR_3_7_NAME
+			desc = TECH_APP_ARMOR_3_7_DESC
+			
+			required = { 2205 11405 } # Land doctrine as a must added
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = mechanized value = 5 }
+				command = { type = shore_attack which = armor value = 5 }
+			}
+		}
+	} # Level 3
+	
+	level = { # 4 - Basic Tanks
+		id = 2300
+		name = CTECN_2300
+		desc = CTECD_2300
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Improved Gear
+			id = 2301
+			name = TECH_APP_ARMOR_4_1_NAME
+			desc = TECH_APP_ARMOR_4_1_DESC
+			
+			required = { 2201 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Suspension
+			id = 2302
+			name = TECH_APP_ARMOR_4_2_NAME
+			desc = TECH_APP_ARMOR_4_2_DESC
+			
+			required = { 2202 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Engine
+			id = 2303
+			name = TECH_APP_ARMOR_4_3_NAME
+			desc = TECH_APP_ARMOR_4_3_DESC
+			
+			required = { 2203 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Airborne Tank
+			id = 2304
+			name = TECH_APP_ARMOR_4_4_NAME
+			desc = TECH_APP_ARMOR_4_4_DESC
+			
+			required = { 2103 12203 }
+			chance = 90
+			cost = 5
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = paratrooper when = now value = 1 }
+				command = { type = hard_attack which = paratrooper when = now value = 1 }
+			}
+		}
+		application = { # Desert Operations Equipment
+			id = 2208
+			name = TECH_APP_ARMOR_3_8_NAME
+			desc = TECH_APP_ARMOR_3_8_DESC
+			
+			required = { 11004 } # Land doctrine added
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = desert_move which = mechanized value = 10 }
+				command = { type = desert_move which = armor value = 10 }
+			}
+		}
+		application = { # Cast Hull
+			id = 2352
+			name = CTECN_2352
+			desc = CTECD_2352
+			
+			required = { 2100 }
+			chance = 90
+			cost = 7
+			time = 60
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 2 }
+				command = { type = build_cost which = armor when = on_upgrade value = 1 }
+				command = { type = build_time which = armor when = on_upgrade value = 10 }
+				command = { type = deactivate which = 2354 } # Bolted Hull
+			}
+		}
+		application = { # Rivetted Hull
+			id = 2354
+			name = CTECN_2354
+			desc = CTECD_2354
+			
+			required = { 2100 }
+			chance = 90
+			cost = 7
+			time = 60
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = -2 }
+				command = { type = build_cost which = armor when = on_upgrade value = -1 }
+				command = { type = build_time which = armor when = on_upgrade value = -10 }
+				command = { type = deactivate which = 2352 } # Cast Hull
+			}
+		}
+		application = { # .30 Cal AAMG
+			id = 2956
+			name = CTECN_2956
+			desc = CTECD_2956
+			required = { 1975 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = air_defense which = armor when = on_upgrade value = 1 }
+				command = { type = soft_attack which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Halftrack Troop Carrier
+			id = 2102
+			name = TECH_APP_ARMOR_2_2_NAME
+			desc = TECH_APP_ARMOR_2_2_DESC
+			
+			required = { 2004 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = mechanized when = now value = 1 }
+				command = { type = soft_attack which = mechanized when = now value = 1 }
+				command = { type = ground_defense which = mechanized when = now value = 1 }
+			}
+		}
+		application = { # Basic Light Tank Prototype Tests
+			id = 2103
+			name = TECH_APP_ARMOR_2_3_NAME
+			desc = TECH_APP_ARMOR_2_3_DESC
+			
+			required = { 2005 2101 2201 2202 2203 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Light Tank (MG)
+			id = 2104
+			name = TECH_APP_ARMOR_2_4_NAME
+			desc = TECH_APP_ARMOR_2_4_DESC
+			
+			required = { 2103 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 5 }
+			}
+		}
+		application = { # Basic Light Tank (20mm+)
+			id = 2105
+			name = CTECN_2105
+			desc = TECH_APP_ARMOR_2_5_DESC
+			
+			required = { 2103 14010 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 6 }
+				command = { type = deactivate which = 2104 }
+				command = { type = deactivate which = 2106 }
+				command = { type = deactivate which = 2107 }
+			}
+		}
+		application = { # Basic Light Tank (37mm+)
+			id = 2106
+			name = CTECN_2106
+			desc = CTECD_2106
+			
+			required = { 2103 14011 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 7 }
+				command = { type = deactivate which = 2104 }
+				command = { type = deactivate which = 2105 }
+				command = { type = deactivate which = 2107 }
+			}
+		}
+		application = { # Basic Light Tank (40mm+)
+			id = 2107
+			name = CTECN_2107
+			desc = TECH_APP_ARMOR_2_7_DESC
+			
+			required = { 2103 14105 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 8 }
+				command = { type = deactivate which = 2104 }
+				command = { type = deactivate which = 2105 }
+				command = { type = deactivate which = 2106 }
+			}
+		}
+		application = { # Light Assault Gun (100mm+)
+			id = 2305
+			name = CTECN_2305
+			desc = CTECD_2305
+			
+			required = { 2103 14102 11203 } # add Combined Arms Warfare Doctrine
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Light Assault Gun (120mm+)
+			id = 2350
+			name = CTECN_2350
+			desc = CTECD_2350
+			
+			required = { 2103 14153 11203 } # add Combined Arms Warfare Doctrine
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Light Assault Gun (150mm+)
+			id = 2351
+			name = CTECN_2351
+			desc = CTECD_2351
+			required = { 2103 14601 11203 } # add Combined Arms Warfare Doctrine
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Light Tank Destroyer (37mm+)
+			id = 2307
+			name = CTECN_2307
+			desc = CTECD_2307
+			
+			required = { 2103 14008 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Light Tank Destroyer (40mm+)
+			id = 2308
+			name = CTECN_2308
+			desc = TECH_APP_ARMOR_4_8_DESC
+			
+			required = { 2103 14009 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Light Tank Destroyer (50mm+)
+			id = 2406
+			name = CTECN_2406
+			desc = TECH_APP_ARMOR_5_6_DESC
+			
+			required = { 2103 14351 11401 } # added Elastic Defense Doctrine
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Medium Tank Prototype Tests
+			id = 2314
+			name = TECH_APP_ARMOR_4_14_NAME
+			desc = TECH_APP_ARMOR_4_14_DESC
+		
+			required = { 2301 2302 2303 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Medium Tank (MG)
+			id = 2315
+			name = TECH_APP_ARMOR_4_15_NAME
+			desc = CTECD_2315
+			
+			required = { 2314 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 12 }
+			}
+		}
+		application = { # Basic Medium Tank (37mm+)
+			id = 2316
+			name = CTECN_2316
+			desc = CTECD_2316
+			
+			required = { 2314 14011 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 13 }
+				command = { type = deactivate which = 2315 }
+				command = { type = deactivate which = 2317 }
+				command = { type = deactivate which = 2318 }
+				command = { type = deactivate which = 2319 }
+			}
+		}
+		application = { # Basic Medium Tank (40mm+)
+			id = 2317
+			name = CTECN_2317
+			desc = TECH_APP_ARMOR_4_17_DESC
+			
+			required = { 2314 14105 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 14 }
+				command = { type = deactivate which = 2315 }
+				command = { type = deactivate which = 2316 }
+				command = { type = deactivate which = 2318 }
+				command = { type = deactivate which = 2319 }
+			}
+		}
+		application = { # Basic Medium Tank (50mm+)
+			id = 2318
+			name = CTECN_2318
+			desc = TECH_APP_ARMOR_4_18_DESC
+			
+			required = { 2314 14206 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 15 }
+				command = { type = deactivate which = 2315 }
+				command = { type = deactivate which = 2316 }
+				command = { type = deactivate which = 2317 }
+				command = { type = deactivate which = 2319 }
+			}
+		}
+		application = { # Basic Medium Tank (75mm+ CS)
+			id = 2319
+			name = CTECN_2319
+			desc = CTECD_2319
+			
+			required = { 2314 14207 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 16 }
+				command = { type = deactivate which = 2315 }
+				command = { type = deactivate which = 2316 }
+				command = { type = deactivate which = 2317 }
+				command = { type = deactivate which = 2318 }
+			}
+		}
+		application = { # Basic Medium Tank (Command)
+			id = 2355
+			name = CTECN_2355
+			desc = CTECD_2355
+			
+			required = { 2314 3007 11518 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = armor when = now value = 5 }
+			}
+		}
+		application = { # 3+ Man Turret
+			id = 2356
+			name = CTECN_2356
+			desc = CTECD_2356
+			
+			required = { 2314 11518 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = armor when = now value = 5 }
+			}
+		}
+		application = { # Flame Tank
+			id = 2989
+			name = CTECN_2989
+			desc = CTECD_2989
+			
+			required = { 1202 2314 } # Flamethrower, Basic Medium prot.
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+#				command = { type = urban_attack which = armor value = 3 }
+				command = { type = jungle_attack which = armor value = 5 }
+#				command = { type = urban_attack which = mechanized value = 3 }
+				command = { type = jungle_attack which = mechanized value = 5 }
+#				command = { type = urban_attack which = marine value = 3 }
+				command = { type = jungle_attack which = marine value = 7 }
+				command = { type = ground_defense which = armor when = now value = 0.5 }
+				command = { type = ground_defense which = mechanized when = now value = 0.5 }
+				command = { type = ground_defense which = marine when = now value = 0.5 }
+			}
+		}
+		application = { # Medium Assault Gun (75mm+ CS)
+			id = 2306
+			name = CTECN_2306
+			desc = CTECD_2306
+			
+			required = { 2314 14207 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = soft_attack which = motorized when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Medium Assault Gun (75mm+ Medium)
+			id = 2998
+			name = CTECN_2998
+			desc = CTECD_2998
+			
+			required = { 2314 2306 14976 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = hard_attack which = mechanized when = on_upgrade value = 2 }
+				command = { type = soft_attack which = motorized when = on_upgrade value = 1 }
+				command = { type = hard_attack which = motorized when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Basic Heavy Tank Prototype Tests
+			id = 2612
+			name = TECH_APP_ARMOR_7_12_NAME
+			desc = TECH_APP_ARMOR_7_12_DESC
+			
+			required = { 2301 2302 2303 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Heavy Tank Battalion
+			id = 2703
+			name = CTECN_2703
+			desc = CTECD_2703
+			
+			required = { 2612 14207 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+#				command = { type = fort_attack which = armor value = 5 } # new
+				command = { type = soft_attack which = armor when = on_upgrade value = 2 } # new
+				command = { type = ground_defense which = armor when = on_upgrade value = 2 } # new
+				command = { type = speed which = armor when = on_upgrade value = -1 } # new
+				command = { type = build_time which = armor when = on_upgrade value = 10 } # new
+				command = { type = build_cost which = armor when = on_upgrade value = 1 } # new
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 0.2 } # new
+				command = { type = supply_consumption which = armor when = on_upgrade value = 0.1 } # new
+			}
+		}
+	} # Level 4
+	
+	level = { # 5 - Improved Tanks
+		id = 2400
+		name = CTECN_2400
+		desc = CTECD_2400
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # .50 Cal AAMG
+			id = 2955
+			name = CTECN_2955
+			desc = CTECD_2955
+			required = { 14973 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = air_defense which = armor when = on_upgrade value = 1 }
+				command = { type = soft_attack which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Sloped Armor Application
+			id = 2990
+			name = CTECN_2990
+			desc = CTECD_2990
+			required = { 2400 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 3 }
+			}
+		}
+		application = { # Improved Optical Sights
+			id = 2401
+			name = TECH_APP_ARMOR_5_1_NAME
+			desc = TECH_APP_ARMOR_5_1_DESC
+			
+			required = { 2101 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = hard_attack which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Vehicle Radio Intercoms
+			id = 2402
+			name = TECH_APP_ARMOR_5_2_NAME
+			desc = TECH_APP_ARMOR_5_2_DESC
+			
+			required = { 11518 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved Armoured Car Battalion
+			id = 2935
+			name = CTECN_2935
+			desc = CTECD_2935
+			
+			required = { 2943 2603 14974 } # Interwar batt, Adv.Engine, 20mm cannon
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = army_detection which = us value = 2 }
+				command = { type = max_organization which = cavalry when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = cavalry when = on_upgrade value = 0.1 }
+				command = { type = max_organization which = armor when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = armor when = on_upgrade value = 0.1 }
+				command = { type = max_organization which = motorized when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = motorized when = on_upgrade value = 0.1 }
+				command = { type = max_organization which = mechanized when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = mechanized when = on_upgrade value = 0.1 }
+			}
+		}		
+		application = { # Improved Halftrack Troop Carrier
+			id = 2405
+			name = TECH_APP_ARMOR_5_5_NAME
+			desc = TECH_APP_ARMOR_5_5_DESC
+			
+			required = { 2102 11300 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = mechanized when = now value = 1 }
+				command = { type = soft_attack which = mechanized when = now value = 1 }
+				command = { type = ground_defense which = mechanized when = now value = 1 }
+			}
+		}
+		application = { # Improved Light Tank Prototype Tests
+			id = 2209
+			name = TECH_APP_ARMOR_3_9_NAME
+			desc = TECH_APP_ARMOR_3_9_DESC
+			
+			required = { 2201 2202 2103 2203 11300 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Light Tank (20mm+)
+			id = 2210
+			name = CTECN_2210
+			desc = TECH_APP_ARMOR_3_10_DESC
+			
+			required = { 2209 14010 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 9 }
+				command = { type = deactivate which = 2211 }
+				command = { type = deactivate which = 2212 }
+			}
+		}
+		application = { # Improved Light Tank (37mm+)
+			id = 2211
+			name = CTECN_2211
+			desc = CTECD_2211
+			
+			required = { 2209 14011 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 10 }
+				command = { type = deactivate which = 2210 }
+				command = { type = deactivate which = 2212 }
+			}
+		}
+		application = { # Improved Light Tank (40mm+)
+			id = 2212
+			name = CTECN_2212
+			desc = TECH_APP_ARMOR_3_12_DESC
+			
+			required = { 2209 14105 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 11 }
+				command = { type = deactivate which = 2210 }
+				command = { type = deactivate which = 2211 }
+			}
+		}
+		application = { # Improved Medium Tank Prototype Tests
+			id = 2407
+			name = TECH_APP_ARMOR_5_7_NAME
+			desc = TECH_APP_ARMOR_5_7_DESC
+			
+			required = { 2301 2302 2303 2314 11300 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Medium Tank (40mm+)
+			id = 2408
+			name = CTECN_2408
+			desc = TECH_APP_ARMOR_5_8_DESC
+			
+			required = { 2407 14105 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 17 }
+				command = { type = deactivate which = 2409 }
+				command = { type = deactivate which = 2410 }
+				command = { type = deactivate which = 2981 }
+				command = { type = deactivate which = 2503 }
+			}
+		}
+		application = { # Improved Medium Tank (50mm+)
+			id = 2409
+			name = CTECN_2409
+			desc = TECH_APP_ARMOR_5_9_DESC
+			
+			required = { 2407 14206 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 18 }
+				command = { type = deactivate which = 2408 }
+				command = { type = deactivate which = 2410 }
+				command = { type = deactivate which = 2981 }
+				command = { type = deactivate which = 2503 }
+			}
+		}
+		application = { # Improved Medium Tank (75mm+ Medium)
+			id = 2410
+			name = CTECN_2410
+			desc = CTECD_2410
+			
+			required = { 2407 14976 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 19 }
+				command = { type = deactivate which = 2408 }
+				command = { type = deactivate which = 2409 }
+				command = { type = deactivate which = 2981 }
+				command = { type = deactivate which = 2503 }
+			}
+		}		
+		application = { # Improved Medium Tank (75mm+ Long)
+			id = 2981
+			name = CTECN_2981
+			desc = CTECD_2981
+			
+			required = { 2407 14977 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 20 }
+				command = { type = deactivate which = 2408 }
+				command = { type = deactivate which = 2409 }
+				command = { type = deactivate which = 2410 }
+				command = { type = deactivate which = 2503 }
+			}
+		}
+		application = { # Improved Medium Tank (85mm+)
+			id = 2503
+			name = CTECN_2503
+			desc = CTECD_2503
+			
+			required = { 2407 14503 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 21 }
+				command = { type = deactivate which = 2408 }
+				command = { type = deactivate which = 2409 }
+				command = { type = deactivate which = 2410 }
+				command = { type = deactivate which = 2981 }
+			}
+		}
+		application = { # Improved Heavy Tank Prototype Tests
+			id = 2704
+			name = TECH_APP_ARMOR_8_4_NAME
+			desc = TECH_APP_ARMOR_8_4_DESC
+			
+			required = { 2612 2301 2302 2303 11300 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Heavy Tank Battalion
+			id = 2705
+			name = CTECN_2705
+			desc = CTECD_2705
+			
+			required = { 2704 14503 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 2 } # new
+				command = { type = hard_attack which = armor when = on_upgrade value = 2 } # new
+				command = { type = ground_defense which = armor when = on_upgrade value = 2 } # new
+				command = { type = build_time which = armor when = on_upgrade value = 10 } # new
+				command = { type = build_cost which = armor when = on_upgrade value = 2 } # new
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 0.3 } # new
+				command = { type = supply_consumption which = armor when = on_upgrade value = 0.3 } # new
+			}
+		}
+		application = { # Medium Tank Destroyer (75mm+)
+			id = 2411
+			name = CTECN_2411
+			desc = CTECD_2411
+			
+			required = { 2407 14205 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Medium Tank Destroyer (85mm+)
+			id = 2412
+			name = CTECN_2412
+			desc = CTECD_2412
+			
+			required = { 2407 14303 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Medium Tank Destroyer (90mm+)
+			id = 2413
+			name = CTECN_2413
+			desc = TECH_APP_ARMOR_5_13_DESC
+			
+			required = { 2407 14304 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 1 }
+			}
+		}
+	} # Level 5
+	
+	level = { # 6 - Tank Applications
+		id = 2500
+		name = CTECN_2500
+		desc = CTECD_2500
+				
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Applique Armor
+			id = 2934
+			name = CTECN_2934
+			desc = CTECD_2934
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Armor Skirts
+			id = 2501
+			name = TECH_APP_ARMOR_6_1_NAME
+			desc = TECH_APP_ARMOR_6_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Engineering Tanks
+			id = 2984
+			name = CTECN_2984
+			desc = CTECD_2984
+			
+			required = { 1305 14979 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+#				command = { type = fort_attack which = engineer when = on_upgrade value = 5 }
+				command = { type = ground_defense which = engineer when = now value = 1 }
+			}
+		}
+
+		application = { # Heavy evacuation vehicle
+			id = 2982
+			name = CTECN_2982
+			desc = CTECD_2982
+			
+			required = { 1305 2407 11400 } # Bulldozer, Imp. Medium prot., Late War Experience
+			chance = 90
+			cost = 12
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = armor when = on_upgrade value = 3 }
+				command = { type = air_defense which = armor when = on_upgrade value = 1 }
+				command = { type = ground_defense which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Remote Controlled Tank
+			id = 2994
+			name = CTECN_2994
+			desc = CTECD_2994
+			
+			required = { 3204 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = soft_attack which = engineer when = on_upgrade value = 1 }
+#				command = { type = fort_attack which = engineer when = on_upgrade value = 3 } # change
+				command = { type = ground_defense which = engineer when = now value = 1 }
+			}
+		}
+	} # Level 6
+	
+	level = { # 7 - Advanced Tanks
+		id = 2600
+		name = CTECN_2600
+		desc = TECH_LEVEL_ARMOR_7_DESC 
+				
+		cost = 15
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Advanced Gear
+			id = 2601
+			name = TECH_APP_ARMOR_7_1_NAME
+			desc = TECH_APP_ARMOR_7_1_DESC
+			
+			required = { 2301 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Suspension
+			id = 2602
+			name = TECH_APP_ARMOR_7_2_NAME
+			desc = TECH_APP_ARMOR_7_2_DESC
+			
+			required = { 2302 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Engine
+			id = 2603
+			name = TECH_APP_ARMOR_7_3_NAME
+			desc = TECH_APP_ARMOR_7_3_DESC
+			
+			required = { 2303 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Halftrack Troop Carrier
+			id = 2604
+			name = TECH_APP_ARMOR_7_4_NAME
+			desc = TECH_APP_ARMOR_7_4_DESC
+			
+			required = { 2405 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = mechanized when = now value = 1 }
+				command = { type = soft_attack which = mechanized when = now value = 1 }
+				command = { type = ground_defense which = mechanized when = now value = 1 }
+			}
+		}
+		application = { # Advanced Light Tank Prototype Tests
+			id = 2309
+			name = TECH_APP_ARMOR_4_9_NAME
+			desc = TECH_APP_ARMOR_4_9_DESC
+			
+			required = { 2209 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Light Tank Recon Battalion
+			id = 2313
+			name = CTECN_2313
+			desc = CTECD_2313
+			
+			required = { 2309 14974 4803 } # Quality Control added, 20mm air cannon added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = armor when = on_upgrade value = 1 }
+				command = { type = desert_attack which = armor when = on_upgrade value = 3 }
+				command = { type = desert_defense which = armor when = on_upgrade value = 3 }
+				command = { type = hill_attack which = armor when = on_upgrade value = 3 }
+				command = { type = hill_defense which = armor when = on_upgrade value = 3 }
+				command = { type = forest_attack which = armor when = on_upgrade value = 3 }
+				command = { type = forest_defense which = armor when = on_upgrade value = 3 }
+				command = { type = speed which = mechanized when = on_upgrade value = 1 }
+				command = { type = desert_attack which = mechanized when = on_upgrade value = 3 }
+				command = { type = desert_defense which = mechanized when = on_upgrade value = 3 }
+				command = { type = hill_attack which = mechanized when = on_upgrade value = 3 }
+				command = { type = hill_defense which = mechanized when = on_upgrade value = 3 }
+				command = { type = forest_attack which = mechanized when = on_upgrade value = 3 }
+				command = { type = forest_defense which = mechanized when = on_upgrade value = 3 }	
+			}
+		}
+
+		application = { # Advanced Medium Tank Prototype Tests
+			id = 2504
+			name = TECH_APP_ARMOR_6_4_NAME
+			desc = TECH_APP_ARMOR_6_4_DESC
+			
+			required = { 2407 11400 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Advanced Medium Tank (50mm+)
+			id = 2505
+			name = CTECN_2505
+			desc = TECH_APP_ARMOR_6_5_DESC
+			
+			required = { 2504 14206 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 22 }
+				command = { type = deactivate which = 2506 }
+				command = { type = deactivate which = 2611 }
+				command = { type = deactivate which = 2983 }
+			}
+		}
+		application = { # Advanced Medium Tank (75mm+ Medium)
+			id = 2983
+			name = CTECN_2983
+			desc = CTECD_2983
+			
+			required = { 2504 14976 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 23 }
+				command = { type = deactivate which = 2505 }
+				command = { type = deactivate which = 2611 }
+				command = { type = deactivate which = 2506 }
+			}
+		}
+		application = { # Advanced Medium Tank (75mm+ Long)
+			id = 2506
+			name = CTECN_2506
+			desc = CTECD_2506
+			
+			required = { 2504 14977 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 24 }
+				command = { type = deactivate which = 2505 }
+				command = { type = deactivate which = 2611 }
+				command = { type = deactivate which = 2983 }
+			}
+		}
+		application = { # Advanced Medium Tank (85mm+)
+			id = 2611
+			name = CTECN_2611
+			desc = CTECD_2611
+			
+			required = { 2504 14503 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 25 }
+				command = { type = deactivate which = 2505 }
+				command = { type = deactivate which = 2506 }
+				command = { type = deactivate which = 2983 }
+			}
+		}
+		application = { # Advanced Heavy Tank Prototype Tests
+			id = 2804
+			name = TECH_APP_ARMOR_9_4_NAME
+			desc = TECH_APP_ARMOR_9_4_DESC
+			
+			required = { 2601 2602 2603 2704  }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Heavy Tank Battalion
+			id = 2805
+			name = CTECN_2805
+			desc = TECH_APP_ARMOR_9_5_DESC
+			
+			required = { 2804 2705 14503 4803 } # Imp HT Batt added, Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 1 } # new
+				command = { type = hard_attack which = armor when = on_upgrade value = 2 } # new
+				command = { type = ground_defense which = armor when = on_upgrade value = 2 } # new
+				command = { type = build_time which = armor when = on_upgrade value = 5 } # new
+				command = { type = build_cost which = armor when = on_upgrade value = 1 } # new
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 0.1 } # new
+				command = { type = supply_consumption which = armor when = on_upgrade value = 0.2 } # new
+			}
+		}
+		application = { # Heavy Assault Gun (100mm+)
+			id = 2607
+			name = CTECN_2607
+			desc = TECH_APP_ARMOR_7_7_DESC
+			
+			required = { 2306 2804 14102 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = motorized when = on_upgrade value = 1 }
+				command = { type = soft_attack which = mechanized when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Heavy Assault Gun (120mm+)
+			id = 2613
+			name = "Heavy Assault Gun (120mm+)"
+			desc = "The Assault Gun was a tank chassis fitted with an Infantry Gun. The Assault Gun would cooperate with the infantry and aid in the destruction of hardened targets and function as a direct fire support. The Heavy Assault Gun (120mm+) was equipped with a 120mm+ Infantry Gun allowing it to defeat soft and medium armored targets."
+			
+			required = { 2306 2804 14153 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = motorized when = on_upgrade value = 1 }
+				command = { type = soft_attack which = mechanized when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Heavy Assault Gun (150mm+)
+			id = 2608
+			name = CTECN_2608
+			desc = TECH_APP_ARMOR_7_8_DESC
+			
+			required = { 2306 2804 14601 4803 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = motorized when = on_upgrade value = 1 }
+				command = { type = soft_attack which = mechanized when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Heavy Tank Destroyer (100mm+)
+			id = 2609
+			name = CTECN_2609
+			desc = TECH_APP_ARMOR_7_9_DESC
+			
+			required = { 2413 2804 14501 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Heavy Tank Destroyer (120mm+)
+			id = 2610
+			name = CTECN_2610
+			desc = TECH_APP_ARMOR_7_10_DESC
+			
+			required = { 2413 2804 14502 4803 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 2 }
+			}
+		}
+	} # Level 7
+	
+	level = { # 8 - Improved Heavy Tanks
+		id = 2700
+		name = CTECN_2700
+		desc = CTECD_2700
+				
+		cost = 15
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Smoke Mortars
+			id = 2997
+			name = CTECN_2997
+			desc = CTECD_2997
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Mine discharger
+			id = 2996
+			name = CTECN_2996
+			desc = CTECD_2996
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Shot Trap Analysis
+			id = 2973
+			name = CTECN_2973
+			desc = CTECD_2973
+			
+			required = { 2700 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved Armor Skirts
+			id = 2701
+			name = TECH_APP_ARMOR_8_1_NAME
+			desc = TECH_APP_ARMOR_8_1_DESC
+			
+			required = { 2501 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Advanced Optical Sights
+			id = 2702
+			name = TECH_APP_ARMOR_8_2_NAME
+			desc = TECH_APP_ARMOR_8_2_DESC
+			
+			required = { 2401 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = hard_attack which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved Tracks
+			id = 2974
+			name = CTECN_2974
+			desc = CTECD_2974
+			
+			required = { 2700 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = speed which = armor when = on_upgrade value = 1 }
+				command = { type = fuel_consumption which = armor when = on_upgrade value = -0.3 }
+				command = { type = supply_consumption which = armor when = on_upgrade value = -0.3 }
+			}
+		}
+	} # Level 8
+	
+	level = { # 9 - Advanced Tank Technology
+		id = 2800
+		name = CTECN_2800
+		desc = CTECD_2800
+				
+		cost = 15
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Advanced Armor Skirts
+			id = 2801
+			name = TECH_APP_ARMOR_9_1_NAME
+			desc = TECH_APP_ARMOR_9_1_DESC
+			
+			required = { 2701 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Advanced Mine discharger
+			id = 2995
+			name = CTECN_2995
+			desc = CTECD_2995
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Schmallturm
+			id = 2960
+			name = CTECN_2960
+			desc = CTECD_2960
+			
+			required = { }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = ground_defense which = armor when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Infrared Optical Sights
+			id = 2901
+			name = TECH_APP_ARMOR_10_1_NAME
+			desc = TECH_APP_ARMOR_10_1_DESC
+			
+			required = { 2702 3701 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { type = night_attack which = armor when = on_upgrade value = 15 }
+				command = { type = night_move which = armor when = on_upgrade value = 15 }
+				command = { type = night_defense which = armor when = on_upgrade value = 15 }
+			}
+		}
+	} # Level 9
+	
+	level = { # 10 - Super Heavy Tanks
+		id = 2900
+		name = TECH_LEVEL_ARMOR_11_NAME
+		desc = TECH_LEVEL_ARMOR_11_DESC 
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Super-Heavy Gear
+			id = 2902
+			name = TECH_APP_ARMOR_10_2_NAME
+			desc = TECH_APP_ARMOR_10_2_DESC
+			
+			required = { 2601 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Super-Heavy Suspension
+			id = 2903
+			name = TECH_APP_ARMOR_10_3_NAME
+			desc = TECH_APP_ARMOR_10_3_DESC
+			
+			required = { 2602 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Super-Heavy Engine
+			id = 2904
+			name = TECH_APP_ARMOR_10_4_NAME
+			desc = TECH_APP_ARMOR_10_4_DESC
+			
+			required = { 2603 }
+			chance = 90
+			cost = 6
+			time = 60
+			neg_offset = 15
+			pos_offset = 30
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Super-Heavy Tank Prototype Tests
+			id = 2941
+			name = TECH_APP_ARMOR_11_1_NAME
+			desc = TECH_APP_ARMOR_11_1_DESC
+			
+			required = { 2804 2902 2903 2904 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Super-Heavy Tank Battalion
+			id = 2942
+			name = CTECN_2942
+			desc = CTECD_2942
+			
+			required = { 2941 14942 }
+			chance = 90
+			cost = 10
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 4 }
+				command = { type = hard_attack which = armor when = on_upgrade value = 3 }
+				command = { type = ground_defense which = armor when = on_upgrade value = 5 }
+				command = { type = speed which = armor when = on_upgrade value = -5 } # Yes, 5...
+				command = { type = build_time which = armor when = on_upgrade value = 30 }
+				command = { type = build_cost which = armor when = on_upgrade value = 6 }
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 3.0 }
+				command = { type = supply_consumption which = armor when = on_upgrade value = 2.0 }
+				command = { type = hard_attack which = anti_tank when = on_upgrade value = 2 }
+				command = { type = ground_defense which = anti_tank when = on_upgrade value = 3 }
+				command = { type = build_time which = anti_tank when = on_upgrade value = 10 }
+				command = { type = build_cost which = anti_tank when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = anti_tank when = on_upgrade value = 0.5 }
+			}
+		}
+	} # Level 10
+	
+	level = { # 11 - Post-War Tank Technology
+		id = 2999
+		name = CTECN_2999
+		desc = CTECD_2999
+				
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Armored Personnel Carriers
+			id = 2972
+			name = TECH_APP_ARMOR_12_2_NAME
+			desc = TECH_APP_ARMOR_12_2_DESC
+			
+			required = { 2604 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = mechanized when = now value = 1 }
+				command = { type = soft_attack which = mechanized when = now value = 2 }
+				command = { type = ground_defense which = mechanized when = now value = 1 }
+				command = { type = soft_attack which = armor when = now value = 2 }
+				command = { type = ground_defense which = armor when = now value = 1 }
+			}
+		}		
+		application = { # Post War Tank Prototypes
+			id = 2975
+			name = CTECN_2975
+			desc = CTECD_2975
+			
+			required = { 2504 2804 } # Advanced prototypes added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Post War Tank 90mm+
+			id = 2976
+			name = CTECN_2976
+			desc = CTECD_2976
+			
+			required = { 2975 14603 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 30 }
+			}
+		}
+		application = { # Post War Tank 100mm+
+			id = 2977
+			name = CTECN_2977
+			desc = CTECD_2977
+			
+			required = { 2975 14703 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 31 }
+			}
+		}
+		application = { # Post War Tank 120mm+
+			id = 2978
+			name = CTECN_2978
+			desc = CTECD_2978
+			
+			required = { 2975 14103 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 32 }
+			}
+		}
+		application = { # Post War Tank 120mm+
+			id = 2936
+			name = CTECN_2936
+			desc = CTECD_2936
+			
+			required = { 2975 14803 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 33 }
+			}
+		}
+	} # Level 11
+	
+	level = { # 12 - MBT Theory
+		id = 2970
+		name = CTECN_2970
+		desc = CTECD_2970
+
+		cost = 20
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Basic MBT
+			id = 2980
+			name = CTECN_2980
+			desc = CTECD_2980
+			
+			required = { 4803 14603 2975 } # Quality Control added
+			chance = 90
+			cost = 12
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = armor value = 34 }
+			}
+		}
+	} # Level 12
+}

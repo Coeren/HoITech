@@ -1,0 +1,3719 @@
+# 
+# The Naval Technology Group
+#
+#
+#
+#	
+#	
+
+technology = {
+	id = 6
+	category = naval
+	name = TECH_NAVAL_NAME #Localized name
+	desc = TECH_NAVAL_DESC #Localized description
+	
+	level = { # Great War Ships
+		id = 6000
+		name = CTECN_6000
+		desc = CTECD_6000
+		
+		cost = 4
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Commercial Shipbuilding
+			id = 6013
+			name = CTECN_6013
+			desc = CTECD_6013
+			required = {  }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Naval Shipbuilding
+			id = 6014
+			name = CTECN_6014
+			desc = CTECD_6014
+			
+			required = { 6013 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }				
+			}
+		}
+		application = { # Small Naval Guns
+			id = 6015
+			name = CTECN_6015
+			desc = CTECD_6015
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }				
+			}
+		}
+		application = { # Medium Naval Guns
+			id = 6016
+			name = CTECN_6016
+			desc = CTECD_6016
+			
+			required = { 6015 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }				
+			}
+		}
+		application = { # Heavy Naval Guns
+			id = 6017
+			name = CTECN_6017
+			desc = CTECD_6017
+			
+			required = { 6016 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+
+			pos_offset = 40
+			
+			effects = {
+				command = { }				
+			}
+		}
+		application = { # Light Armor
+			id = 6018
+			name = CTECN_6018
+			desc = CTECD_6018
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }				
+			}
+		}
+		application = { # Heavy Armor
+			id = 6019
+			name = CTECN_6019
+			desc = CTECD_6019
+			
+			required = { 6018 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }				
+			}
+		}
+		application = { # Naval Logistics
+			id = 6020
+			name = CTECN_6020
+			desc = CTECD_6020
+			
+			required = {  }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }	
+			}
+		}
+		application = { # Shoreside Infrastructure
+			id = 6021
+			name = CTECN_6021
+			desc = CTECD_6021
+			
+			required = { 6020 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }					
+			}
+		}
+		application = { # Naval Supply Vessels
+			id = 6022
+			name = CTECN_6022
+			desc = CTECD_6022
+			
+			required = { 6020 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }			
+			}
+		}
+		application = { # Naval Ammunition Supply Vessel
+			id = 6023
+			name = CTECN_6023
+			desc = CTECD_6023
+			
+			required = { 6022 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }			
+			}
+		}
+		application = { # Naval Refueling Vessel
+			id = 6024
+			name = CTECN_6024
+			desc = CTECD_6024
+			
+			required = { 6022 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }		
+			}
+		}
+		application = { # Naval Architecture
+			id = 6025
+			name = CTECN_6025
+			desc = CTECD_6025
+			
+			required = {  }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }		
+			}
+		}
+		application = { # Transport Design
+			id = 6026
+			name = CTECN_6026
+			desc = CTECD_6026
+			
+			required = { 6013 6025 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = activate_unit_type which = transports }
+			}
+		}
+		application = { # Destroyer Design
+			id = 6027
+			name = CTECN_6027
+			desc = CTECD_6027
+			
+			required = { 6014 6025 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Cruiser Design
+			id = 6028
+			name = CTECN_6028
+			desc = CTECD_6028
+			
+			required = { 6014 6025 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Battleship Design
+			id = 6029
+			name = CTECN_6029
+			desc = CTECD_6029
+			
+			required = { 6014 6025 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Basic Marine Engineering
+			id = 6030
+			name = CTECN_6030
+			desc = CTECD_6030
+			
+			required = {  }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Basic Steam Plant
+			id = 6031
+			name = CTECN_6031
+			desc = CTECD_6031
+			
+			required = { 6030 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Reciprocating Engine
+			id = 6032
+			name = CTECN_6032
+			desc = CTECD_6032
+			
+			required = { 6030 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Basic Steam Turbine
+			id = 6033
+			name = CTECN_6033
+			desc = CTECD_6033
+			
+			required = { 6032 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Large Diesel Engines
+			id = 6034
+			name = CTECN_6034
+			desc = CTECD_6034
+			
+			required = { 6033 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Basic Surface Torpedo
+			id = 6035
+			name = CTECN_6035
+			desc = CTECD_6035
+			
+			required = { 6030 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Basic Fire Control
+			id = 6036
+			name = CTECN_6036
+			desc = CTECD_6036
+			
+			required = {  }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Basic Turret Optics
+			id = 6037
+			name = CTECN_6037
+			desc = CTECD_6037
+			
+			required = { 6036 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Central Plotting
+			id = 6038
+			name = CTECN_6038
+			desc = CTECD_6038
+			
+			required = { 6036 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Basic Main Battery Director
+			id = 6039
+			name = CTECN_6039
+			desc = CTECD_6039
+			
+			required = { 6037 6038 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Naval Infantry Training
+			id = 6040
+			name = CTECN_6040
+			desc = CTECD_6040
+			
+			required = { 6020 13010 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = infantry when = now value = 20 }
+				command = { type = shore_attack which = bergsjaeger when = now value = 20 }
+				command = { type = shore_attack which = paratrooper when = now value = 20 }
+			}
+		}
+		application = { # Marines
+			id = 6041
+			name = CTECN_6041
+			desc = CTECD_6041
+			
+			required = { 6040 }
+			chance = 90
+			cost = 3
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = activate_unit_type which = marine }
+			}
+		}
+	} # Level 1
+	
+	level = { # Basic Vessel Designs
+		id = 6100
+		name = CTECN_6100
+		desc = CTECD_6100
+		cost = 4
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Small Tramp Steamer
+			id = 6113
+			name = CTECN_6113
+			desc = CTECD_6113
+			
+			required = { 6026 6031 6032 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transports value = 5 }				
+			}
+		}
+		application = { # Small Tramp Freighter
+			id = 6114
+			name = CTECN_6114
+			desc = CTECD_6114
+			
+			required = { 6113 6034 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transports value = 6 }				
+			}
+		}
+		application = { # Passenger Liners
+			id = 6115
+			name = CTECN_6115
+			desc = CTECD_6115
+
+			required = { 6033 6113 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transports value = 1 }
+				command = { type = new_model which = transports value = 2 }
+			}
+		}
+		application = { # Large Passenger Liners
+			id = 6123
+			name = CTECN_6123
+			desc = CTECD_6123
+
+			required = { 6028 6033 6115 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transports value = 3 }
+			}
+		}
+		application = { # 500 Ton Destroyer
+			id = 6116
+			name = CTECN_6116
+			desc = CTECD_6116
+			
+			required = { 6027 6031 6032 6035 14250 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 1 }				
+			}
+		}
+		application = { # 1000 Ton Destroyer
+			id = 6117
+			name = CTECN_6117
+			desc = CTECD_6117
+			
+			required = { 6116 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 2 }				
+			}
+		}
+		application = { # Escort Sloops
+			id = 6122
+			name = CTECN_6122
+			desc = CTECD_6122
+			
+			required = { 6117 14251 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 3 }	
+			}
+		}
+		application = { # Protected Cruiser
+			id = 6118
+			name = CTECN_6118
+			desc = CTECD_6118
+			
+			required = { 6028 6031 6032 14251 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 1 }	
+			}
+		}
+		application = { # Light Cruiser
+			id = 6119
+			name = CTECN_6119
+			desc = CTECD_6119
+			
+			required = { 6033 6118 14252 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 3 }
+			}
+		}
+		application = { # Armored Cruiser 
+			id = 6120
+			name = CTECN_6120
+			desc = CTECD_6120
+			
+			required = { 6018 6028 6031 6032 14254 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 2 }
+			}
+		}
+		application = { # Auxiliary Cruiser
+			id = 6121
+			name = CTECN_6121
+			desc = CTECD_6121
+
+			required = { 6115 13108 14252 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transports value = 4 }
+			}
+		}
+		application = { # Coast Defense Battleship
+			id = 6207
+			name = CTECN_6207
+			desc = CTECD_6207
+
+			required = { 6019 6029 6031 6032 6037 13010 14254 }
+			chance = 90
+			cost = 4
+			time = 180
+
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = activate_unit_type which = battleship }
+			}
+		}
+		application = { # Pre-Dreadnaught Battleship
+			id = 6208
+			name = CTECN_6208
+			desc = CTECD_6208
+			
+			required = { 6207 14255 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 1 }
+			}
+		}
+		application = { # Dreadnaught Battleship
+			id = 6209
+			name = CTECN_6209
+			desc = CTECD_6209
+			
+			required = { 6033 6038 6208 14255 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 3 }
+			}
+		}
+		application = { # Battlecruiser
+			id = 6210
+			name = CTECN_6210
+			desc = CTECD_6210
+			
+			required = { 6120 6209 14255 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 2 }
+			}
+		}
+		application = { # Super-Dreadnaught Battleship
+			id = 6211
+			name = CTECN_6211
+			desc = CTECD_6211
+			
+			required = { 6039 6209 14256 }
+			chance = 90
+			cost = 4
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 6 }
+			}
+		}
+		application = { # Super-Dreadnaught Fast Battleship
+			id = 6212
+			name = CTECN_6212
+			desc = CTECD_6212
+
+			required = { 6211 14256 }
+			chance = 90
+			cost = 4
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 7 }
+			}
+		}
+		application = { # Large Battlecruiser
+			id = 6213
+			name = CTECN_6213
+			desc = CTECD_6213
+			
+			required = { 6211 14256 }
+			chance = 90
+			cost = 4
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 5 }
+			}
+		}
+	} # Level 2
+	
+	level = { # Great War Experience
+		id = 6200
+		name = CTECN_6200
+		desc = CTECD_6200
+				
+		cost = 4
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Forced Draft Boilers
+			id = 6307
+			name = CTECN_6307
+			desc = CTECD_6307
+
+			required = { 6031 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Geared Steam Turbine
+			id = 6308
+			name = CTECN_6308
+			desc = CTECD_6308
+
+			required = { 6033 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { }
+			}
+		}
+		application = { # Basic Anti-Submarine Equipment
+			id = 6309
+			name = CTECN_6309
+			desc = CTECD_6309
+
+			required = { 13009 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Anti-Submarine Operations
+			id = 6310
+			name = CTECN_6310
+			desc = CTECD_6310
+
+			required = { 6309 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_attack which = destroyer when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Seaplane Operations
+			id = 6311
+			name = CTECN_6311
+			desc = CTECD_6311
+			
+			required = {  }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Lighter Than Air Craft
+			id = 6312
+			name = CTECN_6312
+			desc = CTECD_6312
+
+			required = { 13113 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+	} # Level 3
+	
+	level = { # Carrier Experimentation
+		id = 6300
+		name = CTECN_6300
+		desc = CTECD_6300
+				
+		cost = 4
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+
+		application = { # Basic Conversions
+			id = 6411
+			name = CTECN_6411
+			desc = CTECD_6411
+			
+			required = { 6025 6311 13008 13010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = activate_unit_type which = carrier }
+			}
+		}
+
+		application = { # Hydraulic Catapult
+			id = 6412
+			name = CTECN_6412
+			desc = CTECD_6412
+			
+			required = { 6030 6311 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Arrestor Wires
+			id = 6413
+			name = CTECN_6413
+			desc = CTECD_6413
+			
+			required = { 6030 6311 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Large Cruiser Conversions
+			id = 6414
+			name = CTECN_6414
+			desc = CTECD_6414
+			
+			required = { 6213 6411 6412 6413 13105 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 6 }
+			}
+		}
+		application = { # Carrier Designs
+			id = 6415
+			name = CTECN_6415
+			desc = CTECD_6415
+			
+			required = { 6414 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Black Powder Catapult
+			id = 6416
+			name = CTECN_6416
+			desc = CTECD_6416
+			
+			required = { 6412 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+	} # Level 4
+	
+	level = { # Improved Shipbuilding
+		id = 6400
+		name = CTECN_6400
+		desc = CTECD_6400
+				
+		cost = 4
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Weight Saving Technology
+			id = 6514
+			name = CTECN_6514
+			desc = CTECD_6514
+			
+			required = { 6025 }
+			chance = 90
+			cost = 2
+			time = 180
+
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Secondary Battery Turrets
+			id = 6515
+			name = CTECN_6515
+			desc = CTECD_6515
+
+			required = { 6016 6037 6514 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Sloped Belt Armor
+			id = 6516
+			name = CTECN_6516
+			desc = CTECD_6516
+
+			required = { 6019 6514 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Small Tube Boilers
+			id = 6517
+			name = CTECN_6517
+			desc = CTECD_6517
+			
+			required = { 6307 6308 6514 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Aluminum Structures
+			id = 6518
+			name = CTECN_6518
+			desc = CTECD_6518
+
+			required = { 6514 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Transom Stern
+			id = 6519
+			name = CTECN_6519
+			desc = CTECD_6519
+			
+			required = { 6025 6514 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # High Speed Diesel Engines
+			id = 6520
+			name = CTECN_6520
+			desc = CTECD_6520
+			
+			required = { 6034 6514 5009 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Refined Weapons Development
+			id = 6521
+			name = CTECN_6521
+			desc = CTECD_6521
+
+			required = { 6030 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Dual Purpose Guns
+			id = 6522
+			name = CTECN_6522
+			desc = CTECD_6522
+
+			required = { 6016 6521 14251 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = air_attack which = destroyer when = on_upgrade value = 2 }
+				command = { type = build_time which = destroyer value = -5 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 2 }
+				command = { type = build_time which = cruiser value = -5 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 2 }
+				command = { type = build_time which = battleship value = -5 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 2 }
+				command = { type = build_time which = carrier value = -5 }
+			}
+		}
+		application = { # Dual Speed Torpedoes
+			id = 6523
+			name = CTECN_6523
+			desc = CTECD_6523
+			
+			required = { 6035 6521 5013 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = destroyer when = now value = 1 }
+				command = { type = naval_attack which = submarine when = now value = 1 }
+			}
+		}
+		application = { # Basic ASW Weapons
+			id = 6524
+			name = CTECN_6524
+			desc = CTECD_6524
+			
+			required = { 6310 6521 13109 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = sub_attack which = destroyer when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Oxygen Powered Torpedo
+			id = 6526
+			name = CTECN_6526
+			desc = CTECD_6526
+
+			required = { 6523 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Improved Torpedo Engines
+			id = 6527
+			name = CTECN_6527
+			desc = CTECD_6527
+
+			required = { 6526 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Large Torpedo Warheads
+			id = 6528
+			name = CTECN_6528
+			desc = CTECD_6528
+
+			required = { 6527 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = naval_attack which = torpedo_plane value = 1 }
+			}
+		}
+		application = { # Improved Fire Control
+			id = 6529
+			name = CTECN_6529
+			desc = CTECD_6529
+
+			required = { 6036 6038 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Advanced Turret Optics
+			id = 6530
+			name = CTECN_6530
+			desc = CTECD_6530
+			
+			required = { 6037 6529 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Improved Main Battery Director
+			id = 6531
+			name = CTECN_6531
+			desc = CTECD_6531
+			
+			required = { 6039 6530 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			effects = {
+				command = { type = naval_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Secondary Battery Director
+			id = 6532
+			name = CTECN_6532
+			desc = CTECD_6532
+			
+			required = { 6515 6518 6531 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			effects = {
+				command = { type = naval_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Spotting Aircraft
+			id = 6533
+			name = CTECN_6533
+			desc = CTECD_6533
+			
+			required = { 6416 6529 13107 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = naval_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = naval_defense which = cruiser when = on_upgrade value = -1 }
+				command = { type = surface_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = shore_attack which = cruiser when = on_upgrade value = 10 }
+				command = { type = supply_consumption which = cruiser when = on_upgrade value = 0.5 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = 2 }
+				command = { type = naval_defense which = battleship when = on_upgrade value = -1 }
+				command = { type = surface_detection which = battleship when = on_upgrade value = 1 }
+				command = { type = shore_attack which = battleship when = on_upgrade value = 10 }
+				command = { type = supply_consumption which = battleship when = on_upgrade value = 0.5 }
+			}
+		}
+
+		application = { # Improved Lighter Than Air Craft Reconnaissance
+			id = 6534
+			name = CTECN_6534
+			desc = CTECD_6534
+
+			required = { 6312 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = convoy_def_eff value = 2 }
+			}
+		}
+	} # Level 5
+	
+	level = { # Washington Treaty Designs
+		id = 6500
+		name = CTECN_6500
+		desc = CTECD_6500
+				
+		cost = 4
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Medium Steamer
+			id = 6610
+			name = CTECN_6610
+			desc = CTECD_6610
+
+			required = { 6033 6113 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transports value = 7 }
+			}
+		}
+		application = { # Medium Freighter
+			id = 6611
+			name = CTECN_6611
+			desc = CTECD_6611
+
+			required = { 6114 6610 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = new_model which = transports value = 8 }
+			}
+		}		
+		application = { # 1500 Ton Destroyer
+			id = 6612
+			name = CTECN_6612
+			desc = CTECD_6612
+			
+			required = { 6117 6515 6517 6518 6519 14251 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = new_model which = destroyer value = 6 }
+			}
+		}
+		application = { # Large Destroyer
+			id = 6613
+			name = CTECN_6613
+			desc = CTECD_6613
+
+			required = { 6117 6515 6517 6518 6519 13013 14251 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = new_model which = destroyer value = 8 }
+			}
+		}
+		application = { # Treaty Sloop
+			id = 6535
+			name = CTECN_6535
+			desc = CTECD_6535
+			
+			required = { 6118 6308 6518 6519 14252 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = new_model which = cruiser value = 5 }
+			}
+		}
+		application = { # Small Treaty Light Cruiser
+			id = 6536
+			name = CTECN_6536
+			desc = CTECD_6536
+
+			required = { 6118 6516 6517 6518 6519 14252 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = new_model which = cruiser value = 6 }
+			}
+		}
+		application = { # Treaty Light Cruiser
+			id = 6614
+			name = CTECN_6614
+			desc = CTECD_6614
+			
+			required = { 6119 6516 6517 6518 6519 14252 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = new_model which = cruiser value = 7 }
+			}
+		}
+		application = { # Treaty Heavy Cruiser
+			id = 6615
+			name = CTECN_6615
+			desc = CTECD_6615
+			
+			required = { 6119 6516 6517 6518 6519 14253 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 8 }
+			}
+		}
+		application = { # Pocket Battleship
+			id = 6616
+			name = CTECN_6616
+			desc = CTECD_6616
+
+			required = { 6120 6515 6516 6518 6519 6520 13016 14254 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 4 }
+			}
+		}
+		application = { # Small Treaty Battlecruiser
+			id = 6617
+			name = CTECN_6617
+			desc = CTECD_6617
+
+			required = { 6308 6517 6616 13215 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 4 }
+			}
+		}
+		application = { # Treaty Battleship
+			id = 6618
+			name = CTECN_6618
+			desc = CTECD_6618
+			
+			required = { 6211 6515 6516 6517 6530 14257 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 8 }
+			}
+		}
+		application = { # Aviation Cruiser
+			id = 6742
+			name = CTECN_6742
+			desc = CTECD_6742
+			
+			required = { 6415 6614 14252 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 2 }
+			}
+		}
+		application = { # Fleet Carrier
+			id = 6743
+			name = CTECN_6743
+			desc = CTECD_6743
+			
+			required = { 6415 6517 13105 14251 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 4 }
+				command = { type = new_model which = carrier value = 8 }
+			}
+		}
+		application = { # Armored Deck Fleet Carrier
+			id = 6744
+			name = CTECN_6744
+			desc = CTECD_6744
+
+			required = { 6743 13210 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 7 }
+			}
+		}
+
+	} # Level 6	
+
+	level = { # Advanced Shipbuilding
+		id = 6600
+		name = CTECN_6600
+		desc = CTECD_6600
+				
+		cost = 4
+		time = 540
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Basic Marine Electronics
+			id = 6716
+			name = CTECN_6716
+			desc = CTECD_6716
+			
+			required = {  }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Decimetric Air Search Radar
+			id = 6717
+			name = CTECN_6717
+			desc = CTECD_6717
+			
+			required = { 3003 3102 6716 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_detection which = cruiser when = on_upgrade value = 2 }
+				command = { type = air_detection which = battleship when = on_upgrade value = 2 }
+				command = { type = air_detection which = carrier when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Basic Decimetric Surface Search Radar
+			id = 6718
+			name = CTECN_6718
+			desc = CTECD_6718
+
+			required = { 6717 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = surface_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = night_attack which = destroyer when = on_upgrade value = 5 }
+				command = { type = surface_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = night_attack which = cruiser when = on_upgrade value = 5 }
+				command = { type = surface_detection which = battleship when = on_upgrade value = 1 }
+				command = { type = night_attack which = battleship when = on_upgrade value = 5 }
+				command = { type = surface_detection which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Sonar/ASDIC
+			id = 6719
+			name = CTECN_6719
+			desc = CTECD_6719
+			
+			required = { 6716 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = convoy_def_eff value = 10 }
+			}
+		}
+		application = { # Improved MF/HF Radios
+			id = 6720
+			name = CTECN_6720
+			desc = CTECD_6720
+			
+			required = { 6716 3007 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = cruiser when = now value = 1 }
+				command = { type = max_organization which = destroyer when = now value = 2 }
+				command = { type = max_organization which = cruiser when = now value = 2 }
+				command = { type = max_organization which = battleship when = now value = 2 }
+				command = { type = max_organization which = carrier when = now value = 2 }
+			}
+		}
+		application = { # VHF Tactical Radios
+			id = 6721
+			name = CTECN_6721
+			desc = CTECD_6721
+
+			required = { 6716 3006 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = max_organization which = destroyer when = now value = 5 }
+				command = { type = night_attack which = destroyer when = now value = 1 }
+				command = { type = max_organization which = cruiser when = now value = 5 }
+				command = { type = night_attack which = cruiser when = now value = 1 }
+				command = { type = max_organization which = battleship when = now value = 5 }
+				command = { type = night_attack which = battleship when = now value = 1 }
+				command = { type = max_organization which = carrier when = now value = 5 }
+				command = { type = night_attack which = carrier when = now value = 1 }
+			}
+		}
+		application = { # Superior Turret Optics
+			id = 6915
+			name = CTECN_6915
+			desc = CTECD_6915
+			
+			required = { 6530 2401 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Marine Engineering
+			id = 6722
+			name = CTECN_6722
+			desc = CTECD_6722
+
+			required = { 6030 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Diesel Fire Pump
+			id = 6723
+			name = CTECN_6723
+			desc = CTECD_6723
+
+			required = { 6722 6520 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = naval_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = naval_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = naval_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Diesel Generator
+			id = 6724
+			name = CTECN_6724
+			desc = CTECD_6724
+
+			required = { 6723 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = naval_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = naval_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = naval_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = naval_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved Steam Plant
+			id = 6725
+			name = CTECN_6725
+			desc = CTECD_6725
+
+			required = { 6722 6517 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Improved Naval Aviation
+			id = 6726
+			name = CTECN_6726
+			desc = CTECD_6726
+			
+			required = { 6743 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Merchant Vessel Conversions
+			id = 6727
+			name = CTECN_6727
+			desc = CTECD_6727
+			
+			required = { 6411 6610 6726 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Light Cruiser Conversions
+			id = 6728
+			name = CTECN_6728
+			desc = CTECD_6728
+			
+			required = { 6414 6614 6726 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+
+		application = { # Improved Aviation Fueling System
+			id = 6729
+			name = CTECN_6729
+			desc = CTECD_6729
+			
+			required = { 6726 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_defense which = carrier when = on_upgrade value = 2 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Directional Homing Beacons
+			id = 6730
+			name = CTECN_6730
+			desc = CTECD_6730
+			
+			required = { 6720 6726 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = max_organization which = torpedo_plane value = 5 }
+			}
+		}
+		application = { # Improved Aircraft Handling Systems
+			id = 6731
+			name = CTECN_6731
+			desc = CTECD_6731
+			
+			required = { 6743 6726 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Arrestor Wires
+			id = 6732
+			name = CTECN_6732
+			desc = CTECD_6732
+
+			required = { 6743 6726 }
+			chance = 90
+			cost = 1
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+		application = { # Heavy Shipboard Torpedoes
+			id = 6733
+			name = CTECN_6733
+			desc = CTECD_6733
+
+			required = { 6526 6527 6528 13011 }
+			chance = 90
+			cost = 3
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = naval_attack which = destroyer when = on_upgrade value = 2 }
+				command = { type = night_attack which = destroyer when = on_upgrade value = 5 }
+				command = { type = supply_consumption which = destroyer when = on_upgrade value = 0.3 }
+			}
+		}
+		application = { # Blimp Experimentation
+			id = 6734
+			name = CTECN_6734
+			desc = CTECD_6734
+
+			required = { 6534 }
+
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { }
+			}
+		}
+	} # Level 7
+	level = { # Advanced Naval Designs
+		id = 6940
+		name = CTECN_6940
+		desc = CTECD_6940
+				
+		cost = 6
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Fast Steamer
+			id = 6930
+			name = CTECN_6930
+			desc = CTECD_6930
+
+			required = { 6610 6725 6308 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = transports value = 9 }
+			}
+		}
+		application = { # Mass Produced Steamer
+			id = 6931
+			name = CTECN_6931
+			desc = CTECD_6931
+			
+			required = { 6610 4802 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transports value = 12 }
+			}
+		}
+		application = { # Attack Transport
+			id = 6932
+			name = CTECN_6932
+			desc = CTECD_6932
+			
+			required = { 6930 13309 14251 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = transports value = 10 }
+			}
+		}
+		application = { # Corvette
+			id = 6933
+			name = CTECN_6933
+			desc = CTECD_6933
+			
+			required = { 4802 6520 6117 13307 14250 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 4 }
+			}
+		}
+		application = { # 2000 Ton Destroyer
+			id = 6934
+			name = CTECN_6934
+			desc = CTECD_6934
+
+			required = { 6612 6725 14251 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 7 }
+			}
+		}
+		application = { # 2500 Ton Destroyer
+			id = 6991
+			name = CTECN_6991
+			desc = CTECD_6991
+			
+			required = { 6934 }
+			chance = 90
+			cost = 1
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 9 }
+			}
+		}
+		application = { # Post-Treaty Light Cruiser
+			id = 6935
+			name = CTECN_6935
+			desc = CTECD_6935
+
+			required = { 6614 6725 6915 14252 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 12 }
+			}
+		}
+		application = { # AA Light Cruiser
+			id = 6936
+			name = CTECN_6936
+			desc = CTECD_6936
+			
+			required = { 6119 6518 6519 6522 6725 6914 14251 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 9 }
+			}
+		}
+		application = { # Post-Treaty Heavy Cruiser
+			id = 6937
+			name = CTECN_6937
+			desc = CTECD_6937
+			
+			required = { 6615 6725 6915 14253 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 13 }
+			}
+		}
+		application = { # Super Cruiser
+			id = 6938
+			name = CTECN_6938
+			desc = CTECD_6938
+
+			required = { 6615 6725 6915 13008 13009 14265 }
+			chance = 90
+			cost = 3
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 11 }
+			}
+		}
+		application = { # Fast Treaty Battleship
+			id = 6741
+			name = CTECN_6741
+			desc = CTECD_6741
+
+			required = { 6618 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 9 }
+			}
+		}
+		application = { # Post-Treaty Battleship
+			id = 6939
+			name = CTECN_6939
+			desc = CTECD_6939
+
+			required = { 6618 6725 6915 14258 }
+			chance = 90
+			cost = 3
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 10 }
+			}
+
+		}
+		application = { # Super Battleship
+			id = 6945
+			name = CTECN_6945
+			desc = CTECD_6945
+
+			required = { 6618 6725 6915 14259 }
+			chance = 90
+			cost = 4
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = battleship value = 11 }
+			}
+		}
+		application = { # Escort Carrier
+			id = 6946
+			name = CTECN_6946
+			desc = CTECD_6946
+
+			required = { 6727 6930 13308 13408 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 1 }
+			}
+		}
+		application = { # Light Carrier
+			id = 6947
+			name = CTECN_6947
+			desc = CTECD_6947
+
+			required = { 6728 6935 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 5 }
+			}
+		}
+		application = { # Post-Treaty Fleet Carrier
+			id = 6745
+			name = CTECN_6745
+			desc = CTECD_6745
+
+			required = { 6743 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 10 }
+			}
+		}
+		application = { # Armored Deck Post-Treaty Fleet Carrier
+			id = 6746
+			name = CTECN_6746
+			desc = CTECD_6746
+
+			required = { 6745 6744 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 9 }
+			}
+		}
+		application = { # Large Carrier
+			id = 6948
+			name = CTECN_6948
+			desc = CTECD_6948
+			
+			required = { 6725 6730 6731 6732 6745 13210 13308 }
+			chance = 90
+			cost = 3
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = carrier value = 11 }
+			}
+		}	
+
+
+	} # Level 8	
+	level = { # Refined Marine Technology
+		id = 6800
+		name = CTECN_6800
+		desc = CTECD_6800
+				
+		cost = 4
+		time = 540
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Refined ASW Technology
+			id = 6908
+			name = CTECN_6908
+			desc = CTECD_6908
+
+			required = { 6524 13408 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Refined ASW Tactics
+			id = 6909
+			name = CTECN_6909
+			desc = CTECD_6909
+
+			required = { 6908 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = now value = 1 }
+				command = { type = sub_attack which = destroyer when = now value = 1 }
+			}
+		}
+		application = { # Basic Long Range ASW Aircraft
+			id = 6910
+			name = CTECN_6910
+			desc = CTECD_6910
+			
+			required = { 6311 6908 13409 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_attack which = naval_bomber when = now value = 1 }
+			}
+		}
+		application = { # Coordinated ASW Tactics
+			id = 6911
+			name = CTECN_6911
+			desc = CTECD_6911
+
+			required = { 6719 6909 13409 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = now value = 1 }
+				command = { type = sub_attack which = destroyer when = now value = 1 }
+			}
+		}
+		application = { # HF Direction Finder
+			id = 6912
+			name = CTECN_6912
+			desc = CTECD_6912
+			
+			required = { 3206 6720 6908 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Depth Charge Mortar
+			id = 6913
+			name = CTECN_6913
+			desc = CTECD_6913
+			
+			required = { 6909 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = convoy_def_eff value = 10  }
+			}
+		}
+		application = { # Advanced Fire Control Systems
+			id = 6914
+			name = CTECN_6914
+			desc = CTECD_6914
+			
+			required = { 6529 3402 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Main Battery Director
+			id = 6916
+			name = CTECN_6916
+			desc = CTECD_6916
+			
+			required = { 6914 6915 6531 }
+			chance = 90
+			cost = 2
+			time = 180
+
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved Secondary Battery Director
+			id = 6917
+			name = CTECN_6917
+			desc = CTECD_6917
+
+			required = { 6914 6532 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic AA Battery Director
+			id = 6918
+			name = CTECN_6918
+			desc = CTECD_6918
+
+			required = { 6917 14264 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 2 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 2 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Basic Fire Control Computer
+			id = 6919
+			name = CTECN_6919
+			desc = CTECD_6919
+
+			required = { 6916 3302 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Improved Marine Electronics
+			id = 6920
+			name = CTECN_6920
+			desc = CTECD_6920
+
+			required = { 6716 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Centimetric Air Search Radar
+			id = 6921
+			name = CTECN_6921
+			desc = CTECD_6921
+			
+			required = { 6920 3501 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_detection which = battleship when = on_upgrade value = 1 }
+				command = { type = air_detection which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Centimetric Surface Search Radar
+			id = 6922
+			name = CTECN_6922
+			desc = CTECD_6922
+
+			required = { 6921 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = night_attack which = destroyer when = on_upgrade value = 5 }
+				command = { type = surface_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = night_attack which = cruiser when = on_upgrade value = 5 }
+				command = { type = surface_detection which = battleship when = on_upgrade value = 1 }
+				command = { type = night_attack which = battleship when = on_upgrade value = 5 }
+				command = { type = surface_detection which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved ASDIC/Sonar
+			id = 6923
+			name = CTECN_6923
+			desc = CTECD_6923
+			
+			required = { 6719 6920 3502 13408 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = convoy_def_eff value = 10  }
+			}
+		}
+		application = { # Towed Hydrophone
+			id = 6924
+			name = CTECN_6924
+			desc = CTECD_6924
+			
+			required = { 6923 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = convoy_def_eff value = 10 }
+			}
+		}
+		application = { # Sonobouys
+			id = 6925
+			name = CTECN_6925
+			desc = CTECD_6925
+
+			required = { 6923 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = convoy_def_eff value = 10 }
+			}
+		}
+		application = { # Air Dropped Sonobouys
+			id = 6926
+			name = CTECN_6926
+			desc = CTECD_6926
+			
+			required = { 6910 6925 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = carrier when = now value = 1 }
+				command = { type = sub_detection which = naval_bomber when = now value = 1 }
+				command = { type = sub_attack which = naval_bomber when = now value = 1 }
+				command = { type = convoy_def_eff value = 10 }
+			}
+		}
+		application = { # Basic Decimetric Fire Control Radar
+			id = 6927
+			name = CTECN_6927
+			desc = CTECD_6927
+			
+			required = { 6718 6916 3402 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = battleship when = on_upgrade value = 2 }
+				command = { type = night_attack which = battleship when = on_upgrade value = 5 }
+			}
+		}
+		application = { # Basic Centimetric Fire Control Radar
+			id = 6928
+			name = CTECN_6928
+			desc = CTECD_6928
+
+			required = { 6922 6927 3702 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = night_attack which = cruiser when = on_upgrade value = 10 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = night_attack which = battleship when = on_upgrade value = 10 }
+			}
+		}
+		application = { # Basic Centimetric AA Radar
+			id = 6929
+			name = CTECN_6929
+			desc = CTECD_6929
+
+			required = { 6928 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = naval_attack which = destroyer when = on_upgrade value = 1 } # intentional
+				command = { type = night_attack which = destroyer when = on_upgrade value = 10 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Magnetic Anomaly Detector
+			id = 6740
+			name = CTECN_6740
+			desc = CTECD_6740
+
+			required = { 6920 6926 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			effects = {
+				command = { type = sub_detection which = naval_bomber when = on_upgrade value = 1 }
+			}
+		}
+		application = { # ASW Blimps
+			id = 6735
+			name = CTECN_6735
+			desc = CTECD_6735
+
+			required = { 6740 6734 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = convoy_def_eff value = 10 }
+			}
+		}
+	} # Level 9
+	level = { # Specialized Amphibious Warfare Equipment
+		id = 6700
+		name = CTECN_6700
+		desc = CTECD_6700
+				
+		cost = 4
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Naval Special Forces
+			id = 6810
+			name = CTECN_6810
+			desc = CTECD_6810
+			
+			required = { 6041 13214 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = marine when = now value = 10 }
+			}
+		}
+		application = { # Coordinated Naval Gunfire
+			id = 6811
+			name = CTECN_6811
+			desc = CTECD_6811
+			
+			required = { 6119 6721 13214 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = cruiser when = now value = 20 }
+				command = { type = shore_attack which = battleship when = now value = 20 }
+			}
+		}
+		application = { # Specialized Infantry Landing Craft
+			id = 6812
+			name = CTECN_6812
+			desc = CTECD_6812
+			
+			required = { 2206 13309 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = marine when = now value = 10 }
+				command = { type = shore_attack which = infantry when = now value = 10 }
+				command = { type = shore_attack which = bergsjaeger when = now value = 10 }
+				command = { type = shore_attack which = paratrooper when = now value = 10 }
+			}
+		}
+		application = { # Specialized Vehicle Landing Craft
+			id = 6813
+			name = CTECN_6813
+			desc = CTECD_6813
+			
+			required = { 6812 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = armor when = now value = 20 }
+				command = { type = shore_attack which = motorized when = now value = 20 }
+				command = { type = shore_attack which = mechanized when = now value = 20 }
+				command = { type = shore_attack which = cavalry when = now value = 20 }
+			}
+		}
+		application = { # Specialized Fire Support Craft
+			id = 6814
+			name = CTECN_6814
+			desc = CTECD_6814
+			
+			required = { 6811 6812 7002 13415 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = marine when = now value = 5 }
+				command = { type = shore_attack which = infantry when = now value = 5 }
+				command = { type = shore_attack which = cavalry when = now value = 5 }
+				command = { type = shore_attack which = armor when = now value = 5 }
+				command = { type = shore_attack which = bergsjaeger when = now value = 5 }
+				command = { type = shore_attack which = paratrooper when = now value = 5 }
+				command = { type = shore_attack which = motorized when = now value = 5 }
+				command = { type = shore_attack which = mechanized when = now value = 5 }
+			}
+		}
+		application = { # Specialized Amphibious Command Ship
+			id = 6815
+			name = CTECN_6815
+			desc = CTECD_6815
+
+			required = { 6720 6721 6610 13415 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = shore_attack which = marine when = now value = 5 }
+				command = { type = max_organization which = marine when = now value = 5 }
+				command = { type = shore_attack which = infantry when = now value = 5 }
+				command = { type = shore_attack which = cavalry when = now value = 5 }
+				command = { type = shore_attack which = armor when = now value = 5 }
+				command = { type = shore_attack which = bergsjaeger when = now value = 5 }
+				command = { type = shore_attack which = paratrooper when = now value = 5 }
+				command = { type = shore_attack which = motorized when = now value = 5 }
+				command = { type = shore_attack which = mechanized when = now value = 5 }
+				command = { type = shore_attack which = cruiser when = now value = 5 }
+				command = { type = shore_attack which = battleship when = now value = 5 }
+			}
+		}
+		application = { # Amphibious Supply Craft
+			id = 6816
+			name = CTECN_6816
+			desc = CTECD_6816
+
+			required = { 6812 13309 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = supply_consumption which = marine when = now value = -0.25 }
+			}
+		}
+	} # Level 10
+	
+	level = { # Semi-Modern Naval Technology
+		id = 6970
+		name = CTECN_6970
+		desc = CTECD_6970
+				
+		cost = 8
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Advanced Marine Electronics
+			id = 6949
+			name = CTECN_6949
+			desc = CTECD_6949
+
+			required = { 6920 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Centimetric Air Search Radar
+			id = 6950
+			name = CTECN_6950
+			desc = CTECD_6950
+
+			required = { 6921 6949 3804 3901 3903}
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_detection which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_detection which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Advanced Centimetric Surface Search Radar
+			id = 6951
+			name = CTECN_6951
+			desc = CTECD_6951
+
+			required = { 6922 6950 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = night_attack which = destroyer when = on_upgrade value = 5 }
+				command = { type = surface_detection which = cruiser when = on_upgrade value = 1 }
+				command = { type = night_attack which = destroyer when = on_upgrade value = 5 }
+				command = { type = surface_detection which = battleship when = on_upgrade value = 1 }
+				command = { type = night_attack which = battleship when = on_upgrade value = 5 }
+				command = { type = surface_detection which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Advanced ASDIC/Sonar
+			id = 6952
+			name = CTECN_6952
+			desc = CTECD_6952
+			
+			required = { 6923 6949 3905 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = convoy_def_eff value = 10  } # 2% increased Def efficiency of Convoys
+			}
+		}
+		application = { # Basic Marine Jammer
+			id = 6953
+			name = CTECN_6953
+			desc = CTECD_6953
+			
+			required = { 6951 3905 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = naval_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = naval_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = naval_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Semi-Modern Fire Control
+			id = 6954
+			name = CTECN_6954
+			desc = CTECD_6954
+			
+			required = { 6914 3943 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Secondary Battery Directors
+			id = 6955
+			name = CTECN_6955
+			desc = CTECD_6955
+			
+			required = { 6917 6954 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = naval_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved AA Battery Directors
+			id = 6956
+			name = CTECN_6956
+			desc = CTECD_6956
+
+			required = { 6918 6954 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved Fire Control Computer
+			id = 6957
+			name = CTECN_6957
+			desc = CTECD_6957
+
+			required = { 6919 6954 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = naval_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Anti-Ship Guided Missile Illuminator
+			id = 6958
+			name = CTECN_6958
+			desc = CTECD_6958
+
+			required = { 6951 6954 3972 7201 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Surface-to-air Guided Missile Illuminator
+			id = 6959
+			name = CTECN_6959
+			desc = CTECD_6959
+
+			required = { 6958 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Naval Anti-Ship Missile
+			id = 6960
+			name = CTECN_6960
+			desc = CTECD_6960
+			
+			required = { 7404 6958 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+
+			pos_offset = 60
+			
+			effects = {
+				command = { type = naval_attack which = cruiser when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = cruiser when = on_upgrade value = 0.5 }
+				command = { type = naval_attack which = battleship when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = battleship when = on_upgrade value = 0.5 }
+			}
+		}
+		application = { # Naval Long Range Surface-to-air Missile
+			id = 6961
+			name = CTECN_6961
+			desc = CTECD_6961
+			
+			required = { 7704 7404 6959 3904}
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Naval Short Range Surface-to-air Missile
+			id = 6962
+			name = CTECN_6962
+			desc = CTECD_6962
+			
+			required = { 6961 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = destroyer when = on_upgrade value = 0.3 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = cruiser when = on_upgrade value = 0.3 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = battleship when = on_upgrade value = 0.3 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = carrier when = on_upgrade value = 0.3 }
+			}
+		}
+		application = { # Surface Torpedo Homing System
+			id = 6963
+			name = CTECN_6963
+			desc = CTECD_6963
+			
+			required = { 6952 } # 5713
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Shaped Torpedo Warhead
+			id = 6964
+			name = CTECN_6964
+			desc = CTECD_6964
+			
+			required = { 2885 6528 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Semi-Modern Surface Torpedo
+			id = 6965
+			name = CTECN_6965
+			desc = CTECD_6965
+			
+			required = { 6527 6963 6964 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = naval_attack which = destroyer when = on_upgrade value = 2 }
+				command = { type = sub_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = destroyer when = on_upgrade value = 0.2 }
+			}
+		}
+		application = { # Anti-Submarine Rocket Launch Torpedo
+			id = 6966
+			name = CTECN_6966
+			desc = CTECD_6966
+			
+			required = { 6960 6965 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = sub_attack which = destroyer when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Advanced Marine Engineering
+			id = 6967
+			name = CTECN_6967
+			desc = CTECD_6967
+
+			required = { 6722 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Automated Steam Plant
+			id = 6968
+			name = CTECN_6968
+			desc = CTECD_6968
+
+			required = { 6725 6967 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+				
+			}
+		}
+		application = { # Gas Turbine Engines
+			id = 6969
+			name = CTECN_6969
+			desc = CTECD_6969
+
+			required = { 6308 6967 7802 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Shipboard Nuclear Power Plant
+			id = 6977
+			name = CTECN_6977
+			desc = CTECD_6977
+
+			required = { 6308 6968 8971 13508}
+			chance = 90
+			cost = 4
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Advanced ASW Tactics
+			id = 6978
+			name = CTECN_6978
+			desc = CTECD_6978
+
+			required = { 6909 6952 13408 } # 13401
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Standoff Tactics
+			id = 6979
+			name = CTECN_6979
+			desc = CTECD_6979
+
+			required = { 6978 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = max_organization which = destroyer when = now value = 5 }
+				command = { type = convoy_def_eff value = 5 }
+			}
+		}
+		application = { # Surface and Aircraft Coordination
+			id = 6980
+			name = CTECN_6980
+			desc = CTECD_6980
+
+			required = { 6910 6978 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = sub_detection which = destroyer when = now value = 1 }
+				command = { type = sub_attack which = destroyer when = now value = 1 }
+				command = { type = sub_detection which = naval_bomber when = now value = 1 }
+				command = { type = sub_attack which = naval_bomber when = now value = 1 }
+			}
+		}
+		application = { # ASW Helicopters
+			id = 6981
+			name = CTECN_6981
+			desc = CTECD_6981
+			
+			required = { 10030 6926 6980 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = sub_attack which = destroyer when = on_upgrade value = 2 }
+				command = { type = sub_detection which = destroyer when = on_upgrade value = 1 }
+				command = { type = naval_attack which = destroyer when = on_upgrade value = -2 }
+				command = { type = naval_defense which = destroyer when = on_upgrade value = -1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = -1 }
+				command = { type = supply_consumption which = destroyer when = on_upgrade value = 2.0 }
+				command = { type = sub_attack which = carrier when = now value = 2 }
+				command = { type = sub_detection which = carrier when = now value = 1 }
+				command = { type = convoy_def_eff value = 10  } # 5% increased Def efficiency of Convoys
+			}
+		}
+		application = { # Advanced Naval Aviation Technology
+			id = 6982
+			name = CTECN_6982
+			desc = CTECD_6982
+			
+			required = { 6726 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Angled Flight Deck
+			id = 6983
+			name = CTECN_6983
+			desc = CTECD_6983
+
+			required = { 6982 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = max_organization which = carrier when = on_upgrade value = 15 }
+			}
+		}
+		application = { # Advanced Aircraft Handling Systems
+			id = 6984
+			name = CTECN_6984
+			desc = CTECD_6984
+
+			required = { 6731 6983 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Steam Catapult
+			id = 6985
+			name = CTECN_6985
+			desc = CTECD_6985
+
+			required = { 6968 6982 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Advanced Arrestor Wires
+			id = 6986
+			name = CTECN_6986
+			desc = CTECD_6986
+
+			required = { 6732 6983 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+		application = { # Landing Signaling Device
+			id = 6987
+			name = CTECN_6987
+			desc = CTECD_6987
+			
+			required = { 6983 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = {  }
+			}
+		}
+	} # Level 11
+	
+	level = { # Semi-Modern Warship Design
+		id = 6988
+		name = CTECN_6988
+		desc = CTECD_6988
+	
+		cost = 8
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Nuclear Powered Merchant Vessel
+			id = 6989
+			name = CTECN_6989
+			desc = CTECD_6989
+
+			required = { 6930 6977 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = transports value = 11 }
+			}
+		}
+		application = { # Frigate
+			id = 6990
+			name = CTECN_6990
+			desc = CTECD_6990
+			
+			required = { 6933 6969 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 5 }
+			}
+		}
+		application = { # 3000 Ton Destroyer
+			id = 6992
+			name = CTECN_6992
+			desc = CTECD_6992
+
+			required = { 6981 6991 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 10 }
+			}
+		}
+		application = { # Guided Missile Destroyer
+			id = 6993
+			name = CTECN_6993
+			desc = CTECD_6993
+
+			required = { 6961 6969 6992 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = destroyer value = 11 }
+			}
+		}
+		application = { # Nuclear Light Cruiser
+			id = 6994
+			name = CTECN_6994
+			desc = CTECD_6994
+
+			required = { 6935 6977 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 16 }
+			}
+		}
+		application = { # Large AA Light Cruiser
+			id = 6736
+			name = CTECN_6736
+			desc = CTECD_6736
+
+			required = { 6936 6968 14260 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = new_model which = cruiser value = 10 }
+			}
+		}
+		application = { # Nuclear Heavy Cruiser
+			id = 6995
+			name = CTECN_6995
+			desc = CTECD_6995
+
+			required = { 6937 6977 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 17 }
+			}
+		}
+		application = { # Rapid Fire Heavy Cruiser
+			id = 6737
+			name = CTECN_6737
+			desc = CTECD_6737
+
+			required = { 6937 6968 14261 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = new_model which = cruiser value = 14 }
+			}
+		}
+		application = { # Nuclear Super Cruiser
+			id = 6996
+			name = CTECN_6996
+			desc = CTECD_6996
+
+			required = { 6938 6977 }
+			chance = 90
+			cost = 3
+			time = 270
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 15 }
+			}
+		}
+		application = { # Guided Missile Cruiser
+			id = 6997
+			name = CTECN_6997
+			desc = CTECD_6997
+
+			required = { 6936 6961 6969 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 18 }
+			}
+		}
+		application = { # Nuclear Guided Missile Cruiser
+			id = 6998
+			name = CTECN_6998
+			desc = CTECD_6998
+
+			required = { 6997 6977 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = cruiser value = 19 }
+			}
+		}
+		application = { # Nuclear Battleship
+			id = 6624
+			name = CTECN_6624
+			desc = CTECD_6624
+
+			required = { 6945 6977 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = battleship value = 13 }
+			}
+		}
+		application = { # Guided Missile Battleship
+			id = 6619
+			name = CTECN_6619
+			desc = CTECD_6619
+
+			required = { 6939 6961 6968 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = battleship value = 12 }
+			}
+		}
+		application = { # Nuclear Guided Missile Battleship
+			id = 6620
+			name = CTECN_6620
+			desc = CTECD_6620
+
+			required = { 6619 6977 }
+			chance = 90
+			cost = 4
+			time = 270
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = battleship value = 14 }
+			}
+		}
+		application = { # ASW Support Carrier
+			id = 6621
+			name = CTECN_6621
+			desc = CTECD_6621
+
+			required = { 6745 6909 6911 6926 6740 6978 13505 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = carrier value = 3 }
+			}
+		}
+		application = { # Super Carrier
+			id = 6622
+			name = CTECN_6622
+			desc = CTECD_6622
+
+			required = { 6948 6968 6983 6984 6985 6986 6987 13507 }
+			chance = 90
+			cost = 8
+			time = 180
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = new_model which = carrier value = 12 }
+			}
+		}
+		application = { # Nuclear Super Carrier
+			id = 6623
+			name = CTECN_6623
+			desc = CTECD_6623
+
+			required = { 6622 6977 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 30
+			pos_offset = 60
+
+			
+			effects = {
+				command = { type = new_model which = carrier value = 13 }
+			}
+		}
+	} # Level 12
+}

@@ -9,56 +9,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
+import java.util.Set;
+import java.util.TreeSet;
 
 @Entity
-@Component
-public class TechLevel implements Comparable<TechLevel> {
-    @Override
-    public int compareTo(TechLevel o) {
-        return Integer.compare(id, o.id);
+public class TechLevel extends TechBase {
+    public Set<TechApplication> getApplications() {
+        return apps;
     }
-
-    public Integer getId() {
-        return id;
-    }
-    public String getName() {
-        Optional<TextMapping> candidate = textMappingRepository.findById(name);
-        return candidate.isEmpty() ? name : candidate.get().getValue();
-    }
-    public String getDetails() {
-        Optional<TextMapping> candidate = textMappingRepository.findById(details);
-        return candidate.isEmpty() ? details : candidate.get().getValue();
-    }
-    public Integer getCost() {
-        return cost;
+    void addApplication(TechApplication application) {
+        apps.add(application);
     }
     public TechArea getArea() {
         return area;
-    }
-    public Integer getTime() {
-        return time;
-    }
-    public String getEffects() {
-        return effects;
     }
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private TechArea area;
-    @Id
-    private Integer id;
-    private String name;
-    @Column(length = 2048)
-    private String details; // desc
-    @Column(length = 2048)
-    private String effects;
-    private Integer cost;
-    private Integer time;
-    private Integer chance;
-    private Integer neg_offset;
-    private Integer pos_offset;
-
-    @Transient
-    @Autowired
-    private TextMappingRepository textMappingRepository;
+    @OneToMany
+    private TreeSet<TechApplication> apps = new TreeSet<>();
 }

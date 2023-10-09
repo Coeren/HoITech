@@ -1,0 +1,1871 @@
+# 
+# The Submarine Technology Group
+#
+#
+#	
+#	
+
+technology = {
+	id = 5
+	category = submarine
+	name = TECH_SUB_NAME #Localized name
+	desc = TECH_SUB_DESC #Localized description
+	
+	level = { # Basic Submarine Technology
+		id = 5000
+		name = CTECN_5000
+		desc = CTECD_5000
+		
+		cost = 4
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Standardized Submarine Construction
+			id = 5006
+			name = CTECN_5006
+			desc = CTECD_5006
+			
+			required = { 6014 6025 13010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Submarine Support Infrastructure
+			id = 5007
+			name = CTECN_5007
+			desc = CTECD_5007
+			
+			required = { 6021 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Submarine Pressure Hull
+			id = 5008
+			name = CTECN_5008
+			desc = CTECD_5008
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Submarine Diesel Engine
+			id = 5009
+			name = CTECN_5009
+			desc = CTECD_5009
+			
+			required = { 6034 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Battery System
+			id = 5010
+			name = CTECN_5010
+			desc = CTECD_5010
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Battery Charging System
+			id = 5011
+			name = CTECN_5011
+			desc = CTECD_5011
+			
+			required = { 5009 5010 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Periscope
+			id = 5012
+			name = CTECN_5012
+			desc = CTECD_5012
+			
+			required = { 6037 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Submarine Torpedo
+			id = 5013
+			name = CTECN_5013
+			desc = CTECD_5013
+			
+			required = { 6035 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # 102mm Submarine Deck Gun
+			id = 5014
+			name = CTECN_5014
+			desc = CTECD_5014
+			
+			required = { 14250 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Short Range Submarine
+			id = 5015
+			name = CTECN_5015
+			desc = CTECD_5015
+			
+			required = { 5006 5007 5008 5009 5010 5011 5012 5013 5014 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 2 }
+			}
+		}
+
+	} # Level 1
+	
+	level = { # Great War Submarine Experience
+		id = 5100
+		name = CTECN_5100
+		desc = CTECD_5100
+				
+		cost = 4
+		time = 180
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Improved Submarine Torpedo
+			id = 5104
+			name = CTECN_5104
+			desc = CTECD_5104
+			
+			required = { 5013 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Ballast Tank Design
+			id = 5105
+			name = CTECN_5105
+			desc = CTECD_5105
+			
+			required = { 5008 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Mechanical Torpedo Reloading System
+			id = 5106
+			name = CTECN_5106
+			desc = CTECD_5106
+			
+			required = { 5013 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Gyro Compass
+			id = 5107
+			name = CTECN_5107
+			desc = CTECD_5107
+			
+			required = { 6030 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Hydrostatic Depth Gauge
+			id = 5108
+			name = CTECN_5108
+			desc = CTECD_5108
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Hydrophones
+			id = 5109
+			name = CTECN_5109
+			desc = CTECD_5109
+			
+			required = { 6309 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # 127mm Submarine Deck Gun
+			id = 5110
+			name = CTECN_5110
+			desc = CTECD_5110
+			
+			required = { 5014 14251 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Medium Range Submarine
+			id = 5111
+			name = CTECN_5111
+			desc = CTECD_5111
+			
+			required = { 5104 5105 5106 5107 5108 5109 5110 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 3 }
+			}
+		}
+	} # Level 2
+	
+	level = { # Interwar Submarine Technology
+		id = 5200
+		name = CTECN_5200
+		desc = CTECD_5200
+				
+		cost = 4
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Improved Submarine Hull Shape
+			id = 5205
+			name = CTECN_5205
+			desc = CTECD_5205
+			
+			required = { 5008 6025 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Fuel Storage
+			id = 5206
+			name = CTECN_5206
+			desc = CTECD_5206
+			
+			required = { 5008 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Submarine Diesel Engine
+			id = 5207
+			name = CTECN_5207
+			desc = CTECD_5207
+			
+			required = { 5009 6520 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Long Range Submarine Radio Equipment
+			id = 5208
+			name = CTECN_5208
+			desc = CTECD_5208
+			
+			required = { 6720 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Mechanical Torpedo Data Computer
+			id = 5209
+			name = CTECN_5209
+			desc = CTECD_5209
+			
+			required = { 6532 }
+			chance = 90
+			cost = 3
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = submarine when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Magnetic Influence Exploder
+			id = 5210
+			name = CTECN_5210
+			desc = CTECD_5210
+			
+			required = { 5104 }
+			chance = 90
+			cost = 3
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = submarine value = 1 }
+				command = { type = supply_consumption which = submarine value = 0.3 }
+			}
+		}
+		application = { # Acoustic Depth Sounder
+			id = 5211
+			name = CTECN_5211
+			desc = CTECD_5211
+			
+			required = { 5108 5109 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Air Conditioning Equipment
+			id = 5212
+			name = CTECN_5212
+			desc = CTECD_5212
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Submarine Rescue Equipment
+			id = 5213
+			name = CTECN_5213
+			desc = CTECD_5213
+			
+			required = { 5007 13106 }
+			chance = 90
+			cost = 2
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 1 }
+			}
+		}
+		application = { # Heavy Submarine Torpedo
+			id = 5214
+			name = CTECN_5214
+			desc = CTECD_5214
+			
+			required = { 6733 13216 }
+			chance = 90
+			cost = 3
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = submarine when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = submarine when = on_upgrade value = 0.3 }
+			}
+		}
+		application = { # Submarine Launched Aircraft
+			id = 5215
+			name = CTECN_5215
+			desc = CTECD_5215
+			
+			required = { 6311 6412 6533 }
+			chance = 90
+			cost = 3
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # 152mm Submarine Deck Gun
+			id = 5216
+			name = CTECN_5216
+			desc = CTECD_5216
+			
+			required = { 5110 14252 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Cruiser Submarine
+			id = 5217
+			name = CTECN_5217
+			desc = CTECD_5217
+			
+			required = { 5111 5206 5207 5216 13106 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 4 }
+			}
+		}
+		application = { # Aircraft Carrying Submarine
+			id = 5218
+			name = CTECN_5218
+			desc = CTECD_5218
+			
+			required = { 5215 5217 }
+			chance = 90
+			cost = 2
+			time = 270
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 1 }
+			}
+		}
+		application = { # Basic Long Range Submarine
+			id = 5219
+			name = CTECN_5219
+			desc = CTECD_5219
+			
+			required = { 5111 5205 5206 5207 5208 5211 5212 }
+			chance = 90
+			cost = 2 # prelim cost/time added
+			time = 270 #
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 6 }
+			}
+		}
+		
+	} # Level 3
+	
+	level = { # Early War Submarine Technology
+		id = 5300
+		name = CTECN_5300
+		desc = CTECD_5300
+				
+		cost = 4
+		time = 720
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Improved Submarine Pressure Hull
+			id = 5305
+			name = CTECN_5305
+			desc = CTECD_5305
+			
+			required = { 5008 5205 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Battery Systems
+			id = 5306
+			name = CTECN_5306
+			desc = CTECD_5306
+			
+			required = { 5010 6722 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Battery Charging Systems
+			id = 5307
+			name = CTECN_5307
+			desc = CTECD_5307
+			
+			required = { 5011 5207 5306 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Air Scrubbers
+			id = 5308
+			name = CTECN_5308
+			desc = CTECD_5308
+			
+			required = { 5212 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Welded Hull Construction
+			id = 5309
+			name = CTECN_5309
+			desc = CTECD_5309
+			
+			required = { 4801 5205 5305 }
+			chance = 90
+			cost = 3
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 1 }
+				command = { type = naval_defense which = submarine when = on_upgrade value = 1 }
+				command = { type = air_defense which = submarine when = on_upgrade value = 1 }
+				command = { type = build_time which = submarine value = -5 }
+			}
+		}
+		application = { # Improved Short Range Submarine
+			id = 5310
+			name = CTECN_5310
+			desc = CTECD_5310
+			
+			required = { 5015 5205 5207 5208 5305 5306 5307 5308 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 5 }
+			}
+		}
+		application = { # Improved Medium Range Submarine
+			id = 5311
+			name = CTECN_5311
+			desc = CTECD_5311
+			
+			required = { 5111 5205 5207 5208 5305 5306 5307 5308 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 7 }
+			}
+		}
+
+	} # Level 4
+	
+	level = { # Early War Submarine Experience 
+		id = 5400
+		name = CTECN_5400
+		desc = CTECD_5400
+				
+		cost = 4
+		time = 720
+		neg_offset = 45
+		pos_offset = 90
+		
+
+		application = { # Electric Torpedo
+			id = 5406
+			name = CTECN_5406
+			desc = CTECD_5406
+			
+			required = { 5104 5306 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = submarine value = 1 }
+				command = { type = supply_consumption which = submarine value = 0.1 }
+			}
+		}
+		application = { # Supply Submarine
+			id = 5407
+			name = CTECN_5407
+			desc = CTECD_5407
+			
+			required = { 5217 13106 13211 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 1 }
+				command = { type = range which = submarine value = 1000 }
+			}
+		}
+		application = { # Improved Hydrophones
+			id = 5408
+			name = CTECN_5408
+			desc = CTECD_5408
+			
+			required = { 5109 6923 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = submarine when = on_upgrade value = 2 }
+				command = { type = visibility which = submarine when = on_upgrade value = -2 }
+			}
+		}
+		application = { # Improved Periscope
+			id = 5409
+			name = CTECN_5409
+			desc = CTECD_5409
+			
+			required = { 5012 6530 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Analog Filters
+			id = 5410
+			name = CTECN_5410
+			desc = CTECD_5410
+			
+			required = { 5408 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = submarine when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Decimetric Radar Detector
+			id = 5411
+			name = CTECN_5411
+			desc = CTECD_5411
+			
+			required = { 6718 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_defense which = submarine when = on_upgrade value = 1 }
+				command = { type = air_defense which = submarine when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Basic Submarine Anti-Aircraft Gun
+			id = 5412
+			name = CTECN_5412
+			desc = CTECD_5412
+			
+			required = { 14012 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = submarine when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Torpedo Testing Program
+			id = 5413
+			name = CTECN_5413
+			desc = CTECD_5413
+			
+			required = { 5104 4803 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 2 }
+				command = { type = naval_attack which = submarine value = 1 }
+			}
+		}
+		application = { # Improved Long Range Submarine
+			id = 5414
+			name = CTECN_5414
+			desc = CTECD_5414
+			
+			required = { 5219 5305 5306 5307 5308 5409 }
+			chance = 90
+			cost = 3 
+			time = 180 
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 9 }
+			}
+		}
+
+	} # Level 5
+	
+	level = { # Middle War Experience
+		id = 5500
+		name = CTECN_5500
+		desc = CTECD_5500
+				
+		cost = 4
+		time = 720
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Snorkel Experimentation
+			id = 5506
+			name = CTECN_5506
+			desc = CTECD_5506
+			
+			required = { 6722 13416 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Closed Cycle Engine Experimentation
+			id = 5507
+			name = CTECN_5507
+			desc = CTECD_5507
+			
+			required = { 6722 13416 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Walter Turbine Engine Experimentation
+			id = 5508
+			name = CTECN_5508
+			desc = CTECD_5508
+			
+			required = { 6722 7202 7303 13416 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Modular Submarine Construction
+			id = 5509
+			name = CTECN_5509
+			desc = CTECD_5509
+			
+			required = { 4802 }
+			chance = 90
+			cost = 2
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = build_time which = submarine value = -10 }
+				command = { type = build_cost which = submarine value = -1 }
+			}
+		}
+		application = { # Submarine Shoreline Reconnaissance
+			id = 5510
+			name = CTECN_5510
+			desc = CTECD_5510
+			
+			required = { 5409 13309 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = army_detection value = 1 }
+				command = { type = shore_attack which = marine value = 1 }
+				command = { type = shore_attack which = infantry value = 1 }
+			}
+		}
+		application = { # Submarine-Aircraft Coordination
+			id = 5511
+			name = CTECN_5511
+			desc = CTECD_5511
+			
+			required = { 13112 13311 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = max_organization which = submarine value = 1 }
+				command = { type = surface_detection which = submarine value = 1 }
+			}
+		}
+		application = { # Pattern Running Torpedo
+			id = 5512
+			name = CTECN_5512
+			desc = CTECD_5512
+			
+			required = { 3103 5209 5413 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = submarine when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = submarine when = on_upgrade value = 0.1 }
+			}
+		}
+		application = { # Acoustic Countermeasures
+			id = 5513
+			name = CTECN_5513
+			desc = CTECD_5513
+			
+			required = { 5408 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_defense which = submarine when = on_upgrade value = 1 }
+				command = { type = visibility which = submarine when = on_upgrade value = -1 }
+			}
+		}
+		application = { # Basic Submarine Centimetric Radar
+			id = 5514
+			name = CTECN_5514
+			desc = CTECD_5514
+			
+			required = { 6922 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = submarine when = on_upgrade value = 2 }
+				command = { type = night_attack which = submarine when = on_upgrade value = 5 }
+			}
+		}
+		application = { # Basic Submarine Centimetric Radar Detector
+			id = 5515
+			name = CTECN_5515
+			desc = CTECD_5515
+			
+			required = { 5411 5514 3903}
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_defense which = submarine when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Improved Waterproof Anti-Aircraft Guns
+			id = 5516
+			name = CTECN_5516
+			desc = CTECD_5516
+			
+			required = { 5412 14264 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = submarine when = on_upgrade value = 2 }
+				command = { type = air_defense which = submarine when = on_upgrade value = 1 }
+				command = { type = build_time which = submarine value = 5 }
+				command = { type = speed which = submarine when = on_upgrade value = -2 }
+			}
+		}
+
+	} # Level 6
+	
+	level = { # Late War Submarine Technology
+		id = 5600
+		name = CTECN_5600
+		desc = CTECD_5600
+				
+		cost = 4
+		time = 540
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Advanced Submarine Pressure Hull
+			id = 5606
+			name = CTECN_5606
+			desc = CTECD_5606
+			
+			required = { 5305 5309 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Streamlined Hull Form
+			id = 5607
+			name = CTECN_5607
+			desc = CTECD_5607
+			
+			required = { }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Submarine Diesel Engine
+			id = 5608
+			name = CTECN_5608
+			desc = CTECD_5608
+			
+			required = { 5207 6520 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Battery Systems
+			id = 5609
+			name = CTECN_5609
+			desc = CTECD_5609
+			
+			required = { 5306 6967 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Battery Charging Systems
+			id = 5610
+			name = CTECN_5610
+			desc = CTECD_5610
+			
+			required = { 5307 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Periscope
+			id = 5611
+			name = CTECN_5611
+			desc = CTECD_5611
+			
+			required = { 5409 6915 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Advanced Hydrophones
+			id = 5612
+			name = CTECN_5612
+			desc = CTECD_5612
+			
+			required = { 5408 5410 6952 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = submarine when = on_upgrade value = 1 }
+				command = { type = sub_detection which = submarine when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Advanced Short Range Submarine
+			id = 5613
+			name = CTECN_5613
+			desc = CTECD_5613
+			
+			required = { 5310 5606 5607 5608 5609 5610 5611 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 8 }
+			}
+		}
+		application = { # Advanced Medium Range Submarine
+			id = 5614
+			name = CTECN_5614
+			desc = CTECD_5614
+			
+			required = { 5311 5606 5607 5608 5609 5610 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 10 }
+			}
+		}
+
+	} # Level 7
+	
+	level = { # Late War Submarine Experience
+		id = 5700
+		name = CTECN_5700
+		desc = CTECD_5700
+				
+		cost = 4
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Deck Gun Removal
+			id = 5708
+			name = CTECN_5708
+			desc = CTECD_5708
+			
+			required = { 5607 13311 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = submarine when = on_upgrade value = 2 }
+				command = { type = naval_defense which = submarine when = on_upgrade value = 1 }
+				command = { type = naval_attack which = submarine when = on_upgrade value = -1 }
+				command = { type = visibility which = submarine when = on_upgrade value = -5 }
+				command = { type = build_time which = submarine when = on_upgrade value = -5 }
+			}
+		}
+		application = { # Snorkel Deployment
+			id = 5709
+			name = CTECN_5709
+			desc = CTECD_5709
+
+			
+			required = { 5506 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_defense which = submarine when = on_upgrade value = 2 }
+				command = { type = visibility which = submarine when = on_upgrade value = -5 }
+			}
+		}
+		application = { # Closed Cycle Engine Deployment
+			id = 5710
+			name = CTECN_5710
+			desc = CTECD_5710
+			
+			required = { 5507 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Walter Turbine Engine Deployment
+			id = 5711
+			name = CTECN_5711
+			desc = CTECD_5711
+			
+			required = { 5508 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Centimetric Submarine Radar
+			id = 5712
+			name = CTECN_5712
+			desc = CTECD_5712
+			
+			required = { 5514 5611 6951 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = submarine when = on_upgrade value = 1 }
+				command = { type = naval_attack which = submarine when = on_upgrade value = 1 }
+				command = { type = night_attack which = submarine when = on_upgrade value = 5 }
+			}
+		}
+		application = { # Acoustic Homing Torpedo
+			id = 5713
+			name = CTECN_5713
+			desc = CTECD_5713
+			
+			required = { 5406 5512 5612 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = submarine value = 1 }
+				command = { type = naval_defense which = submarine value = 1 }
+				command = { type = supply_consumption which = submarine value = 0.3 }
+			}
+		}
+		application = { # Advanced Long Range Submarine
+			id = 5714
+			name = CTECN_5714
+			desc = CTECD_5714
+			
+			required = { 5414 5606 5607 5608 5609 5610 5611 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 12 }
+			}
+		}
+		application = { # Basic Closed-Cycle Short Range Submarine
+			id = 5715
+			name = CTECN_5715
+			desc = CTECD_5715
+			
+			required = { 5613 5709 5710 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 14 }
+			}
+		}
+		application = { # Basic Closed-Cycle Medium Range Submarine
+			id = 5716
+			name = CTECN_5716
+			desc = CTECD_5716
+			
+			required = { 5614 5709 5710 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 16 }
+			}
+		}
+		application = { # Basic Walter Engine Short Range Submarine
+			id = 5717
+			name = CTECN_5717
+			desc = CTECD_5717
+			
+			required = { 5613 5709 5711 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 15 }
+			}
+		}
+		application = { # Basic Walter Engine Medium Range Submarine
+			id = 5718
+			name = CTECN_5718
+			desc = CTECD_5718
+			
+			required = { 5614 5709 5711 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 17 }
+			}
+		}
+
+	} # Level 8
+	
+	level = { # Semi-Modern Submarine Technology
+		id = 5800
+		name = CTECN_5800
+		desc = CTECD_5800
+				
+		cost = 4
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Semi-Modern Pressure Hull
+			id = 5805
+			name = CTECN_5805
+			desc = CTECD_5805
+			
+			required = { 5606 5607 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Semi-Modern Submarine Diesel Engine
+			id = 5806
+			name = CTECN_5806
+			desc = CTECD_5806
+			
+			required = { 5608 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Semi-Modern Battery System
+			id = 5807
+			name = CTECN_5807
+			desc = CTECD_5807
+			
+			required = { 5609 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Semi-Modern Battery Charging System
+			id = 5808
+			name = CTECN_5808
+			desc = CTECD_5808
+			
+			required = { 5610 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Semi-Modern Periscope
+			id = 5809
+			name = CTECN_5809
+			desc = CTECD_5809
+			
+			required = { 5611 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Integrated Sonar/ASDIC Suite
+			id = 5810
+			name = CTECN_5810
+			desc = CTECD_5810
+			
+			required = { 5612 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = surface_detection which = submarine when = on_upgrade value = 1 }
+				command = { type = sub_detection which = submarine when = on_upgrade value = 1 }
+				command = { type = sub_attack which = submarine when = on_upgrade value = 1 }
+				command = { type = naval_defense which = submarine when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Internal Navigation System
+			id = 5811
+			name = CTECN_5811
+			desc = CTECD_5811
+			
+			required = { 5107 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Wire Guided Torpedo
+			id = 5812
+			name = CTECN_5812
+			desc = CTECD_5812
+			
+			required = { 5713 5810 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = naval_attack which = submarine value = 1 }
+				command = { type = supply_consumption which = submarine value = 0.1 }
+			}
+		}
+		application = { # Submarine Nuclear Reactor Experimentation
+			id = 5813
+			name = CTECN_5813
+			desc = CTECD_5813
+			
+			required = { 8971 13508 }
+			chance = 90
+			cost = 4
+			time = 360
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Basic Closed-Cycle Long Range Submarine
+			id = 5814
+			name = CTECN_5814
+			desc = CTECD_5814
+			
+			required = { 5709 5710 5714 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 18 }
+			}
+		}
+		application = { # Basic Walter Engine Long Range Submarine
+			id = 5815
+			name = CTECN_5815
+			desc = CTECD_5815
+			
+			required = { 5709 5711 5714 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 19 }
+			}
+		}		
+
+	} # Level 9
+	
+	level = { # Semi-Modern Submarine Construction
+		id = 5900
+		name = CTECN_5900
+		desc = CTECD_5900
+				
+		cost = 8
+		time = 270
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Improved Closed-Cycle Engine
+			id = 5904
+			name = CTECN_5904
+			desc = CTECD_5904
+			
+			required = { 5710 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Improved Walter Turbine Engine
+			id = 5905
+			name = CTECN_5905
+			desc = CTECD_5905
+			
+			required = { 5711 }
+			chance = 90
+			cost = 2
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Submarine Nuclear Reactor Deployment
+			id = 5906
+			name = CTECN_5906
+			desc = CTECD_5906
+			
+			required = { 5813 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Semi-Modern Short Range Submarine
+			id = 5907
+			name = CTECN_5907
+			desc = CTECD_5907
+			
+			required = { 5613 5805 5806 5807 5808 5809 5811 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 11 }
+			}
+		}
+		application = { # Semi-Modern Medium Range Submarine
+			id = 5908
+			name = CTECN_5908
+			desc = CTECD_5908
+			
+			required = { 5614 5805 5806 5807 5808 5809 5811 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 13 }
+			}
+		}
+		application = { # Semi-Modern Long Range Submarine
+			id = 5909
+			name = CTECN_5909
+			desc = CTECD_5909
+			
+			required = { 5714 5805 5806 5807 5808 5809 5811 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 26 }
+			}
+		}
+
+		
+	} # Level 10
+	
+	level = { # Improved AIP Submarine Deployment
+		id= 5941
+		name = CTECN_5941
+		desc = CTECD_5941
+				
+		cost = 8
+		time = 270
+		neg_offset = 45
+		pos_offset = 90
+		
+		application = { # Improved Closed-Cycle Short Range Submarine
+			id = 5910
+			name = CTECN_5910
+			desc = CTECD_5910
+			
+			required = { 5715 5904 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 20 }
+			}
+		}
+		application = { # Improved Closed-Cycle Medium Range Submarine
+			id = 5911
+			name = CTECN_5911
+			desc = CTECD_5911
+			
+			required = { 5716 5904 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 22 }
+			}
+		}
+		application = { # Improved Closed-Cycle Long Range Submarine
+			id = 5912
+			name = CTECN_5912
+			desc = CTECD_5912
+			
+			required = { 5814 5904 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 24 }
+			}
+		}
+		application = { # Improved Walter Engine Short Range Submarine
+			id = 5913
+			name = CTECN_5913
+			desc = CTECD_5913
+			
+			required = { 5717 5905 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 21 }
+			}
+		}
+		application = { # Improved Walter Engine Medium Range Submarine
+			id = 5914
+			name = CTECN_5914
+			desc = CTECD_5914
+			
+			required = { 5718 5905 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 23 }
+			}
+		}
+		application = { # Improved Walter Engine Long Range Submarine
+			id = 5915
+			name = CTECN_5915
+			desc = CTECD_5915
+			
+			required = { 5815 5905 }
+			chance = 90
+			cost = 3
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 25 }
+			}
+		}
+
+	} # Level 11
+	
+	level = { # Nuclear Submarine Deployment
+		id = 5971
+		name = CTECN_5971
+		desc = CTECD_5971
+				
+		cost = 8
+		time = 270
+		neg_offset = 45
+		pos_offset = 90
+		
+
+		application = { # Basic Nuclear Powered Submarine
+			id = 5916
+			name = CTECN_5916
+			desc = CTECD_5916
+			
+			required = { 5906 5909 }
+			chance = 90
+			cost = 4
+			time = 180
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = new_model which = submarine value = 27 }
+			}
+		}
+
+	} # Level 12
+
+}

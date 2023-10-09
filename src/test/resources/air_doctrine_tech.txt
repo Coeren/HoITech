@@ -1,0 +1,536 @@
+# 
+# The Air Doctrine Technology Group
+#
+
+# AA_batteries increase 10 points
+#	
+#	
+#	
+
+technology = {
+	id = 12
+	category = air_doctrine
+	name = TECH_AIR_DOC_NAME #Localized name
+	desc = TECH_AIR_DOC_DESC #Localized description
+	
+	level = { # 1 - Great War Experience Analysis
+		id = 12000
+		name = TECH_LEVEL_AIR_DOC_1_NAME 
+		desc = TECH_LEVEL_AIR_DOC_1_DESC 
+
+		cost = 5
+		time = 600
+		neg_offset = 75
+		pos_offset = 150
+
+		application = { # Flying Circus Doctrine
+			id = 12001
+			name = TECH_APP_AIR_DOC_1_1_NAME
+			desc = TECH_APP_AIR_DOC_1_1_DESC
+			
+			required = { }
+			chance = 80
+			cost = 12
+			time = 320
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = fighter when = now value = 10 }
+			}
+		}
+		application = { # Blitz Bombing Doctrine
+			id = 12002
+			name = TECH_APP_AIR_DOC_1_2_NAME
+			desc = TECH_APP_AIR_DOC_1_2_DESC
+			
+			required = { }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = tactical_bomber when = now value = 10 }
+				command = { type = max_organization which = dive_bomber when = now value = 25 }
+			}
+		}
+		application = { #  Carrier based airgroups
+			id = 12005
+			name = CTECN_12005
+			desc = CTECD_12005
+			
+			required = { }
+			chance = 80
+			cost = 12
+			time = 400
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = torpedo_plane when = now value = 20 }
+				command = { type = air_defense which = torpedo_plane when = now value = 1.5 }
+			}
+		}
+		application = { # Airborne Assault Doctrine
+			id = 12003
+			name = TECH_APP_AIR_DOC_1_3_NAME
+			desc = TECH_APP_AIR_DOC_1_3_DESC
+			
+			required = { 9204 }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = paradrop_attack which = paratrooper value = 10 }
+			}
+		}
+		application = { # Point Anti-Air Defense Doctrine
+			id = 12004
+			name = TECH_APP_AIR_DOC_1_4_NAME
+			desc = TECH_APP_AIR_DOC_1_4_DESC
+			
+			required = { 14204 }
+			chance = 80
+			cost = 10
+			time = 280
+			neg_offset = 35
+			pos_offset = 70
+			
+			effects = {
+				command = { type = AA_batteries value = 3 }
+			}
+}
+
+		application = { # Shortened Training programm
+			id = 12006
+			name = CTECN_12006
+			desc = CTECD_12006
+			
+			required = { }
+			chance = 80
+			cost = 2
+			time = 280
+			neg_offset = 35
+			pos_offset = 70
+			
+			effects = {
+				command = { type = deactivate which = 12007 }
+				command = { type = build_time which = fighter when = on_upgrade value = -30 }
+				command = { type = max_organization which = fighter when = on_upgrade value = -10 }
+				command = { type = air_attack which = fighter when = on_upgrade value = -2 }
+				command = { type = air_defense which = fighter when = on_upgrade value = -2 }
+				command = { type = build_time which = strategic_bomber when = on_upgrade value = -30 }
+				command = { type = max_organization which = strategic_bomber when = on_upgrade value = -10 }
+				command = { type = air_attack which = strategic_bomber when = on_upgrade value = -2 }
+				command = { type = air_defense which = strategic_bomber when = on_upgrade value = -2 }
+				command = { type = build_time which = tactical_bomber when = on_upgrade value = -30 }
+				command = { type = max_organization which = tactical_bomber when = on_upgrade value = -10 }
+				command = { type = air_attack which = tactical_bomber when = on_upgrade value = -2 }
+				command = { type = air_defense which = tactical_bomber when = on_upgrade value = -2 }
+				command = { type = build_time which = torpedo_plane when = on_upgrade value = -30 }
+				command = { type = max_organization which = torpedo_plane when = on_upgrade value = -10 }
+				command = { type = air_attack which = torpedo_plane when = on_upgrade value = -2 }
+				command = { type = air_defense which = torpedo_plane when = on_upgrade value = -2 }
+				command = { type = build_time which = naval_bomber when = on_upgrade value = -30 }
+				command = { type = max_organization which = naval_bomber when = on_upgrade value = -10 }
+				command = { type = air_attack which = naval_bomber when = on_upgrade value = -2 }
+				command = { type = air_defense which = naval_bomber when = on_upgrade value = -2 }
+				command = { type = build_time which = dive_bomber when = on_upgrade value = -30 }
+				command = { type = max_organization which = dive_bomber when = on_upgrade value = -10 }
+				command = { type = air_attack which = dive_bomber when = on_upgrade value = -2 }
+				command = { type = air_defense which = dive_bomber when = on_upgrade value = -2 }
+
+			}
+		}
+		application = { # Extended Training Programm
+			id = 12007
+			name = CTECN_12007
+			desc = CTECD_12007
+			
+			required = { }
+			chance = 80
+			cost = 2
+			time = 280
+			neg_offset = 35
+			pos_offset = 70
+			
+			effects = {
+				command = { type = deactivate which = 12006 }
+				command = { type = build_time which = fighter when = on_upgrade value = 30 }
+				command = { type = max_organization which = fighter when = on_upgrade value = 5 }
+				command = { type = air_attack which = fighter when = on_upgrade value = 1 }
+				command = { type = air_defense which = fighter when = on_upgrade value = 1 }
+				command = { type = build_time which = strategic_bomber when = on_upgrade value = 40 }
+				command = { type = max_organization which = strategic_bomber when = on_upgrade value = 5 }
+				command = { type = build_time which = tactical_bomber when = on_upgrade value = 30 }
+				command = { type = max_organization which = tactical_bomber when = on_upgrade value = 5 }
+				command = { type = air_defense which = tactical_bomber when = on_upgrade value = 1 }
+				command = { type = build_time which = torpedo_plane when = on_upgrade value = 30 }
+				command = { type = max_organization which = torpedo_plane when = on_upgrade value = 5 }
+				command = { type = air_defense which = torpedo_plane when = on_upgrade value = 1.5 }
+				command = { type = build_time which = naval_bomber when = on_upgrade value = 30 }
+				command = { type = max_organization which = naval_bomber when = on_upgrade value = 5 }
+				command = { type = air_defense which = naval_bomber when = on_upgrade value = 1 }
+				command = { type = build_time which = dive_bomber when = on_upgrade value = 30 }
+				command = { type = max_organization which = dive_bomber when = on_upgrade value = 5 }
+				command = { type = air_defense which = dive_bomber when = on_upgrade value = 1 }
+			}
+
+
+		}
+	} # Level 1
+	
+	level = { # 2 - Pre-War Field Testing
+		id = 12100
+		name = TECH_LEVEL_AIR_DOC_2_NAME 
+		desc = TECH_LEVEL_AIR_DOC_2_DESC 
+				
+		cost = 12
+		time = 650
+		neg_offset = 75
+		pos_offset = 150
+
+		application = { # Home Chain Doctrine
+			id = 12101
+			name = TECH_APP_AIR_DOC_2_1_NAME
+			desc = TECH_APP_AIR_DOC_2_1_DESC
+			
+			required = { 3004 }
+			chance = 80
+			cost = 12
+			time = 320
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = fighter when = now value = 5 }
+				command = { type = AA_batteries value = 3 }
+			}
+		}
+		application = { # Sheltered Airfields Organization
+			id = 12102
+			name = TECH_APP_AIR_DOC_2_2_NAME
+			desc = TECH_APP_AIR_DOC_2_2_DESC
+			
+			required = { 3004 }
+			chance = 80
+			cost = 10
+			time = 280
+			neg_offset = 35
+			pos_offset = 70
+			
+			effects = {
+				command = { type = max_organization which = fighter when = now value = 5 }
+				command = { type = air_defense which = fighter when = now value = 1 }
+				command = { type = max_organization which = tactical_bomber when = now value = 5 }
+				command = { type = air_defense which = tactical_bomber when = now value = 1 }
+				command = { type = max_organization which = strategic_bomber when = now value = 5 }
+				command = { type = air_defense which = strategic_bomber when = now value = 1 }
+				command = { type = max_organization which = naval_bomber when = now value = 5 }
+				command = { type = air_defense which = naval_bomber when = now value = 1 }
+				command = { type = max_organization which = dive_bomber when = now value = 5 }
+				command = { type = air_defense which = dive_bomber when = now value = 1 }
+			}
+		}
+	} # Level 2
+	
+	level = { # 3 - Early War Experience Analysis
+		id = 12200
+		name = TECH_LEVEL_AIR_DOC_3_NAME 
+		desc = TECH_LEVEL_AIR_DOC_3_DESC 
+				
+		cost = 12
+		time = 720
+		neg_offset = 75
+		pos_offset = 150
+
+		application = { # Combat Training Team Doctrine
+			id = 12201
+			name = TECH_APP_AIR_DOC_3_1_NAME
+			desc = TECH_APP_AIR_DOC_3_1_DESC
+			
+			required = { }
+			chance = 80
+			cost = 12
+			time = 320
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = fighter when = now value = 10 }
+				command = { type = max_organization which = torpedo_plane when = now value = 2 }
+			}
+		}
+		application = { # Carpet Bombing Doctrine
+			id = 12202
+			name = TECH_APP_AIR_DOC_3_2_NAME
+			desc = TECH_APP_AIR_DOC_3_2_DESC
+			
+			required = { }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = tactical_bomber when = now value = 5 }
+				command = { type = max_organization which = strategic_bomber when = now value = 15 }
+				command = { type = max_organization which = naval_bomber when = now value = 10 }
+				command = { type = strategic_attack which = strategic_bomber when = now value = 1 }
+			}
+		}
+		application = { # Mechanized Airborne Doctrine
+			id = 12203
+			name = TECH_APP_AIR_DOC_3_3_NAME
+			desc = TECH_APP_AIR_DOC_3_3_DESC
+			
+			required = { 9109 9204 2103 }
+			chance = 80
+			cost = 10
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = paratrooper when = now value = 10 }
+			}
+		}
+		application = { # Vertical Envelopment Doctrine
+			id = 12204
+			name = TECH_APP_AIR_DOC_3_4_NAME
+			desc = TECH_APP_AIR_DOC_3_4_DESC
+			
+			required = { 9204 }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = paratrooper when = now value = 10 }
+				command = { type = paradrop_attack which = paratrooper value = 10 }
+				command = { type = max_organization which = dive_bomber when = now value = 10 }
+			}
+		}
+		application = { # Area Anti-Air Defense Doctrine
+			id = 12205
+			name = TECH_APP_AIR_DOC_3_5_NAME
+			desc = TECH_APP_AIR_DOC_3_5_DESC
+			
+			required = { 12004 }
+			chance = 80
+			cost = 10
+			time = 280
+			neg_offset = 35
+			pos_offset = 70
+			
+			effects = {
+				command = { type = AA_batteries value = 4 }
+			}
+		}
+	} # Level 3
+	
+	level = { # 4 - Early War Combat Testing
+		id = 12300
+		name = TECH_LEVEL_AIR_DOC_4_NAME 
+		desc = TECH_LEVEL_AIR_DOC_4_DESC 
+				
+		cost = 12
+		time = 720
+		neg_offset = 75
+		pos_offset = 150
+
+		application = { # Air-Land Battle Doctrine
+			id = 12301
+			name = TECH_APP_AIR_DOC_4_1_NAME
+			desc = TECH_APP_AIR_DOC_4_1_DESC
+			
+			required = { 11203 12201 }
+			chance = 80
+			cost = 12
+			time = 320
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = fighter when = now value = 10 }
+				command = { type = max_organization which = dive_bomber when = now value = 20 }
+				command = { type = max_organization which = tactical_bomber when = now value = 10 }
+				command = { type = max_organization which = torpedo_plane when = now value = 3 }
+			}
+		}
+		application = { # Radar Scout Doctrine
+			id = 12302
+			name = TECH_APP_AIR_DOC_4_2_NAME
+			desc = TECH_APP_AIR_DOC_4_2_DESC
+			
+			required = { 10202 12201 }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = fighter when = now value = 10 }
+				command = { type = max_organization which = naval_bomber when = now value = 15 }
+				command = { type = max_organization which = torpedo_plane when = now value = 10 }
+			}
+		}
+		application = { # Bomb-Runner Doctrine
+			id = 12303
+			name = TECH_APP_AIR_DOC_4_3_NAME
+			desc = TECH_APP_AIR_DOC_4_3_DESC
+			
+			required = { 9502 12202 }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = tactical_bomber when = now value = 10 }
+				command = { type = max_organization which = strategic_bomber when = now value = 20 }
+				command = { type = max_organization which = torpedo_plane when = now value = 10 }
+				command = { type = max_organization which = naval_bomber when = now value = 10 }
+			}
+		}
+	} # Level 4
+	
+	level = { # 5 - Late War Experience Analysis
+		id = 12400
+		name = TECH_LEVEL_AIR_DOC_5_NAME 
+		desc = TECH_LEVEL_AIR_DOC_5_DESC 
+				
+		cost = 12
+		time = 720
+		neg_offset = 75
+		pos_offset = 150
+
+		application = { # Wingman Doctrine
+			id = 12401
+			name = TECH_APP_AIR_DOC_5_1_NAME
+			desc = TECH_APP_AIR_DOC_5_1_DESC
+			
+			required = { 12201 }
+			chance = 80
+			cost = 12
+			time = 320
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = fighter when = now value = 15 }
+			}
+		}
+		application = { # Close Air Support Doctrine
+			id = 12402
+			name = TECH_APP_AIR_DOC_5_2_NAME
+			desc = TECH_APP_AIR_DOC_5_2_DESC
+			
+			required = { 1972 12301 }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = tactical_bomber when = now value = 10 }
+				command = { type = max_organization which = dive_bomber when = now value = 10 }
+				command = { type = max_organization which = torpedo_plane when = now value = 10 }
+				command = { type = max_organization which = naval_bomber when = now value = 10 }
+			}
+		}
+		application = { # Terror Bombing Doctrine
+			id = 12403
+			name = TECH_APP_AIR_DOC_5_3_NAME
+			desc = TECH_APP_AIR_DOC_5_3_DESC
+			
+			required = { 9302 12202 }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = tactical_bomber when = now value = 10 }
+				command = { type = max_organization which = strategic_bomber when = now value = 20 } 
+			}
+		}
+		application = { # Airborne Invasion Organization
+			id = 12404
+			name = TECH_APP_AIR_DOC_5_4_NAME
+			desc = TECH_APP_AIR_DOC_5_4_DESC
+			
+			required = { 12202 }
+			chance = 80
+			cost = 12
+			time = 360
+			neg_offset = 45
+			pos_offset = 90
+			
+			effects = {
+				command = { type = max_organization which = paratrooper when = now value = 10 }
+				command = { type = paradrop_attack which = paratrooper value = 10 }
+				command = { type = max_organization which = strategic_bomber when = now value = 5 }
+			}
+		}
+	} # Level 5
+	
+	level = { # 6 - Late War Combat Testing
+		id = 12500
+		name = TECH_LEVEL_AIR_DOC_6_NAME 
+		desc = TECH_LEVEL_AIR_DOC_6_DESC 
+				
+		cost = 10
+		time = 720
+		neg_offset = 75
+		pos_offset = 150
+
+
+		application = { # Air Superiority Doctrine
+			id = 12502
+			name = TECH_APP_AIR_DOC_6_2_NAME
+			desc = TECH_APP_AIR_DOC_6_2_DESC
+			
+			required = { }
+			chance = 80
+			cost = 12
+			time = 320
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = fighter when = now value = 10 }
+			}
+		}
+
+		application = { # Air-to-Air Refueling Doctrine
+			id = 12503
+			name = CTECN_12503
+			desc = CTECD_12503
+			
+			required = { 9973 }
+			chance = 80
+			cost = 12
+			time = 320
+			neg_offset = 40
+			pos_offset = 80
+			
+			effects = {
+				command = { type = max_organization which = strategic_bomber when = now value = 2 } 
+			}
+		}
+	} # Level 6
+
+}

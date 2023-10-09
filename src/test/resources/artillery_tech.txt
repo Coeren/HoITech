@@ -1,0 +1,2490 @@
+####################################
+## The Artillery Technology Group ##
+####################################
+
+technology = {
+	id = 14
+	category = artillery
+	name = TECH_ARTILLERY_NAME #Localized name
+	desc = TECH_ARTILLERY_DESC #Localized description
+	
+	level = { # Great War Artillery Pieces
+		id = 14000
+		name = CTECN_14000
+		desc = TECH_LEVEL_ARTILLERY_1_DESC 
+					
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Semi-Automatic Breech
+			id = 14001
+			name = TECH_APP_ARTILLERY_1_1_NAME
+			desc = TECH_APP_ARTILLERY_1_1_DESC
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # High-Elevation Gun Carriage
+			id = 14050
+			name = CTECN_14050
+			desc = CTECD_14050
+			
+			required = { }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Infantry Gun 37mm+
+			id = 14003
+			name = CTECN_14003
+			desc = TECH_APP_ARTILLERY_1_3_DESC
+			
+			required = { 14001 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = paratrooper when = now value = 1 }
+				command = { type = ground_defense which = paratrooper when = now value = 1 }
+				command = { type = soft_attack which = bergsjaeger when = now value = 1 }
+				command = { type = ground_defense which = bergsjaeger when = now value = 1 }
+				command = { type = soft_attack which = marine when = now value = 1 }
+				command = { type = ground_defense which = marine when = now value = 1 }
+			}
+		}
+		application = { # Great War Field Artillery Gun 75mm+
+			id = 14051
+			name = CTECN_14051
+			desc = CTECD_14051
+			
+			required = { 14001 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = infantry when = now value = 1 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = soft_attack which = cavalry when = now value = 1 }
+				command = { type = supply_consumption which = cavalry when = now value = 0.1 }
+			}
+		}
+		application = { # Great War Field Artillery Gun 150mm+
+			id = 14052
+			name = CTECN_14052
+			desc = CTECD_14052
+			
+			required = { 14001 14051 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = infantry when = now value = 1 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+#				command = { type = soft_attack which = bergsjaeger when = now value = 1 }
+#				command = { type = supply_consumption which = bergsjaeger when = now value = 0.1 }
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = supply_consumption which = artillery when = now value = 0.1 }
+			}
+		}
+		application = { # Great War Mountain Gun 75mm+
+			id = 14053
+			name = CTECN_14053
+			desc = CTECD_14053
+			
+			required = { 14001 14051 14050 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = bergsjaeger when = now value = 1 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = 0.1 }
+			}
+		}
+		application = { # Great War Heavy Artillery Gun 240mm+
+			id = 14054
+			name = CTECN_14054
+			desc = CTECD_14054	
+			required = { 14001 14052 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 2 }
+				command = { type = supply_consumption which = artillery when = now value = 0.1 }
+				command = { type = speed which = artillery when = now value = -1 }
+			}
+		}
+		application = { # Great War Gun Carrier
+			id = 14057
+			name = CTECN_14057
+			desc = CTECD_14057
+			
+			required = { 14054 2005 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = artillery when = now value = 1 }
+				command = { type = fuel_consumption which = artillery when = now value = 0.1 }
+			}
+		}
+		application = { # Anti-Tank Gun 20mm+
+			id = 14055
+			name = CTECN_14055
+			desc = CTECD_14055
+			
+			required = { 14001 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+			command = { type = hard_attack which = infantry when = now value = 0.5 }
+			command = { type = hard_attack which = motorized when = now value = 0.5 }
+			command = { type = hard_attack which = mechanized when = now value = 0.5 }
+			 }
+		}
+		application = { # Tank Gun 20mm+
+			id = 14010
+			name = CTECN_14010
+			desc = TECH_APP_ARTILLERY_1_10_DESC
+			
+			required = { 14055 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # 7.7mm+ MGs (air)
+			id = 14995
+			name = CTECN_14995
+			desc = CTECD_14995
+			
+			required = { 1975 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # 12.7mm MGs (air)
+			id = 14973
+			name = CTECN_14973
+			desc = CTECD_14973
+			required = { 14995 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { } # No effects
+			}
+		}
+		application = { # Anti-Air Machine Gun
+			id = 14056
+			name = CTECN_14056
+			desc = CTECD_14056
+			
+			required = { 14995 14050 }
+			chance = 90
+			cost = 4
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_defense which = infantry when = now value = 1 }
+				command = { type = air_defense which = motorized when = now value = 1 }
+				command = { type = air_defense which = mechanized when = now value = 1 }
+				command = { type = air_defense which = paratrooper when = now value = 1 }
+				command = { type = air_defense which = bergsjaeger when = now value = 1 }
+				command = { type = air_defense which = marine when = now value = 1 }
+				command = { type = air_defense which = artillery when = now value = 1 }
+				command = { type = air_defense which = battleship when = now value = 1 }
+				command = { type = air_defense which = cruiser when = now value = 1 }
+				command = { type = air_defense which = carrier when = now value = 1 }
+				command = { type = air_defense which = destroyer when = now value = 1 }
+			}
+		}
+		application = { # Anti-Air Gun 75mm+
+			id = 14107
+			name = CTECN_14107
+			desc = CTECD_14107
+			
+			required = { 14001 14050 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+
+				command = { type = air_attack which = anti_air when = now value = 2 }
+				command = { type = air_defense which = anti_air when = now value = 2 }
+				command = { type = hard_attack which = anti_air when = now value = 1 }
+				command = { type = supply_consumption which = anti_air when = now value = 0.1 }
+				command = { type = build_time which = anti_air when = now value = 2 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = now value = 1 }
+				command = { type = AA_batteries value = 4 }
+				command = { type = deactivate which = 14208 }
+			}
+		}
+		application = { # Anti-Air Gun 85mm+
+			id = 14208
+			name = CTECN_14208
+			desc = CTECD_14208
+			
+			required = { 14001 14050 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = anti_air when = now value = 2 }
+				command = { type = air_defense which = anti_air when = now value = 2 }
+				command = { type = hard_attack which = anti_air when = now value = 3 }
+				command = { type = supply_consumption which = anti_air when = now value = 0.1 }
+				command = { type = build_time which = anti_air when = now value = 2 }
+				command = { type = AA_batteries value = 4 }
+				command = { type = deactivate which = 14107 }
+			}
+		}
+		application = { # 102mm Naval Gun
+			id = 14250
+			name = CTECN_14250
+			desc = CTECD_14250
+
+			required = { 14001 6015 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+
+			effects = { }
+		}
+		application = { # 127mm Naval Gun
+			id = 14251
+			name = CTECN_14251
+			desc = CTECD_14251
+
+			required = { 14250 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+
+			effects = { }
+		}
+		application = { # 152mm Naval Gun
+			id = 14252
+			name = CTECN_14252
+			desc = CTECD_14252
+
+			required = { 6016 14251 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+
+			effects = { }
+		}
+		application = { # 203mm Naval Gun
+			id = 14253
+			name = CTECN_14253
+			desc = CTECD_14253
+
+			required = { 14252 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+
+			effects = { }
+		}
+		application = { # 254mm Naval Gun
+			id = 14254
+			name = CTECN_14254
+			desc = CTECD_14254
+
+			required = { 6017 14253 }
+			chance = 90
+			cost = 10
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+
+			effects = { }
+		}
+		application = { # 305mm Naval Gun
+			id = 14255
+			name = CTECN_14255
+			desc = CTECD_14255
+
+			required = { 14254 }
+			chance = 90
+			cost = 10
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+
+			effects = { }
+		}
+		application = { # 356mm Naval Gun
+			id = 14256
+			name = CTECN_14256
+			desc = CTECD_14256
+			
+			required = { 14255 }
+			chance = 90
+			cost = 12
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { }
+		}
+		application = { # 406mm Naval Gun
+			id = 14257
+			name = CTECN_14257
+			desc = CTECD_14257
+
+			required = { 14256 }
+			chance = 90
+			cost = 12
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { }
+		}		
+	} # Level 1
+	
+	level = { # Light Artillery Pieces
+		id = 14100
+		name = CTECN_14100
+		desc = TECH_LEVEL_ARTILLERY_2_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Improved Gun Carriage
+			id = 14151
+			name = CTECN_14151
+			desc = CTECD_14151
+			
+			required = { 14050 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = motorized when = now value = 2 }
+				command = { type = ground_defense which = motorized when = now value = 1 }
+				command = { type = supply_consumption which = motorized when = now value = 0.2 }
+			}
+		}
+		application = { # Improved Fire Control
+			id = 14150
+			name = CTECN_14150
+			desc = CTECD_14150
+			
+			required = { 3007 }
+			chance = 90
+			cost = 6
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Tracked Utility Vehicles
+			id = 14155
+			name = CTECN_14155
+			desc = CTECD_14155
+			
+			required = { 2986 11106 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = supply_consumption which = artillery when = now value = -0.3 }
+				command = { type = fuel_consumption which = artillery when = now value = 0.1 }
+				command = { type = supply_consumption which = anti_tank when = now value = -0.3 }
+				command = { type = fuel_consumption which = anti_tank when = now value = 0.1 }
+				command = { type = supply_consumption which = anti_air when = now value = -0.3 }
+				command = { type = fuel_consumption which = anti_air when = now value = 0.1 }
+				command = { type = supply_consumption which = engineer when = now value = -0.3 }
+				command = { type = fuel_consumption which = engineer when = now value = 0.1 }
+			}
+		}
+		application = { # Motorized Artillery Carriers
+			id = 14156
+			name = CTECN_14156
+			desc = CTECD_14156
+			
+			required = { 14151 11106 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = supply_consumption which = infantry when = now value = -0.2 }
+				command = { type = supply_consumption which = cavalry when = now value = -0.2 }
+				command = { type = supply_consumption which = motorized when = now value = -0.3 }
+				command = { type = fuel_consumption which = motorized when = now value = 0.1 }
+			}
+		}
+		application = { # Basic Tank Gun Ammunition
+			id = 14101
+			name = TECH_APP_ARTILLERY_2_1_NAME
+			desc = TECH_APP_ARTILLERY_2_1_DESC
+			
+			required = { 14055 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = armor when = now value = 1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+			}
+		}
+		application = { # Infantry Gun 70mm+
+			id = 14004
+			name = CTECN_14004
+			desc = CTECD_14004
+			
+			required = { 14003 14051 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = bergsjaeger when = now value = 1 }
+				command = { type = soft_attack which = marine when = now value = 1 }
+				command = { type = soft_attack which = militia value = 0.5 }
+				command = { type = supply_consumption which = militia when = now value = 0.1 }
+			}
+		}
+		application = { # Infantry Gun 100mm+
+			id = 14102
+			name = CTECN_14102
+			desc = CTECD_14102
+			
+			required = { 14004 14052 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = ground_defense which = militia when = now value = 0.5 }
+				command = { type = supply_consumption which = militia when = now value = 0.1 }
+				command = { type = deactivate which = 14153 }
+				command = { type = deactivate which = 14601 }
+			}
+		}
+		application = { # Infantry Gun 120mm+
+			id = 14153
+			name = CTECN_14153
+			desc = CTECD_14153
+			
+			required = { 14004 14052 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = ground_defense which = militia when = now value = 0.5 }
+				command = { type = soft_attack which = militia when = now value = 0.5 }
+				command = { type = supply_consumption which = militia when = now value = 0.1 }
+				command = { type = deactivate which = 14102 }
+				command = { type = deactivate which = 14601 }
+			}
+		}
+		application = { # Infantry Gun 150mm+
+			id = 14601
+			name = CTECN_14601
+			desc = CTECD_14601
+			
+			required = { 14004 14052 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = ground_defense which = militia when = now value = 1.0 }
+				command = { type = soft_attack which = militia when = now value = 0.5 }
+				command = { type = supply_consumption which = militia when = now value = 0.2 }
+				command = { type = deactivate which = 14102 }
+				command = { type = deactivate which = 14153 }
+			}
+		}
+		application = { # Light Artillery Prototype Tests
+			id = 14152
+			name = CTECN_14152
+			desc = CTECD_14152
+			
+			required = { 14151 14051 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Field Artillery Gun 75mm+
+			id = 14005
+			name = CTECN_14005
+			desc = CTECD_14005
+			
+			required = { 14152 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = infantry when = now value = 1 }
+				command = { type = ground_defense which = infantry when = now value = 2 }
+				command = { type = soft_attack which = cavalry when = now value = 1 }
+				command = { type = ground_defense which = cavalry when = now value = 2 }
+				command = { type = soft_attack which = motorized when = now value = 1 }
+				command = { type = ground_defense which = motorized when = now value = 2 }
+				command = { type = deactivate which = 14006 }
+				command = { type = deactivate which = 14007 }
+			}
+		}
+		application = { # Field Artillery Gun 85mm+
+			id = 14006
+			name = CTECN_14006
+			desc = CTECD_14006
+			
+			required = { 14152 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = infantry when = now value = 1 }
+				command = { type = hard_attack which = infantry when = now value = 1 }
+				command = { type = ground_defense which = infantry when = now value = 2 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = soft_attack which = motorized when = now value = 1 }
+				command = { type = hard_attack which = motorized when = now value = 1 }
+				command = { type = ground_defense which = motorized when = now value = 2 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = deactivate which = 14005 }
+				command = { type = deactivate which = 14007 }
+			}
+		}
+		application = { # Field Artillery Gun 100mm+
+			id = 14007
+			name = CTECN_14007
+			desc = CTECD_14007
+			
+			required = { 14152 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = infantry when = now value = 2 }
+				command = { type = ground_defense which = infantry when = now value = 2 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = soft_attack which = motorized when = now value = 2 }
+				command = { type = ground_defense which = motorized when = now value = 2 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = deactivate which = 14005 }
+				command = { type = deactivate which = 14006 }
+			}
+		}
+		application = { # Basic Anti-Tank Prototype Tests
+			id = 14154
+			name = CTECN_14154
+			desc = CTECD_14154
+			
+			required = { 14151 14010 14101 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Anti-Tank Gun 37mm+
+			id = 14008
+			name = CTECN_14008
+			desc = CTECD_14008
+			
+			required = { 14154 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = infantry when = now value = 1 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = hard_attack which = cavalry when = now value = 1 }
+				command = { type = supply_consumption which = cavalry when = now value = 0.1 }
+				command = { type = hard_attack which = motorized when = now value = 1 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+				command = { type = supply_consumption which = anti_tank when = now value = 0.1 }
+				command = { type = deactivate which = 14009 }
+			}
+		}
+		application = { # Anti-Tank Gun 40mm+
+			id = 14009
+			name = CTECN_14009
+			desc = CTECD_14009
+			
+			required = { 14154 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = infantry when = now value = 1 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = hard_attack which = cavalry when = now value = 1 }
+				command = { type = supply_consumption which = cavalry when = now value = 0.1 }
+				command = { type = hard_attack which = motorized when = now value = 1 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+				command = { type = supply_consumption which = anti_tank when = now value = 0.1 }
+				command = { type = deactivate which = 14008 }
+			}
+		}
+		application = { # Tank Gun 37mm+
+			id = 14011
+			name = CTECN_14011
+			desc = TECH_APP_ARTILLERY_1_11_DESC
+			
+			required = { 14154 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Tank Gun 40mm+
+			id = 14105
+			name = CTECN_14105
+			desc = TECH_APP_ARTILLERY_2_5_DESC
+			
+			required = { 14154 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Tank Gun 75mm+ CS
+			id = 14207
+			name = CTECN_14207
+			desc = CTECD_14207
+			
+			required = { 14154 14004 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Anti-Air Gun 20mm+
+			id = 14012
+			name = CTECN_14012
+			desc = TECH_APP_ARTILLERY_1_12_DESC
+			
+			required = { 14056 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_defense which = infantry when = now value = 2 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = air_defense which = motorized when = now value = 2 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = air_defense which = mechanized when = now value = 2 }
+				command = { type = supply_consumption which = mechanized when = now value = 0.1 }
+				command = { type = air_defense which = paratrooper when = now value = 2 }
+				command = { type = supply_consumption which = paratrooper when = now value = 0.1 }
+				command = { type = air_defense which = bergsjaeger when = now value = 2 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = 0.1 }
+				command = { type = air_defense which = marine when = now value = 2 }
+				command = { type = supply_consumption which = marine when = now value = 0.1 }
+				command = { type = air_attack which = battleship when = now value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = AA_batteries value = 1 }
+			}
+		}
+		application = { # 20mm Cannons
+			id = 14974
+			name = CTECN_14974
+			desc = CTECD_14974
+			required = { 14012 } 
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = fighter when = on_upgrade value = 1 }
+				command = { type = tactical_attack which = fighter when = on_upgrade value = 1 }
+				command = { type = tactical_attack which = dive_bomber when = on_upgrade value = 1 }
+				command = { type = tactical_attack which = tactical_bomber when = on_upgrade value = 1 }
+				command = { type = air_defense which = strategic_bomber when = on_upgrade value = 1 }
+				command = { type = air_defense which = tactical_bomber when = on_upgrade value = 1 }
+				command = { type = air_defense which = dive_bomber when = on_upgrade value = 1 }
+				command = { type = air_attack which = torpedo_plane when = on_upgrade value = 0.3 }
+				command = { type = tactical_attack which = torpedo_plane when = on_upgrade value = 0.7 }
+				command = { type = air_defense which = torpedo_plane when = on_upgrade value = 0.3 }
+
+			}
+		}
+		application = { # Self-Propelled Anti-Air Machine Gun
+			id = 14158
+			name = CTECN_14158
+			desc = CTECD_14158
+			
+			required = { 14056 14012 2103 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_defense which = armor when = now value = 2 }
+				command = { type = air_defense which = mechanized when = now value = 2 }
+			}
+		}
+	} # Level 2
+	
+	level = { # Medium Artillery Pieces
+		id = 14200
+		name = CTECN_14200
+		desc = TECH_LEVEL_ARTILLERY_4_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Mountain Gun Prototype Tests
+			id = 14262
+			name = CTECN_14262
+			desc = CTECD_14262
+			
+			required = { 14053 11004 } # Specialst doctrine added
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Mountain Gun 75mm+
+			id = 14980
+			name = CTECN_14980
+			desc = CTECD_14980
+			
+			required = { 14262 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = bergsjaeger when = now value = 1 }
+				command = { type = deactivate which = 14981 }
+				command = { type = deactivate which = 14987 }
+					}
+		}
+		application = { # Mountain Gun 90mm+
+			id = 14987
+			name = CTECN_14987
+			desc = CTECD_14987
+			
+			required = { 14262 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = bergsjaeger when = now value = 1.5 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = 0.1 }
+				command = { type = deactivate which = 14980 }
+				command = { type = deactivate which = 14981 }
+			}
+		}
+		application = { # Mountain Gun 100mm+
+			id = 14981
+			name = CTECN_14981
+			desc = CTECD_14981
+			
+			required = { 14262 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = bergsjaeger when = now value = 2 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = 0.2 }
+				command = { type = deactivate which = 14980 }
+				command = { type = deactivate which = 14987 }
+			}
+		}
+		application = { # Medium Artillery Prototype Tests
+			id = 14263
+			name = CTECN_14263
+			desc = CTECD_14263
+			
+			required = { 14052 14151 14150 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Field Artillery Gun 120mm+
+			id = 14103
+			name = CTECN_14103
+			desc = CTECD_14103
+			
+			required = { 14263 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = infantry when = now value = 1 }
+				command = { type = soft_attack which = bergsjaeger when = now value = 1 }
+				command = { type = soft_attack which = motorized when = now value = 1 }
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = deactivate which = 14104 }
+			}
+		}
+		application = { # Field Artillery Gun 150mm+
+			id = 14104
+			name = CTECN_14104
+			desc = TECH_APP_ARTILLERY_2_4_DESC
+			
+			required = { 14263 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = infantry when = now value = 1 }
+				command = { type = soft_attack which = bergsjaeger when = now value = 1 }
+				command = { type = soft_attack which = motorized when = now value = 1 }
+				command = { type = soft_attack which = artillery when = now value = 2 }
+				command = { type = supply_consumption which = artillery when = now value = 0.1 }
+				command = { type = deactivate which = 14103 }
+			}
+		}
+		application = { # Improved Anti-Air Prototype Tests
+			id = 14264
+			name = CTECN_14264
+			desc = CTECD_14264
+			
+			required = { 14012 14150 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Anti-Air Gun 37mm+
+			id = 14013
+			name = CTECN_14013
+			desc = CTECD_14013
+			
+			required = { 14264 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = infantry when = now value = 1 }
+				command = { type = air_defense which = infantry when = now value = 2 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = air_attack which = motorized when = now value = 1 }
+				command = { type = air_defense which = motorized when = now value = 2 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = air_attack which = bergsjaeger when = now value = 1 }
+				command = { type = air_defense which = bergsjaeger when = now value = 2 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = 0.1 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = now value = 1 }
+				command = { type = AA_batteries value = 2 }
+				command = { type = deactivate which = 14106 }
+			}
+		}
+		application = { # Anti-Air Gun 40mm+
+			id = 14106
+			name = CTECN_14106
+			desc = CTECD_14106
+			
+			required = { 14264 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = infantry when = now value = 1 }
+				command = { type = air_defense which = infantry when = now value = 2 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = air_attack which = motorized when = now value = 1 }
+				command = { type = air_defense which = motorized when = now value = 2 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = air_attack which = bergsjaeger when = now value = 1 }
+				command = { type = air_defense which = bergsjaeger when = now value = 2 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = 0.1 }
+				command = { type = air_attack which = anti_air when = now value = 1 }
+				command = { type = air_defense which = anti_air when = now value = 2 }
+				command = { type = supply_consumption which = anti_air when = now value = 0.1 }
+				command = { type = build_time which = anti_air when = now value = 2 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = now value = 1 }
+				command = { type = AA_batteries value = 2 }
+				command = { type = deactivate which = 14013 }
+			}
+		}
+		application = { # Improved 406mm Naval Gun
+			id = 14258
+			name = CTECN_14258
+			desc = CTECD_14258
+			
+			required = { 14257 14201 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { }
+		}
+		application = { # 460mm Naval Gun
+			id = 14259
+			name = CTECN_14259
+			desc = CTECD_14259
+			
+			required = { 14257 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { }
+		}
+	} # Level 3
+	
+	level = { # Self-Propelled Artillery Pieces
+		id = 14300
+		name = CTECN_14300
+		desc = TECH_LEVEL_ARTILLERY_3_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Basic Shaped Charge Theory
+			id = 2884
+			name = CTECN_2884
+			desc = CTECD_2884
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Basic HEAT Ammunition
+			id = 2886
+			name = CTECN_2886
+			desc = CTECD_2886
+			
+			required = { 2884 14101 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Improved Tank Gun Ammunition
+			id = 14201
+			name = TECH_APP_ARTILLERY_3_1_NAME
+			desc = TECH_APP_ARTILLERY_3_1_DESC
+			
+			required = { 14101 4407 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = armor when = now value = 1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+			}
+		}
+		application = { # Variable Time Fuse
+			id = 14202
+			name = TECH_APP_ARTILLERY_3_2_NAME
+			desc = TECH_APP_ARTILLERY_3_2_DESC
+			
+			required = { 14101 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = air_attack which = anti_air when = now value = 1 }
+				command = { type = air_defense which = anti_air when = now value = 1 }
+				command = { type = air_attack which = battleship when = now value = 1 }
+				command = { type = air_defense which = battleship when = now value = 1 }
+				command = { type = air_attack which = cruiser when = now value = 1 }
+				command = { type = air_defense which = cruiser when = now value = 1 }
+				command = { type = air_attack which = carrier when = now value = 1 }
+				command = { type = air_defense which = carrier when = now value = 1 }
+				command = { type = air_attack which = destroyer when = now value = 1 }
+				command = { type = air_defense which = destroyer when = now value = 1 }
+			}
+		}
+		application = { # Recoilless Gun 70mm+
+			id = 14982
+			name = CTECN_14982
+			desc = CTECD_14982
+			
+			required = { 7301 9203 4407 } # Paras as a must added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = paratrooper when = now value = 1 }
+				command = { type = hard_attack which = paratrooper when = now value = 1 }
+				command = { type = paradrop_attack which = paratrooper when = now value = 5 }
+				command = { type = supply_consumption which = paratrooper when = now value = 0.1 }
+			}
+		}
+		application = { # Improved Anti-Tank Prototype Tests
+			id = 14350
+			name = CTECN_14350
+			desc = CTECD_14350
+			
+			required = { 14011 14105 14201 11200 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Anti-Tank Gun 50mm+
+			id = 14351
+			name = CTECN_14351
+			desc = CTECD_14351
+			
+			required = { 14350 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = hard_attack which = infantry when = now value = 1 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = hard_attack which = motorized when = now value = 1 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = hard_attack which = mechanized when = now value = 1 }
+				command = { type = supply_consumption which = mechanized when = now value = 0.1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+				command = { type = supply_consumption which = anti_tank when = now value = 0.1 }
+				command = { type = build_time which = anti_tank when = now value = 2 }
+				command = { type = deactivate which = 14205 }
+			}
+		}
+		application = { # Anti-Tank Gun 75mm+
+			id = 14205
+			name = CTECN_14205
+			desc = CTECD_14205
+			
+			required = { 14350 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {				
+				command = { type = hard_attack which = infantry when = now value = 1 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = hard_attack which = motorized when = now value = 1 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = hard_attack which = mechanized when = now value = 1 }
+				command = { type = supply_consumption which = mechanized when = now value = 0.1 }
+				command = { type = hard_attack which = anti_tank when = now value = 2 }
+				command = { type = supply_consumption which = anti_tank when = now value = 0.3 }
+				command = { type = build_time which = anti_tank when = now value = 2 }
+				command = { type = deactivate which = 14351 }
+			}
+		}
+		application = { # Tank Gun 50mm+
+			id = 14206
+			name = CTECN_14206
+			desc = TECH_APP_ARTILLERY_3_6_DESC
+			
+			required = { 14350 11200 4407 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Tank Gun 75mm+ (Medium)
+			id = 14976
+			name = CTECN_14976
+			desc = CTECD_14976
+			
+			required = { 14350 11200 4407 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Self-Propelled Artillery Prototype Tests
+			id = 14203
+			name = CTECN_14203
+			desc = TECH_APP_ARTILLERY_3_3_DESC
+			
+			required = { 14057 11201 2314 4407 }
+			chance = 90
+			cost = 6
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = speed which = artillery when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = artillery when = on_upgrade value = 0.2 }
+				command = { type = fuel_consumption which = artillery when = on_upgrade value = 0.3 }
+				command = { type = build_time which = artillery when = on_upgrade value = 2 }
+			}
+		}
+		application = { # Self-Propelled Artillery 75mm+
+			id = 14209
+			name = CTECN_14209
+			desc = TECH_APP_ARTILLERY_3_9_DESC
+			
+			required = { 14203 14005 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = soft_attack which = armor when = now value = 1 }
+				command = { type = fuel_consumption which = armor when = now value = 0.1 }
+				command = { type = soft_attack which = mechanized when = now value = 2 }
+				command = { type = supply_consumption which = mechanized when = now value = 0.1 }
+				command = { type = fuel_consumption which = mechanized when = now value = 0.1 }
+			}
+		}
+		application = { # Self-Propelled Artillery 85mm+
+			id = 14306
+			name = CTECN_14306
+			desc = CTECD_14306
+			
+			required = { 14203 14006 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = soft_attack which = armor when = now value = 1 }
+				command = { type = hard_attack which = armor when = now value = 1 }
+				command = { type = supply_consumption which = armor when = now value = 0.2 }
+				command = { type = fuel_consumption which = armor when = now value = 0.1 }
+				command = { type = soft_attack which = mechanized when = now value = 2 }
+				command = { type = hard_attack which = mechanized when = now value = 1 }
+				command = { type = supply_consumption which = mechanized when = now value = 0.3 }
+				command = { type = fuel_consumption which = mechanized when = now value = 0.1 }
+			}
+		}
+		application = { # Self-Propelled Artillery 100mm+
+			id = 14404
+			name = CTECN_14404
+			desc = CTECD_14404
+			
+			required = { 14203 14007 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = soft_attack which = armor when = now value = 2 }
+				command = { type = supply_consumption which = armor when = now value = 0.2 }
+				command = { type = fuel_consumption which = armor when = now value = 0.1 }
+				command = { type = soft_attack which = mechanized when = now value = 3 }
+				command = { type = supply_consumption which = mechanized when = now value = 0.3 }
+				command = { type = fuel_consumption which = mechanized when = now value = 0.1 }
+			}
+		}
+		application = { # Mechanized Ammunition Carriers
+			id = 14157
+			name = CTECN_14157
+			desc = CTECD_14157
+			
+			required = { 14203 14156 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = supply_consumption which = armor when = now value = -0.3 }
+				command = { type = fuel_consumption which = armor when = now value = 0.1 }
+				command = { type = supply_consumption which = mechanized when = now value = -0.3 }
+				command = { type = fuel_consumption which = mechanized when = now value = 0.1 }
+			}
+		}
+		application = { # Multi-Barrelled Light Anti-Air Guns
+			id = 14204
+			name = CTECN_14204
+			desc = TECH_APP_ARTILLERY_3_4_DESC
+			
+			required = { 14012 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_defense which = infantry when = now value = 1 }
+				command = { type = supply_consumption which = infantry when = now value = 0.1 }
+				command = { type = air_defense which = motorized when = now value = 1 }
+				command = { type = supply_consumption which = motorized when = now value = 0.1 }
+				command = { type = air_defense which = bergsjaeger when = now value = 1 }
+				command = { type = supply_consumption which = bergsjaeger  when = now value = 0.1 }
+				command = { type = air_defense which = marine when = now value = 1 }
+				command = { type = supply_consumption which = marine  when = now value = 0.1 }
+				command = { type = air_defense which = anti_air when = now value = 2 }
+				command = { type = supply_consumption which = anti_air when = now value = 0.1 }
+				command = { type = build_time which = anti_air when = now value = 2 }
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = AA_batteries value = 2 }
+			}
+		}
+	} # Level 4
+	
+	level = { # Improved Equipment and Ordinance
+		id = 14400
+		name = CTECN_14400
+		desc = TECH_LEVEL_ARTILLERY_5_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Improved Shaped Charges
+			id = 2885
+			name = CTECN_2885
+			desc = CTECD_2885
+			required = { 2886 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Improved HEAT Ammunition
+			id = 2887
+			name = CTECN_2887
+			desc = CTECD_2887
+			required = { 2885 14201 4407 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = infantry when = now value = 1 }
+				command = { type = hard_attack which = motorized when = now value = 1 }
+				command = { type = hard_attack which = mechanized when = now value = 1 }
+				command = { type = hard_attack which = armor when = now value = 1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+				command = { type = hard_attack which = artillery when = now value = 1 }
+				command = { type = hard_attack which = anti_air when = now value = 1 }
+			}
+		}
+		application = { # Muzzle Brake
+			id = 14452
+			name = CTECN_14452
+			desc = CTECD_14452
+			required = { 14152 14264 14350 4407 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = infantry when = now value = 1 }
+				command = { type = soft_attack which = motorized when = now value = 1 }
+				command = { type = soft_attack which = mechanized when = now value = 1 }
+				command = { type = hard_attack which = armor when = now value = 1 }
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+				command = { type = air_defense which = anti_air when = now value = 1 }
+			}
+		}
+		application = { # Rangefinder Radar
+			id = 14002
+			name = TECH_APP_ARTILLERY_1_2_NAME
+			desc = TECH_APP_ARTILLERY_1_2_DESC
+			
+			required = { 3002 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = on_upgrade value = 1 }
+				command = { type = AA_batteries value = 1 }
+			}
+		}
+		application = { # Recoilless Gun 100mm+
+			id = 14352
+			name = CTECN_14352
+			desc = CTECD_14352
+			
+			required = { 14982 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = paratrooper when = now value = 1 }
+				command = { type = supply_consumption which = paratrooper when = now value = 0.1 }
+				command = { type = soft_attack which = bergsjaeger when = now value = 1 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = 0.1 }
+			}
+		}
+		application = { # 200mm+ Engineering Tank Mortar
+			id = 14979
+			name = CTECN_14979
+			desc = CTECD_14979
+			
+			required = { }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {	}
+		}
+		application = { # Dual-Purpose 152mm Naval Gun
+			id = 14260
+			name = CTECN_14260
+			desc = CTECD_14260
+
+			required = { 14252 14201 }
+			chance = 90
+			cost = 8
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { }
+		}
+		application = { # Semi-Automatic 203mm Naval Gun
+			id = 14261
+			name = CTECN_14261
+			desc = CTECD_14261
+			
+			required = { 14253 14201 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { }
+		}
+		application = { # Improved 305mm Naval Gun
+			id = 14265
+			name = CTECN_14265
+			desc = CTECD_14265
+			required = { 14255 14201  }
+			chance = 90
+			cost = 8
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = { }
+		}
+	} # Level 5
+	
+	level = { # Heavy Artillery Pieces
+		id = 14500
+		name = CTECN_14500
+		desc = TECH_LEVEL_ARTILLERY_6_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Advanced Tank Gun Ammunition
+			id = 14301
+			name = TECH_APP_ARTILLERY_4_1_NAME
+			desc = TECH_APP_ARTILLERY_4_1_DESC
+			
+			required = { 14201  }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = armor when = now value = 1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+			}
+		}
+		application = { # Heavy Artillery Prototype Tests
+			id = 14650
+			name = CTECN_14650
+			desc = CTECD_14650
+			
+			required = { 14054 14151 11300 4407 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Heavy Artillery Gun 170mm+
+			id = 14302
+			name = CTECN_14302
+			desc = CTECD_14302
+			
+			required = { 14650 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = supply_consumption which = artillery when = now value = 0.1 }
+				command = { type = deactivate which = 14602 }
+			}
+		}
+		application = { # Heavy Artillery Gun 200mm+
+			id = 14602
+			name = CTECN_14602
+			desc = CTECD_14602
+			
+			required = { 14650 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 2 }
+				command = { type = speed which = artillery when = now value = -1 }
+				command = { type = supply_consumption which = artillery when = now value = 0.2 }
+				command = { type = deactivate which = 14302 }
+			}
+		}
+		application = { # Rocket Artillery 100mm+
+			id = 14307
+			name = TECH_APP_ARTILLERY_4_7_NAME
+			desc = TECH_APP_ARTILLERY_4_7_DESC
+			
+			required = { 7001 7002 11300 4407 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = supply_consumption which = artillery when = now value = 0.3 }
+				command = { type = build_time which = artillery when = now value = 2 }
+				command = { type = speed which = artillery when = now value = -1 }
+			}
+		}
+		application = { # Advanced Anti-Tank Prototype Tests
+			id = 14450
+			name = CTECN_14450
+			desc = CTECD_14450
+			
+			required = { 14206 14976 14301 14350 11300 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Anti-Tank Gun 85mm+
+			id = 14303
+			name = CTECN_14303
+			desc = TECH_APP_ARTILLERY_4_3_DESC
+			
+			required = { 14450 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = anti_tank when = now value = 2 }
+				command = { type = supply_consumption which = anti_tank when = now value = 0.1 }
+				command = { type = build_time which = anti_tank when = now value = 2 }
+				command = { type = deactivate which = 14304 }
+			}
+		}
+		application = { # Recoilless Gun 85mm+
+			id = 14652
+			name = CTECN_14652
+			desc = CTECD_14652
+			
+			required = { 14982 14303 11300 4407 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = paratrooper when = now value = 1 }
+				command = { type = supply_consumption which = paratrooper when = now value = 0.4 }
+				command = { type = hard_attack which = bergsjaeger when = now value = 1 }
+				command = { type = supply_consumption which = bergsjaeger when = now value = 0.4 }
+			}
+		}
+		application = { # Anti-Tank Gun 90mm+
+			id = 14304
+			name = TECH_APP_ARTILLERY_4_4_NAME
+			desc = TECH_APP_ARTILLERY_4_4_DESC
+			
+			required = { 14450 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = anti_tank when = now value = 2 }
+				command = { type = supply_consumption which = anti_tank when = now value = 0.1 }
+				command = { type = build_time which = anti_tank when = now value = 2 }
+				command = { type = deactivate which = 14303 }
+			}
+		}
+		application = { # Tank Gun 75mm+ (Long)
+			id = 14977
+			name = CTECN_14977
+			desc = CTECD_14977
+			
+			required = { 14450 14976 11300  } # AT 70mm added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Tank Gun 85mm+
+			id = 14503
+			name = CTECN_14503
+			desc = CTECD_14503
+			
+			required = { 14450 4803 11300 4407 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Tank Gun 90mm+
+			id = 14603
+			name = TECH_APP_ARTILLERY_7_3_NAME
+			desc = TECH_APP_ARTILLERY_7_3_DESC
+			
+			required = { 14450 11300 4407 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+	} # Level 6
+	
+	level = { # Self-Propelled Rocket Artillery Pieces
+		id = 14600
+		name = CTECN_14600
+		desc = TECH_LEVEL_ARTILLERY_7_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Rocket Artillery 200mm+
+			id = 14704
+			name = TECH_APP_ARTILLERY_8_4_NAME
+			desc = TECH_APP_ARTILLERY_8_4_DESC
+			
+			required = { 14307 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = supply_consumption which = artillery when = now value = 0.3 }
+				command = { type = build_time which = artillery when = now value = 2 }
+				command = { type = speed which = artillery when = now value = -1 }
+			}
+		}
+		application = { # Self-Propelled Rocket Artillery 100mm+
+			id = 14504
+			name = CTECN_14504
+			desc = TECH_APP_ARTILLERY_6_4_DESC
+			
+			required = { 14203 14307 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = fuel_consumption which = artillery when = now value = 0.2 }
+				command = { type = speed which = artillery when = now value = 1 }
+			}
+		}
+		application = { # Self-Propelled Anti-Air 20mm+
+			id = 14805
+			name = CTECN_14805
+			desc = TECH_APP_ARTILLERY_9_5_DESC
+			
+			required = { 14203 14012 14204 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_attack which = armor when = on_upgrade value = 2 }
+				command = { type = air_defense which = armor when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = armor when = on_upgrade value = 0.1 }
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 0.2 }
+				command = { type = air_attack which = mechanized when = on_upgrade value = 2 }
+				command = { type = air_defense which = mechanized when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = mechanized when = on_upgrade value = 0.1 }
+				command = { type = fuel_consumption which = mechanized when = on_upgrade value = 0.2 }
+			}
+		}
+		application = { # Self-Propelled Anti-Air 37mm+
+			id = 14806
+			name = CTECN_14806
+			desc = TECH_APP_ARTILLERY_9_6_DESC
+			
+			required = { 14203 14013 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_attack which = armor when = on_upgrade value = 1 }
+				command = { type = air_defense which = armor when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = armor when = on_upgrade value = 0.1 }
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 0.2 }
+				command = { type = air_attack which = mechanized when = on_upgrade value = 1 }
+				command = { type = air_defense which = mechanized when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = mechanized when = on_upgrade value = 0.1 }
+				command = { type = fuel_consumption which = mechanized when = on_upgrade value = 0.2 }
+			}
+		}
+
+		application = { # 30mm Cannons
+			id = 14975
+			name = CTECN_14975
+			desc = CTECD_14975
+			required = { 14974 12300 4407 } # Early War combat testing as a must
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = fighter when = on_upgrade value = 1 }
+				command = { type = tactical_attack which = fighter when = on_upgrade value = 1 }
+				command = { type = tactical_attack which = dive_bomber when = on_upgrade value = 1 }
+				command = { type = tactical_attack which = tactical_bomber when = on_upgrade value = 1 }
+				command = { type = air_defense which = strategic_bomber when = on_upgrade value = 1 }
+				command = { type = air_defense which = tactical_bomber when = on_upgrade value = 1 }
+				command = { type = air_defense which = dive_bomber when = on_upgrade value = 1 }
+				command = { type = air_attack which = torpedo_plane when = on_upgrade value = 0.3 }
+				command = { type = tactical_attack which = torpedo_plane when = on_upgrade value = 0.7 }
+				command = { type = air_defense which = torpedo_plane when = on_upgrade value = 0.3 }
+			}
+		}
+
+	} # Level 7
+	
+	level = { # Advanced Equipment and Ordinance
+		id = 14700
+		name = CTECN_14700
+		desc = TECH_LEVEL_ARTILLERY_8_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Very Advanced Tank Gun Ammunition
+			id = 14401
+			name = TECH_APP_ARTILLERY_5_1_NAME
+			desc = TECH_APP_ARTILLERY_5_1_DESC
+			
+			required = { 14301 4805 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = armor when = now value = 1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+			}
+		}
+		application = { # Powered Anti-Air Gun mount
+			id = 14451
+			name = CTECN_14451
+			desc = CTECD_14451
+			
+			required = { 14012 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_attack which = battleship when = on_upgrade value = 1 }
+				command = { type = air_defense which = battleship when = on_upgrade value = 1 }
+				command = { type = air_attack which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_defense which = cruiser when = on_upgrade value = 1 }
+				command = { type = air_attack which = carrier when = on_upgrade value = 1 }
+				command = { type = air_defense which = carrier when = on_upgrade value = 1 }
+				command = { type = air_attack which = destroyer when = on_upgrade value = 1 }
+				command = { type = air_defense which = destroyer when = on_upgrade value = 1 }
+				command = { type = AA_batteries value = 1 }
+			}
+		}
+		application = { # Radar Proximity Fuse
+			id = 14701
+			name = TECH_APP_ARTILLERY_8_1_NAME
+			desc = TECH_APP_ARTILLERY_8_1_DESC
+			
+			required = { 3702 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = air_attack which = anti_air when = now value = 1 }
+				command = { type = air_defense which = anti_air when = now value = 1 }
+				command = { type = air_attack which = battleship when = now value = 1 }
+				command = { type = air_defense which = battleship when = now value = 1 }
+				command = { type = air_attack which = cruiser when = now value = 1 }
+				command = { type = air_defense which = cruiser when = now value = 1 }
+				command = { type = air_attack which = carrier when = now value = 1 }
+				command = { type = air_defense which = carrier when = now value = 1 }
+				command = { type = air_attack which = destroyer when = now value = 1 }
+				command = { type = air_defense which = destroyer when = now value = 1 }
+			}
+		}
+		application = { # Basic Counter-Battery Radar
+			id = 14702
+			name = TECH_APP_ARTILLERY_8_2_NAME
+			desc = TECH_APP_ARTILLERY_8_2_DESC
+			
+			required = { 3102 3702 14002 4803 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = ground_def_eff value = 2 }
+			}
+		}
+		application = { # Heavy Anti-Tank Prototype Tests
+			id = 14550
+			name = CTECN_14550
+			desc = CTECD_14550
+			
+			required = { 14401 14450 11300 4805 }
+			chance = 90
+			cost = 4
+			time = 120
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Anti-Tank Gun 100mm+
+			id = 14501
+			name = TECH_APP_ARTILLERY_6_1_NAME
+			desc = TECH_APP_ARTILLERY_6_1_DESC
+			
+			required = { 14550 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+				command = { type = supply_consumption which = anti_tank when = now value = 0.1 }
+				command = { type = build_time which = anti_tank when = now value = 2 }
+				command = { type = deactivate which = 14502 }
+			}
+		}
+		application = { # Anti-Tank Gun 120mm+
+			id = 14502
+			name = TECH_APP_ARTILLERY_6_2_NAME
+			desc = TECH_APP_ARTILLERY_6_2_DESC
+			
+			required = { 14550 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+				command = { type = supply_consumption which = anti_tank when = now value = 0.1 }
+				command = { type = build_time which = anti_tank when = now value = 2 }
+				command = { type = deactivate which = 14501 }
+			}
+		}
+		application = { # Tank Gun 100mm+
+			id = 14703
+			name = TECH_APP_ARTILLERY_8_3_NAME
+			desc = TECH_APP_ARTILLERY_8_3_DESC
+			
+			required = { 14550 4805 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Anti-Air Gun 120mm+
+			id = 14305
+			name = TECH_APP_ARTILLERY_4_5_NAME
+			desc = TECH_APP_ARTILLERY_4_5_DESC
+			
+			required = { 14263 14701 4805 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = AA_batteries value = 4 }
+			}
+		}
+			
+		application = { # 75mm+ Reduced Recoil Cannon
+			id = 14978
+			name = CTECN_14978
+			desc = CTECD_14978
+			required = { 14976 12301 4805 } # Air-land battle doctrine as a must
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = tactical_attack which = tactical_bomber when = on_upgrade value = 1 }
+			}
+		}
+	} # Level 8
+	
+	level = { # Mechanized Artillery Pieces
+		id = 14800
+		name = CTECN_14800
+		desc = TECH_LEVEL_ARTILLERY_9_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Rocket Assisted Projectiles
+			id = 14801
+			name = TECH_APP_ARTILLERY_9_1_NAME
+			desc = TECH_APP_ARTILLERY_9_1_DESC
+			
+			required = { 7401 14307 14650 4805 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = now value = 1 }
+				command = { type = supply_consumption which = artillery when = now value = 0.1 }
+				command = { type = build_time which = artillery when = now value = 2 }
+			}
+		}
+		application = { # Improved Counter-Battery Radar
+			id = 14802
+			name = TECH_APP_ARTILLERY_9_2_NAME
+			desc = TECH_APP_ARTILLERY_9_2_DESC
+			
+			required = { 3901 14702 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = ground_def_eff value = 2 }
+			}
+		}
+		application = { # Tank Gun 120mm+
+			id = 14803
+			name = TECH_APP_ARTILLERY_9_3_NAME
+			desc = TECH_APP_ARTILLERY_9_3_DESC
+			
+			required = { 14550 }
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = { }
+		}
+		application = { # Self-Propelled Artillery 120mm+
+			id = 14405
+			name = CTECN_14405
+			desc = TECH_APP_ARTILLERY_5_5_DESC
+			
+			required = { 14103 14203 4805 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = armor when = on_upgrade value = 0.1 }
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 0.2 }
+				command = { type = soft_attack which = mechanized when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = mechanized when = on_upgrade value = 0.2 }
+				command = { type = fuel_consumption which = mechanized when = on_upgrade value = 0.2 }
+			}
+		}
+		application = { # Self-Propelled Artillery 150mm+
+			id = 14804
+			name = CTECN_14804
+			desc = TECH_APP_ARTILLERY_9_4_DESC
+			
+			required = { 14104 14203 4805 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = soft_attack which = armor when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = armor  when = on_upgrade value = 0.1 }
+				command = { type = fuel_consumption which = armor when = on_upgrade value = 0.2 }
+				command = { type = soft_attack which = mechanized when = on_upgrade value = 2 }
+				command = { type = supply_consumption which = mechanized when = on_upgrade value = 0.2 }
+				command = { type = fuel_consumption which = mechanized when = on_upgrade value = 0.2 }
+			}
+		}
+	} # Level 9
+	
+	level = { # Heavy Rocket Artillery
+		id = 14900
+		name = TECH_LEVEL_ARTILLERY_10_NAME 
+		desc = TECH_LEVEL_ARTILLERY_10_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Rocket Artillery 300mm+
+			id = 14901
+			name = TECH_APP_ARTILLERY_10_1_NAME
+			desc = TECH_APP_ARTILLERY_10_1_DESC
+			
+			required = { 14704 4805 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = soft_attack which = artillery when = on_upgrade value = 1 }
+				command = { type = supply_consumption which = artillery when = on_upgrade value = 0.1 }
+				command = { type = build_time which = artillery when = on_upgrade value = 2 }
+				command = { type = speed which = artillery when = now value = -1 }
+			}
+		}
+		application = { # Self-Propelled Rocket Artillery 200mm+
+			id = 14902
+			name = CTECN_14902
+			desc = TECH_APP_ARTILLERY_10_2_DESC
+			
+			required = { 14704 14203 4805 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = fuel_consumption which = artillery when = now value = 0.2 }
+				command = { type = speed which = artillery when = now value = 1 }
+			}
+		}
+	} # Level 10
+	
+	level = { # Semi-Modern Equipment and Ordinance
+		id = 14940
+		name = TECH_LEVEL_ARTILLERY_11_NAME 
+		desc = TECH_LEVEL_ARTILLERY_11_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Revolver Cannon
+			id = 14220
+			name = CTECN_14220
+			desc = CTECD_14220
+			required = { 14975 12502 4803 4805 } # Air superiority as a must
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = air_attack which = fighter when = on_upgrade value = 2 }
+				command = { type = tactical_attack which = fighter when = on_upgrade value = 2 }
+				command = { type = tactical_attack which = dive_bomber when = on_upgrade value = 2 }
+				command = { type = tactical_attack which = tactical_bomber when = on_upgrade value = 2 }
+				command = { type = air_defense which = strategic_bomber when = on_upgrade value = 2 }
+				command = { type = air_defense which = tactical_bomber when = on_upgrade value = 2 }
+				command = { type = air_defense which = dive_bomber when = on_upgrade value = 2 }
+				command = { type = air_attack which = torpedo_plane when = on_upgrade value = 1.4 }
+				command = { type = tactical_attack which = torpedo_plane when = on_upgrade value = 0.7 }
+				command = { type = air_defense which = torpedo_plane when = on_upgrade value = 0.7 }
+			}
+		}
+		application = { # Semi-Modern Tank Gun Ammunition
+			id = 14941
+			name = TECH_APP_ARTILLERY_11_1_NAME
+			desc = TECH_APP_ARTILLERY_11_1_DESC
+			
+			required = { 14401 4803 4943 } # Quality Control added
+			chance = 90
+			cost = 8
+			time = 90
+			neg_offset = 20
+			pos_offset = 40
+			
+			effects = {
+				command = { type = hard_attack which = armor when = now value = 1 }
+				command = { type = hard_attack which = anti_tank when = now value = 1 }
+			}
+		}
+		application = { # Tank Gun 150mm+
+			id = 14942
+			name = TECH_APP_ARTILLERY_11_2_NAME
+			desc = TECH_APP_ARTILLERY_11_2_DESC
+			
+			required = { 14550 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { }
+			}
+		}
+		application = { # Anti-Air Gun 50mm+
+			id = 14945
+			name = CTECN_14945
+			desc = CTECD_14945
+			
+			required = { 14264 14451 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_attack which = infantry when = now value = 1 }
+				command = { type = air_defense which = infantry when = now value = 2 }
+				command = { type = air_attack which = motorized when = now value = 1 }
+				command = { type = air_defense which = motorized when = now value = 2 }
+				command = { type = air_attack which = mechanized when = now value = 1 }
+				command = { type = air_defense which = mechanized when = now value = 2 }
+				command = { type = air_attack which = armor when = now value = 1 }
+				command = { type = air_defense which = armor when = now value = 2 }
+				command = { type = air_attack which = paratrooper when = now value = 1 }
+				command = { type = air_defense which = paratrooper when = now value = 2 }
+				command = { type = air_attack which = bergsjaeger when = now value = 1 }
+				command = { type = air_defense which = bergsjaeger when = now value = 2 }
+				command = { type = air_attack which = marine when = now value = 1 }
+				command = { type = air_defense which = marine when = now value = 2 }
+				command = { type = air_attack which = anti_air when = now value = 1 }
+				command = { type = air_defense which = anti_air when = now value = 2 }
+				command = { type = build_time which = anti_air when = now value = 2 }
+				command = { type = AA_batteries value = 3 }
+			}
+		}
+	} # Level 11
+	
+	level = { # Semi-Modern Artillery Pieces
+		id = 14970
+		name = TECH_LEVEL_ARTILLERY_12_NAME 
+		desc = TECH_LEVEL_ARTILLERY_12_DESC 
+							
+		cost = 10
+		time = 360
+		neg_offset = 45
+		pos_offset = 90
+
+		application = { # Self-Propelled Artillery 170mm+
+			id = 14971
+			name = CTECN_14971
+			desc = TECH_APP_ARTILLERY_12_1_DESC
+			
+			required = { 14302 14203 4805 }
+			chance = 90
+			cost = 10
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = fuel_consumption which = artillery when = on_upgrade value = 0.2 }
+				command = { type = build_time which = artillery when = now value = 2 }
+				command = { type = speed which = artillery when = on_upgrade value = 1 }
+			}
+		}
+		application = { # Self-Propelled Rocket Artillery 300mm+
+			id = 14972
+			name = CTECN_14972
+			desc = TECH_APP_ARTILLERY_12_2_DESC
+			
+			required = { 14901 14203 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = fuel_consumption which = artillery when = now value = 0.2 }
+				command = { type = speed which = artillery when = now value = 1 }
+			}
+		}
+		application = { # Self-Propelled Anti-Air 30mm+
+			id = 14983
+			name = CTECN_14983
+			desc = CTECD_14983
+			
+			required = { 14203 14013 14805 14451 4805 }
+			chance = 90
+			cost = 12
+			time = 150
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = air_attack which = anti_air when = on_upgrade value = 1 }
+				command = { type = air_defense which = anti_air when = on_upgrade value = 1 }
+				command = { type = fuel_consumption which = anti_air when = on_upgrade value = 0.1 }
+				command = { type = supply_consumption which = anti_air when = on_upgrade value = 0.1 }
+				command = { type = speed which = anti_air when = on_upgrade value = 1 }
+				command = { type = build_time which = anti_air when = now value = 2 }
+				command = { type = deactivate which = 14984 }
+				command = { type = deactivate which = 14986 }
+			}
+		}
+		application = { # Self-Propelled Anti-Air 40mm+
+			id = 14984
+			name = CTECN_14984
+			desc = CTECD_14984
+			
+			required = { 14203 14106 14805 14451 }
+			chance = 90
+			cost = 12
+			time = 120
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = fuel_consumption which = anti_air when = on_upgrade value = 0.1 }
+				command = { type = supply_consumption which = anti_air when = on_upgrade value = 0.1 }
+				command = { type = speed which = anti_air when = on_upgrade value = 1 }
+				command = { type = build_time which = anti_air when = now value = 2 }
+				command = { type = deactivate which = 14983 }
+				command = { type = deactivate which = 14986 }
+			}
+		}
+		application = { # Self-Propelled Anti-Air 50mm+
+			id = 14986
+			name = CTECN_14986
+			desc = CTECD_14986
+			
+			required = { 14203 14945 14805 14451 }
+			chance = 90
+			cost = 12
+			time = 140
+			neg_offset = 30
+			pos_offset = 60
+			
+			effects = {
+				command = { type = fuel_consumption which = anti_air when = on_upgrade value = 0.1 }
+				command = { type = supply_consumption which = anti_air when = on_upgrade value = 0.1 }
+				command = { type = speed which = anti_air when = on_upgrade value = 1 }
+				command = { type = build_time which = anti_air when = now value = 2 }
+				command = { type = deactivate which = 14983 }
+				command = { type = deactivate which = 14984 }
+			}
+		}
+
+	} # Level 12
+}
