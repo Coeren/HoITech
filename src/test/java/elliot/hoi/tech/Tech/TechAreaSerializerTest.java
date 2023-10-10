@@ -1,5 +1,6 @@
 package elliot.hoi.tech.Tech;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -15,38 +16,38 @@ class TechAreaSerializerTest {
         try {
             TechArea area = prepareArea("air_doctrine_tech.txt");
 
-            assertEquals(area.getId(), 12, "Incorrect area Id");
-            assertEquals(area.getName(), "TECH_AIR_DOC_NAME");
-            assertEquals(area.getDetails(), "TECH_AIR_DOC_DESC");
-            assertEquals(area.getCategory(), "air_doctrine");
-            assertEquals(area.getLevels().size(), 6);
+            assertEquals(12, area.getId());
+            assertEquals("TECH_AIR_DOC_NAME", area.getName());
+            assertEquals("TECH_AIR_DOC_DESC", area.getDetails());
+            assertEquals("air_doctrine", area.getCategory());
+            assertEquals(6, area.getLevels().size());
 
-            TechLevel level = area.getLevels().stream().toList().get(4);
-            assertEquals(level.getId(), 12400);
-            assertEquals(level.getName(), "TECH_LEVEL_AIR_DOC_5_NAME");
-            assertEquals(level.getDetails(), "TECH_LEVEL_AIR_DOC_5_DESC");
-            assertEquals(level.getCost(), 12);
-            assertEquals(level.getTime(), 720);
-            assertEquals(level.getApplications().size(), 4);
+            TechLevel level = area.getLevels().get(4);
+            assertEquals(12400, level.getId());
+            assertEquals("TECH_LEVEL_AIR_DOC_5_NAME", level.getName());
+            assertEquals("TECH_LEVEL_AIR_DOC_5_DESC", level.getDetails());
+            assertEquals(12, level.getCost());
+            assertEquals(720, level.getTime());
+            assertEquals(4, level.getApplications().size());
         } catch (Exception e) {
-            assertTrue(false, e.getMessage());
+            fail(e.getMessage());
         }
     }
 
     @Test
-    @Disabled
     void serialize() {
         try {
             InputStream stream = getClass().getClassLoader().getResourceAsStream("air_doctrine_tech.txt");
             stream.mark(1024*1024);
             TechArea area = prepareArea(stream);
 
-            byte[] serialized = (new TechAreaSerializer()).serialize(area);
-
+            String actual = new String((new TechAreaSerializer()).serialize(area));
             stream.reset();
-            assertArrayEquals(serialized, stream.readAllBytes());
+            String expected = new String(stream.readAllBytes(), "windows-1251");
+
+            assertEquals(StringUtils.normalizeSpace(expected), StringUtils.normalizeSpace(actual));
         } catch (Exception e) {
-            assertTrue(false, e.getMessage());
+            fail(e.getMessage());
         }
     }
 

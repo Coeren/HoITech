@@ -10,8 +10,8 @@
 technology = {
 	id = 12
 	category = air_doctrine
-	name = TECH_AIR_DOC_NAME #Localized name
-	desc = TECH_AIR_DOC_DESC #Localized description
+	name = TECH_AIR_DOC_NAME
+	desc = TECH_AIR_DOC_DESC
 	
 	level = { # 1 - Great War Experience Analysis
 		id = 12000

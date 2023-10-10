@@ -45,7 +45,7 @@ public class TextMappingService {
         if (logger.isDebugEnabled()) {
             Files.copy(file.getInputStream(), Path.of(file.getName()));
         }
-        String fc = new String(file.getBytes(), Charset.forName("windows-1252"));
+        String fc = new String(file.getBytes(), Charset.forName("windows-1251"));
         Pattern pattern = Pattern.compile("^([^;]+);([^;]*);(.*)$", Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(fc);
         List<TextMapping> res = new ArrayList<>();
@@ -61,7 +61,7 @@ public class TextMappingService {
     public byte[] export() throws IOException {
         List<TextMapping> ll = repo.findAll(Sort.by("lid").ascending());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        OutputStreamWriter writer = new OutputStreamWriter(outputStream,Charset.forName("windows-1252"));
+        OutputStreamWriter writer = new OutputStreamWriter(outputStream,Charset.forName("windows-1251"));
 
         for (TextMapping tm: ll) {
             writer.append(tm.getId()).append(";").append(tm.getValue()).append(";").append(tm.getRest());

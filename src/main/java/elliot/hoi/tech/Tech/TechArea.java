@@ -5,8 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
 
 //public enum Area {
 //    AirDoctrine,
@@ -25,12 +25,6 @@ import java.util.TreeSet;
 //    Submarine
 //}
 
-class TechObjectBasic {
-    void setId(Integer id) {}
-    void setName(String name) {}
-    void setDetails(String details) {}
-}
-
 @Entity
 public class TechArea extends TechObjectBasic {
     @Id
@@ -39,9 +33,10 @@ public class TechArea extends TechObjectBasic {
     private String name;
     private String details;
     @Column(length = 1024)
-    private String comment;
+    private String comment = "";
     @OneToMany
-    private TreeSet<TechLevel> theoryList = new TreeSet<>();
+    private ArrayList<TechLevel> theoryList = new ArrayList<>();
+//    private TreeSet<TechLevel> theoryList = new TreeSet<>();
 
     public Integer getId() {
         return id;
@@ -55,7 +50,10 @@ public class TechArea extends TechObjectBasic {
     public String getDetails() {
         return details;
     }
-    public Set<TechLevel> getLevels() { return theoryList; }
+    public String getComment() {
+        return comment;
+    }
+    public List<TechLevel> getLevels() { return theoryList; }
     void addLevel(TechLevel level) {
         if (!theoryList.add(level)) {
             throw new RuntimeException("Duplicate theory levels (" + level.getId() + ") in area " + name);

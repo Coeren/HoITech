@@ -1,20 +1,17 @@
 package elliot.hoi.tech.Tech;
 
-import elliot.hoi.tech.TextMapping.TextMapping;
-import elliot.hoi.tech.TextMapping.TextMappingRepository;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class TechLevel extends TechBase {
-    public Set<TechApplication> getApplications() {
+    public List<TechApplication> getApplications() {
         return apps;
     }
     void addApplication(TechApplication application) {
@@ -28,5 +25,6 @@ public class TechLevel extends TechBase {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private TechArea area;
     @OneToMany
-    private TreeSet<TechApplication> apps = new TreeSet<>();
+    private ArrayList<TechApplication> apps = new ArrayList<>();
+//    private TreeSet<TechApplication> apps = new TreeSet<>();
 }

@@ -2,7 +2,10 @@ package elliot.hoi.tech.Tech;
 
 import elliot.hoi.tech.TextMapping.TextMapping;
 import elliot.hoi.tech.TextMapping.TextMappingRepository;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,11 +20,9 @@ public class TechBase extends TechObjectBasic implements Comparable<TechBase> {
     public int compareTo(TechBase o) {
         return Integer.compare(id, o.id);
     }
-
     public Integer getId() {
         return id;
     }
-
     public String getName() {
         if (textMappingRepository == null)
             return name;
@@ -29,7 +30,6 @@ public class TechBase extends TechObjectBasic implements Comparable<TechBase> {
         Optional<TextMapping> candidate = textMappingRepository.findById(name);
         return candidate.isEmpty() ? name : candidate.get().getValue();
     }
-
     public String getDetails() {
         if (textMappingRepository == null)
             return details;
@@ -37,13 +37,20 @@ public class TechBase extends TechObjectBasic implements Comparable<TechBase> {
         Optional<TextMapping> candidate = textMappingRepository.findById(details);
         return candidate.isEmpty() ? details : candidate.get().getValue();
     }
-
     public Integer getCost() {
         return cost;
     }
-
     public Integer getTime() {
         return time;
+    }
+    public String getComment() {
+        return comment;
+    }
+    public Integer getNegOffset() {
+        return negOffset;
+    }
+    public Integer getPosOffset() {
+        return posOffset;
     }
 
     @Id
@@ -53,9 +60,10 @@ public class TechBase extends TechObjectBasic implements Comparable<TechBase> {
     private String details; // desc
     private Integer cost;
     private Integer time;
+
     private Integer negOffset;
     private Integer posOffset;
-    private String comment;
+    private String comment = "";
 
     @Transient
     @Autowired

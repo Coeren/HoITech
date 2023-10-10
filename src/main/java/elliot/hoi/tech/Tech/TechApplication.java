@@ -5,10 +5,11 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class TechApplication extends TechBase {
-    public ArrayList<TechBase> getPredecessors() {
+    public List<TechBase> getPredecessors() {
         return predecessors;
     }
     public TechLevel getTheory() {
@@ -27,6 +28,12 @@ public class TechApplication extends TechBase {
     void appendEffect(String effect) {
         effects += effect;
     }
+    List<Integer> getReqs() {
+        if (!reqs.isEmpty())
+            return reqs;
+
+        return predecessors.stream().map(TechBase::getId).toList();
+    }
 
     @Override
     boolean checkFields() {
@@ -40,7 +47,7 @@ public class TechApplication extends TechBase {
     private ArrayList<TechBase> predecessors = new ArrayList<>();
     private Integer chance;
     @Column(length = 2048)
-    private String effects;
+    private String effects = "";
     @Transient
     private ArrayList<Integer> reqs = new ArrayList<>();
 }

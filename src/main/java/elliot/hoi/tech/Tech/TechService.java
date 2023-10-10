@@ -1,5 +1,9 @@
 package elliot.hoi.tech.Tech;
 
+import elliot.hoi.tech.Tech.Repositories.TechAppRepository;
+import elliot.hoi.tech.Tech.Repositories.TechAreaRepository;
+import elliot.hoi.tech.Tech.Repositories.TechLevelRepository;
+import elliot.hoi.tech.Tech.Repositories.TechRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;

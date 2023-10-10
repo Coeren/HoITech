@@ -1,14 +1,15 @@
 package elliot.hoi.tech.Tech;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.apache.commons.lang3.StringUtils;
 
 public class TechAreaSerializer {
     public TechArea deserialize(InputStream file) throws IOException, InvalidStructureException {
-        area = new TechArea();
-        reader = new BufferedReader(new InputStreamReader(file, encoding));
+        techArea = new TechArea();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(file, encoding));
         state = ParsingState.Outer;
 
         while (reader.ready()) {
@@ -26,64 +27,142 @@ public class TechAreaSerializer {
             }
         }
 
-        TechArea ret = area;
-        area = null;
+        TechArea ret = techArea;
+        techArea = null;
         return ret;
+    }
+    public byte[] serialize(TechArea area) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        writer = new OutputStreamWriter(outputStream, encoding);
+        indent = 0;
+
+        writeArea(area);
+
+        writer.flush();
+        return outputStream.toByteArray();
+    }
+
+    private void writeArea(TechArea area) throws IOException {
+        writeLine(area.getComment());
+        writeLine("technology = {");
+
+        indent++;
+        writeBasics(area, "category = " + area.getCategory());
+
+        int i = 1;
+        for (TechLevel level: area.getLevels())
+            writeLevel(level, i++);
+
+        indent--;
+        writeLine("}");
+    }
+    private void writeLevel(TechLevel level, int i) throws IOException {
+        writeLine("level = { " + level.getComment());
+
+        indent++;
+        writeBasics(level);
+        writeCommons(level);
+
+        for (TechApplication app: level.getApplications())
+            writeApplication(app);
+
+        indent--;
+        writeLine("} # Level " + i);
+    }
+    private void writeApplication(TechApplication app) throws IOException {
+        writeLine("application = { " + app.getComment());
+
+        indent++;
+        writeBasics(app);
+        writeLine("required = { " + StringUtils.join(app.getReqs(), " ") + " }");
+        writeLine("chance = " + app.getChance());
+        writeCommons(app);
+        writeLine("effects = {");
+        writer.append(app.getEffects() + newLine); // raw formatting for effects
+        writeLine("}");
+
+        indent--;
+        writeLine("}");
+    }
+    private void writeCommons(TechBase base) throws IOException {
+        writeLine("cost = " + base.getCost());
+        writeLine("time = " + base.getTime());
+        writeLine("neg_offset = " + base.getNegOffset());
+        writeLine("pos_offset = " + base.getPosOffset());
+        writer.append(newLine);
+    }
+    private void writeBasics(TechObjectBasic tech) throws IOException {
+        writeBasics(tech, null);
+    }
+    private void writeBasics(TechObjectBasic tech, String s) throws IOException {
+        writeLine("id = " + tech.getId());
+        if (s != null)
+            writeLine(s);
+        writeLine("name = " + tech.getName());
+        writeLine("desc = " + tech.getDetails());
+        writer.append(newLine);
+    }
+    private void writeLine(String line) throws IOException {
+        if (line == null)
+            return;
+
+        for (int i = 0; i < indent; i++)
+            writer.append("\t");
+
+        writer.append(line).append(newLine);
     }
 
     private void parseEffects(String line) {
         if (closingPattern.matcher(line).matches())
             state = ParsingState.Application;
         else {
-            if (StringUtils.isNotBlank(app.getEffects()))
-                app.appendEffect("\r\n");
+            if (StringUtils.isNotBlank(techApplication.getEffects()))
+                techApplication.appendEffect(newLine);
 
-            app.appendEffect(line);
+            techApplication.appendEffect(line);
         }
     }
-
     private void parseApplication(String line) throws InvalidStructureException {
         Matcher chanceMatcher = chancePattern.matcher(line);
         Matcher reqMatcher = reqPattern.matcher(line);
 
-        if (parseTechBasics(line, app) || parseTechCommons(line, app))
-            return;
+        if (parseTechBasics(line, techApplication) || parseTechCommons(line, techApplication))
+            ;
         else if (chanceMatcher.matches())
-            app.setChance(Integer.parseInt(chanceMatcher.group(1)));
+            techApplication.setChance(Integer.parseInt(chanceMatcher.group(1)));
         else if (reqMatcher.matches()) {
             for (String s: StringUtils.split(reqMatcher.group(1)))
-                app.appendReq(Integer.parseInt(s));
+                techApplication.appendReq(Integer.parseInt(s));
         } else if (effectsPattern.matcher(line).matches()) {
             state = ParsingState.Effects;
         } else if (closingPattern.matcher(line).matches()) {
-            if (!app.checkFields())
+            if (!techApplication.checkFields())
                 throw new InvalidStructureException("Not all fields in tech app are filled");
 
-            level.addApplication(app);
-            app = null;
+            techLevel.addApplication(techApplication);
+            techApplication = null;
             state = ParsingState.Level;
         }
         else
             throw new InvalidStructureException("Unexpected '" + line + "' line during tech app parsing");
     }
-
     private void parseLevel(String line) throws InvalidStructureException {
         Matcher appMatcher = appPattern.matcher(line);
 
-        if (parseTechBasics(line, level) || parseTechCommons(line, level))
-            return;
+        if (parseTechBasics(line, techLevel) || parseTechCommons(line, techLevel))
+            ;
         else if (appMatcher.matches()) {
-            app = new TechApplication();
-            app.setComment(appMatcher.group(1));
-            app.setTheory(level);
+            techApplication = new TechApplication();
+            techApplication.setComment(appMatcher.group(1));
+            techApplication.setTheory(techLevel);
             state = ParsingState.Application;
         }
         else if (closingPattern.matcher(line).matches()) {
-            if (!level.checkFields())
+            if (!techLevel.checkFields())
                 throw new InvalidStructureException("Not all fields in tech level are filled");
 
-            area.addLevel(level);
-            level = null;
+            techArea.addLevel(techLevel);
+            techLevel = null;
             state = ParsingState.Area;
         }
         else
@@ -93,17 +172,17 @@ public class TechAreaSerializer {
         Matcher categoryMatcher = categoryPattern.matcher(line);
         Matcher levelMatcher = levelPattern.matcher(line);
 
-        if (commentPattern.matcher(line).matches() || parseTechBasics(line, area))
-            return;
+        if (commentPattern.matcher(line).matches() || parseTechBasics(line, techArea))
+            ;
         else if (categoryMatcher.matches())
-            area.setCategory(categoryMatcher.group(1));
+            techArea.setCategory(categoryMatcher.group(1));
         else if (levelMatcher.matches()) {
-            level = new TechLevel();
-            level.setComment(levelMatcher.group(1));
+            techLevel = new TechLevel();
+            techLevel.setComment(levelMatcher.group(1));
             state = ParsingState.Level;
         }
         else if (closingPattern.matcher(line).matches()) {
-            if (!area.checkFields())
+            if (!techArea.checkFields())
                 throw new InvalidStructureException("Not all fields in tech area are filled");
 
             state = ParsingState.Outer;
@@ -113,7 +192,7 @@ public class TechAreaSerializer {
     }
     private void parseOuter(String line) throws InvalidStructureException {
         if (commentPattern.matcher(line).matches())
-            area.appendComment(line + "\r\n");
+            techArea.appendComment(line + newLine);
         else if (technologyPattern.matcher(line).matches())
             state = ParsingState.Area;
         else
@@ -157,10 +236,6 @@ public class TechAreaSerializer {
         return true;
     }
 
-    public byte[] serialize(TechArea area) {
-        return null;
-    }
-
     private enum ParsingState {
         Outer,
         Area,
@@ -169,7 +244,8 @@ public class TechAreaSerializer {
 //        Required,
         Effects
     }
-    private final String encoding = "windows-1252";
+    private final String encoding = "windows-1251";
+    private final String newLine = "\r\n";
     private final Pattern commentPattern = Pattern.compile("^\\s*#.*$");
     private final Pattern closingPattern = Pattern.compile("^\\s*}.*$");
     private final Pattern technologyPattern = Pattern.compile("^\\s*technology\\s*=\\s*\\{\\s*$");
@@ -186,9 +262,10 @@ public class TechAreaSerializer {
     private final Pattern chancePattern = Pattern.compile("^\\s*chance\\s*=\\s*(\\d+)[^}]*$");
     private final Pattern reqPattern = Pattern.compile("^\\s*required\\s*=\\s*\\{(.*?)}\\s*$");
     private final Pattern effectsPattern = Pattern.compile("^\\s*effects\\s*=\\s*\\{\\s*$");
-    private BufferedReader reader;
     private ParsingState state;
-    private TechArea area;
-    private TechLevel level;
-    private TechApplication app;
+    private TechArea techArea;
+    private TechLevel techLevel;
+    private TechApplication techApplication;
+    private OutputStreamWriter writer;
+    private int indent;
 }
