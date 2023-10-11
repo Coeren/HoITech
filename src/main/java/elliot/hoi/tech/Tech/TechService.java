@@ -29,12 +29,32 @@ public class TechService {
         TechAreaSerializer serializer = new TechAreaSerializer();
         TechArea area = serializer.deserialize(file.getInputStream());
         techAreaRepo.deleteById(area.getId());
+
+        for (TechLevel lvl: area.getLevels()) {
+            techLevelRepo.save(lvl);
+        }
+
         techAreaRepo.save(area);
 
         return "Area " + area.getName() + " and all descendants are imported";
     }
-
     public TechBase getTechById(int id) {
-        return techRepo.findById(id).orElse(null);
+        return techRepo.findById(id).orElseThrow();
+    }
+    public byte[] exportAreaFile(int id) throws IOException {
+        TechArea area = techAreaRepo.findById(id).orElseThrow();
+        TechAreaSerializer serializer = new TechAreaSerializer();
+
+        return serializer.serialize(area);
+    }
+    public TechArea getAreaById(int id) {
+        return techAreaRepo.findById(id).orElseThrow();
+    }
+    public void linkTechs() {
+        techAppRepo.findAll().stream().forEach(app -> {
+            for (Integer id: app.getReqs())
+                app.addPredecessor(techRepo.findById(id).get());
+            app.finishReq();
+        });
     }
 }

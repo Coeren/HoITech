@@ -8,10 +8,10 @@ import jakarta.persistence.Id;
 @Entity
 public class TextMapping {
     public String getId() {
-        return id;
+        return sid;
     }
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String sid) {
+        this.sid = sid;
     }
     public String getValue() {
         return value;
@@ -27,7 +27,7 @@ public class TextMapping {
     }
 
     public TextMapping(String id, String value, String rest) {
-        this.id = id;
+        this.sid = id;
         this.value = value;
         this.rest = rest;
     }
@@ -35,16 +35,16 @@ public class TextMapping {
         this(id, value, ";;;;;;;;;;X\r\n");
     }
     public TextMapping() {
-        this.id = "";
+        this.sid = "";
         this.value = "";
         this.rest = "";
     }
 
     @Id
     @GeneratedValue
-    private Long lid;
+    private Long id;
     @Column(unique = true)
-    private String id;
+    private String sid;
     @Column(length = 4096)
     private String value;
     private String rest;

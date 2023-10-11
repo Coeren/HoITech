@@ -6,6 +6,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 public class TechApplication extends TechBase {
@@ -33,6 +34,12 @@ public class TechApplication extends TechBase {
             return reqs;
 
         return predecessors.stream().map(TechBase::getId).toList();
+    }
+    void finishReq() {
+        reqs.clear();
+    }
+    void addPredecessor(TechBase tech) {
+        predecessors.add(tech);
     }
 
     @Override

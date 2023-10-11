@@ -177,7 +177,7 @@ public class TechAreaSerializer {
         else if (categoryMatcher.matches())
             techArea.setCategory(categoryMatcher.group(1));
         else if (levelMatcher.matches()) {
-            techLevel = new TechLevel();
+            techLevel = new TechLevel(techArea);
             techLevel.setComment(levelMatcher.group(1));
             state = ParsingState.Level;
         }

@@ -30,8 +30,8 @@ public class TextController {
         byte[] bytes;
         try {
             bytes = service.export();
-        } catch (IOException e) {
-            return ResponseEntity.internalServerError().body(null);
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(e.getMessage().getBytes());
         }
         return ResponseEntity
                 .ok()

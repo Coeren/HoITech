@@ -11,6 +11,13 @@ import java.util.List;
 
 @Entity
 public class TechLevel extends TechBase {
+    public TechLevel(TechArea area) {
+        this.area = area;
+    }
+    public TechLevel() {
+
+    }
+
     public List<TechApplication> getApplications() {
         return apps;
     }
@@ -22,7 +29,7 @@ public class TechLevel extends TechBase {
     }
 
     @ManyToOne
-    @OnDelete(action = OnDeleteAction.CASCADE)
+//    @OnDelete(action = OnDeleteAction.CASCADE)
     private TechArea area;
     @OneToMany
     private ArrayList<TechApplication> apps = new ArrayList<>();

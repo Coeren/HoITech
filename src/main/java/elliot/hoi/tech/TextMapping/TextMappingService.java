@@ -72,7 +72,7 @@ public class TextMappingService {
     }
 
     public Optional<TextMapping> getMapping(String id) {
-        return repo.findById(id);
+        return repo.findBySid(id);
     }
 
     public TextMapping updateMapping(String id, TextMapping mapping) {
